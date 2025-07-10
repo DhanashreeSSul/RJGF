@@ -1,0 +1,379 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&family=Poppins:wght@300;500&display=swap');
+
+:root {
+    --green-dark: #14532d;
+    --green-medium: #22c55e;
+    --green-accent: #4ade80;
+    --green-light: #bbf7d0;
+    --green-xlight: #d1fae5;
+    --green-hover: #16a34a;
+    --white: #fff;
+    --shadow: 0 4px 16px rgba(22, 101, 52, 0.15);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: var(--green-xlight);
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    background: linear-gradient(90deg, var(--green-dark) 60%, var(--green-accent) 100%);
+    color: var(--white);
+    padding: 1.5em 3em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    box-shadow: var(--shadow);
+}
+
+header.hide-header {
+    transform: translateY(-120%);
+}
+
+/* Dropdown container */
+.dropdown {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+/* Dropdown content */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background: linear-gradient(135deg, var(--green-dark), var(--green-accent));
+    border-radius: 8px;
+    padding: 10px 0;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    z-index: 999;
+    min-width: 180px;
+    top: 100%;
+    left: 0;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px);}
+    to   { opacity: 1; transform: translateY(0);}
+}
+
+/* Individual dropdown links */
+.dropdown-content a {
+    color: var(--white);
+    padding: 10px 20px;
+    text-decoration: none;
+    display: block;
+    font-weight: 500;
+    font-family: 'Montserrat', sans-serif;
+    transition: background 0.3s ease;
+}
+
+/* Hover effect */
+.dropdown-content a:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-left: 4px solid var(--white);
+}
+
+/* Show dropdown on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.logo {
+    height: 60px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+    transition: transform 0.3s;
+}
+
+.logo:hover {
+    transform: scale(1.07) rotate(-2deg);
+}
+
+nav {
+    display: flex;
+    gap: 1.5em;
+}
+
+nav a {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.1em;
+    position: relative;
+    padding: 0.3em 0.7em;
+    transition: color 0.2s;
+}
+
+nav a::after {
+    content: "";
+    display: block;
+    height: 2px;
+    width: 0%;
+    background: linear-gradient(90deg, var(--green-accent), var(--green-medium));
+    transition: width 0.3s;
+    margin-top: 3px;
+}
+
+nav a:hover {
+    color: var(--green-accent);
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        gap: 1em;
+        padding: 1em;
+    }
+
+    nav {
+        gap: 0.7em;
+    }
+    header img {
+        height: 200px;
+    }
+}
+
+.custom-header {
+    background: linear-gradient(135deg, var(--green-dark), var(--green-accent));
+    padding: 2rem;
+    color: var(--white);
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.text-section {
+    flex: 1;
+    min-width: 250px;
+    padding: 1rem;
+}
+
+.text-section h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--green-light);
+    text-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+
+.text-section p {
+    font-size: 1.1rem;
+    color: var(--green-xlight);
+}
+
+.image-section {
+    flex: 1;
+    min-width: 250px;
+    padding: 1rem;
+    text-align: right;
+}
+
+.image-section img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.image-section img:hover {
+    transform: scale(1.08) rotate(2deg);
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.35);
+}
+
+.contact-section {
+    background: linear-gradient(135deg, var(--green-xlight), var(--green-light));
+    padding: 60px 20px;
+    color: var(--green-dark);
+}
+
+.contact-container {
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.contact-card {
+    background: var(--white);
+    color: #333;
+    padding: 2rem;
+    border-radius: 16px;
+    flex: 1;
+    min-width: 320px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.25);
+}
+
+.contact-form h2,
+.contact-info h2 {
+    font-size: 1.8rem;
+    color: var(--green-dark);
+    margin-bottom: 1rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 0.9rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    transition: 0.3s;
+    font-size: 1rem;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: var(--green-medium);
+    box-shadow: 0 0 8px rgba(34, 197, 94, 0.3);
+    outline: none;
+}
+
+.contact-form button {
+    background: linear-gradient(90deg, var(--green-medium), var(--green-accent));
+    color: var(--white);
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(34, 197, 94, 0.4);
+    transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+
+.contact-form button:hover {
+    background: linear-gradient(90deg, var(--green-dark), var(--green-medium));
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(22, 101, 52, 0.7);
+}
+
+.contact-form button i {
+    margin-right: 8px;
+}
+
+.contact-info p {
+    margin: 0.8rem 0;
+    font-size: 1rem;
+}
+
+.contact-info i {
+    color: var(--green-medium);
+    margin-right: 10px;
+}
+
+.social-icons {
+    margin: 1rem 0;
+}
+
+.social-icons a {
+    display: inline-block;
+    margin-right: 12px;
+    font-size: 1.5rem;
+    color: var(--green-dark);
+    background: var(--green-light);
+    padding: 12px;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(34, 197, 94, 0.3);
+    transition: transform 0.4s, background-color 0.4s, color 0.4s, box-shadow 0.4s;
+    position: relative;
+    overflow: hidden;
+}
+
+.social-icons a::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 120%;
+    height: 120%;
+    background: var(--green-medium);
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 0.4s;
+    z-index: 0;
+    opacity: 0.3;
+}
+
+.social-icons a:hover::before {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.social-icons a:hover {
+    color: var(--white);
+    background-color: var(--green-medium);
+    box-shadow: 0 8px 20px rgba(34, 197, 94, 0.6);
+    transform: scale(1.2) rotate(10deg);
+    z-index: 1;
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 250px;
+    border: none;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+.contact {
+    position: relative;
+    min-height: 100vh;
+    padding: 50px 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-image: url("drop image here");
+    background-size: cover;
+    background-position: center;
+}
+
+.contact .content {
+    max-width: 800px;
+    text-align: center;
+}
+
+.contact .content h2 {
+    font-size: 36px;
+    font-weight: 500;
+    color: var(--white);
+}
+
+.contact .content p {
+    font-weight: 300;
+    color: var(--white);
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}

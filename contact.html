@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact Us</title>
+
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="icon" type="image/png" href="Images/rjgf.jpg" />
+  <link rel="stylesheet" href="CSS/footer.css" />
+  <link rel="stylesheet" href="CSS/contact.css" />
+
+</head>
+<body>
+ <header>
+  <img src="Images/rjgf.jpg" alt="RJGF Logo" class="logo">
+ <nav>
+      <a href="rjhomepg.html">Home</a>
+      <a href="aboutusrjgf.html">About Us</a>
+      <a href="team.html">Team</a>
+      <a href="media.html">Media & Recognition</a>
+      <div class="dropdown">
+      <a href="#">Our Work</a>
+      <div class="dropdown-content">
+        <a href="education_index.html">Education</a>
+        <a href="healthcare_index.html">Health</a>
+        <a href="enviornment_index.html">Environment</a>
+      </div>
+    </div>
+      <a href="#">Gallery</a>
+      <a href="contact.html">Contact Us</a>
+    </nav>
+</header>
+
+
+  <div class="custom-header">
+    <div class="header-content">
+      <div class="text-section">
+        <h1>Contact Us</h1>
+        <p>We're here to help. Get in touch with us anytime!</p>
+      </div>
+      <div class="image-section">
+        <img src="Images/Contact-us.png" alt="Support Image" />
+      </div>
+    </div>
+  </div>
+
+  <section class="contact-section">
+    <div class="contact-container">
+      <div class="contact-form contact-card">
+        <h2><i class="fa fa-paper-plane"></i> Send Us a Message</h2>
+        <form action="https://formspree.io/f/xkgbbnbz" method="POST" id="contactForm">
+          <input type="text" name="name" placeholder="Your Name" required />
+          <input type="email" name="_replyto" placeholder="Your Email" required />
+          <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+          <button type="submit"><i class="fa fa-paper-plane"></i> Send Message</button>
+        </form>
+      </div>
+
+      <div class="contact-info contact-card">
+        <h2><i class="fa fa-address-book"></i> Contact Information</h2>
+        <p><i class="fa fa-phone"></i> Contact number:<br>9922954841<br>9922954842<br>8888843163<br>8554003284</p>
+        <p><i class="fa fa-envelope"></i> rjglobalfoundation@gmail.com</p>
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+        </div>
+        <h3><i class="fa fa-map-marker-alt"></i> Our Location</h3>
+        <div class="map-container">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7562.90789488722!2d73.76316004136658!3d18.598641080040473!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2b94b7c4dd19d%3A0xdce6f74efb1b026a!2sMont%20Vert%20Seville!5e0!3m2!1sen!2sin!4v1750523811964!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div id="footer-placeholder"></div>
+
+  <script>
+    const header = document.querySelector('header');
+    let lastScrollY = window.scrollY;
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 10) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+
+      if (window.scrollY > lastScrollY && window.scrollY > 80) {
+        header.classList.add('hide-header');
+      } else {
+        header.classList.remove('hide-header');
+      }
+
+      lastScrollY = window.scrollY;
+    });
+
+    document.getElementById('contactForm').addEventListener('submit', function (e) {
+      alert('Your message has been sent to the organizers!');
+    });
+
+    fetch("footer.html")
+      .then(response => {
+        if (!response.ok) throw new Error("Network response was not ok");
+        return response.text();
+      })
+      .then(data => {
+        document.getElementById("footer-placeholder").innerHTML = data;
+      })
+      .catch(error => {
+        console.error("Error fetching footer:", error);
+      });
+  </script>
+</body>
+</html>

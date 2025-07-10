@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>RJGF Foundation Media Highlights</title>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background: linear-gradient(120deg, #f5f7fa 0%, #c3cfe2 100%);
+      font-family: 'Montserrat', sans-serif;
+      margin: 0;
+      padding: 0;
+      color: #222;
+    }
+    .container {
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 20px;
+    }
+    h1 {
+      color: #2b5876;
+      text-align: center;
+      font-size: 2.4em;
+      margin-bottom: 32px;
+      letter-spacing: 1.5px;
+    }
+    .media-gallery {
+      display: flex;
+      gap: 32px;
+      justify-content: center;
+      margin-bottom: 40px;
+      flex-wrap: wrap;
+    }
+    .media-card {
+      background: #fff;
+      border-radius: 18px;
+      box-shadow: 0 6px 24px rgba(43, 88, 118, 0.13);
+      flex: 1 1 30%;
+      max-width: 32%;
+      min-width: 300px;
+      transition: transform 0.3s, box-shadow 0.3s;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .media-card:hover {
+      transform: translateY(-8px) scale(1.03);
+      box-shadow: 0 12px 32px rgba(43, 88, 118, 0.22);
+    }
+    .media-image {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      transition: opacity 0.5s;
+      opacity: 0.97;
+      border-bottom: 1px solid #e0e6ed;
+    }
+    .media-card:hover .media-image {
+      opacity: 1;
+    }
+    .media-content {
+      padding: 22px;
+      text-align: center;
+    }
+    .media-title {
+      color: #1e3c72;
+      font-size: 1.17em;
+      margin-bottom: 8px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+    .media-date {
+      color: #6a89cc;
+      font-size: 0.98em;
+      margin-bottom: 10px;
+      font-style: italic;
+    }
+    .media-desc {
+      color: #333;
+      font-size: 1em;
+      margin-bottom: 10px;
+    }
+    /* Articles Section */
+    .articles-section {
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 2px 16px rgba(43,88,118,0.08);
+      padding: 32px 24px;
+      margin-top: 32px;
+    }
+    .articles-section h2 {
+      color: #2b5876;
+      font-size: 2em;
+      margin-bottom: 18px;
+      text-align: center;
+      letter-spacing: 1px;
+    }
+    .article-list {
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+    }
+    .article-item {
+      border-left: 4px solid #6a89cc;
+      padding-left: 18px;
+      background: #f8fafc;
+      border-radius: 8px;
+      transition: box-shadow 0.3s;
+    }
+    .article-item:hover {
+      box-shadow: 0 4px 16px rgba(43,88,118,0.10);
+    }
+    .article-title {
+      font-size: 1.18em;
+      color: #1e3c72;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+    .article-meta {
+      color: #6a89cc;
+      font-size: 0.97em;
+      margin-bottom: 5px;
+    }
+    .article-desc {
+      color: #444;
+      font-size: 1em;
+    }
+    @media (max-width: 900px) {
+      .media-card {
+        max-width: 48%;
+      }
+    }
+    @media (max-width: 600px) {
+      .media-gallery {
+        flex-direction: column;
+        gap: 20px;
+      }
+      .media-card {
+        max-width: 100%;
+      }
+      .articles-section {
+        padding: 18px 8px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>RJGF Foundation Media Highlights</h1>
+    <div class="media-gallery">
+      <div class="media-card">
+        <img class="media-image" src="image1.jpg" alt="Grand Launch Pune">
+        <div class="media-content">
+          <div class="media-title">Grand Launch in Pune</div>
+          <div class="media-date">March 29, 2025</div>
+          <div class="media-desc">Read about the grand launch of RJGF Foundation in Pune, attended by prominent dignitaries and media.</div>
+        </div>
+      </div>
+      <div class="media-card">
+        <img class="media-image" src="image2.jpg" alt="Sanwad Media Report">
+        <div class="media-content">
+          <div class="media-title">Sanwad Media Feature</div>
+          <div class="media-date">March 29, 2025</div>
+          <div class="media-desc">Sanwad Media reports on the establishment of RJGF Foundation and its vision for social impact.</div>
+        </div>
+      </div>
+      <div class="media-card">
+        <img class="media-image" src="image3.jpg" alt="Atulya Maharashtra Coverage">
+        <div class="media-content">
+          <div class="media-title">Atulya Maharashtra Coverage</div>
+          <div class="media-date">March 29, 2025</div>
+          <div class="media-desc">Atulya Maharashtra covers the foundation's dedication to social justice and community service.</div>
+        </div>
+      </div>
+    </div>
+    <section class="articles-section">
+      <h2>Featured Articles</h2>
+      <div class="article-list">
+        <div class="article-item">
+          <div class="article-title">Grand Launch in Pune</div>
+          <div class="article-meta">Published: March 29, 2025</div>
+          <div class="article-desc">Read about the grand launch of RJGF Foundation in Pune, attended by prominent dignitaries and media. <a href="#">Read Full Article</a></div>
+        </div>
+        <div class="article-item">
+          <div class="article-title">Sanwad Media Feature</div>
+          <div class="article-meta">Published: March 29, 2025</div>
+          <div class="article-desc">Sanwad Media reports on the establishment of RJGF Foundation and its vision for social impact. <a href="#">Read Full Article</a></div>
+        </div>
+        <div class="article-item">
+          <div class="article-title">Atulya Maharashtra Coverage</div>
+          <div class="article-meta">Published: March 29, 2025</div>
+          <div class="article-desc">Atulya Maharashtra covers the foundation's dedication to social justice and community service. <a href="#">Read Full Article</a></div>
+        </div>
+      </div>
+    </section>
+  </div>
+</body>
+</html>
