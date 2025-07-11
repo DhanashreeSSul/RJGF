@@ -3,83 +3,368 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Contact Us</title>
+  <title>Contact Us | RJ Global Foundation</title>
+  <meta name="description" content="Get in touch with RJ Global Foundation. We'd love to hear from you about our initiatives in education, healthcare, and environment.">
 
   <!-- Font Awesome for icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <link rel="icon" type="image/png" href="Images/rjgf.jpg" />
   <link rel="stylesheet" href="CSS/footer.css" />
   <link rel="stylesheet" href="CSS/contact.css" />
+  <link rel="stylesheet" href="CSS/header.css" />
 
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
- <header>
-  <img src="Images/rjgf.jpg" alt="RJGF Logo" class="logo">
- <nav>
+ <!-- Header -->
+  <header>
+    <img src="Images/rjgf.jpg" alt="RJGF Logo" class="logo">
+    <nav>
       <a href="rjhomepg.html">Home</a>
       <a href="aboutusrjgf.html">About Us</a>
-      <a href="team.html">Team</a>
+      <a href="team.html" class="active">Team</a>
       <a href="media.html">Media & Recognition</a>
       <div class="dropdown">
-      <a href="#">Our Work</a>
-      <div class="dropdown-content">
-        <a href="education_index.html">Education</a>
-        <a href="healthcare_index.html">Health</a>
-        <a href="enviornment_index.html">Environment</a>
+        <a href="#">Our Work</a>
+        <div class="dropdown-content">
+          <a href="education_index.html">Education</a>
+          <a href="healthcare_index.html">Health</a>
+          <a href="enviornment_index.html">Environment</a>
+        </div>
       </div>
-    </div>
       <a href="#">Gallery</a>
       <a href="contact.html">Contact Us</a>
     </nav>
-</header>
+  </header>
 
-
-  <div class="custom-header">
-    <div class="header-content">
-      <div class="text-section">
-        <h1>Contact Us</h1>
-        <p>We're here to help. Get in touch with us anytime!</p>
-      </div>
-      <div class="image-section">
-        <img src="Images/Contact-us.png" alt="Support Image" />
-      </div>
-    </div>
-  </div>
-
-  <section class="contact-section">
-    <div class="contact-container">
-      <div class="contact-form contact-card">
-        <h2><i class="fa fa-paper-plane"></i> Send Us a Message</h2>
-        <form action="https://formspree.io/f/xkgbbnbz" method="POST" id="contactForm">
-          <input type="text" name="name" placeholder="Your Name" required />
-          <input type="email" name="_replyto" placeholder="Your Email" required />
-          <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-          <button type="submit"><i class="fa fa-paper-plane"></i> Send Message</button>
-        </form>
-      </div>
-
-      <div class="contact-info contact-card">
-        <h2><i class="fa fa-address-book"></i> Contact Information</h2>
-        <p><i class="fa fa-phone"></i> Contact number:<br>9922954841<br>9922954842<br>8888843163<br>8554003284</p>
-        <p><i class="fa fa-envelope"></i> rjglobalfoundation@gmail.com</p>
-        <div class="social-icons">
-          <a href="#"><i class="fab fa-facebook-f"></i></a>
-          <a href="#"><i class="fab fa-instagram"></i></a>
-          <a href="#"><i class="fab fa-linkedin-in"></i></a>
-          <a href="#"><i class="fab fa-twitter"></i></a>
+  <main>
+    <section class="hero-section">
+      <div class="hero-container">
+        <div class="hero-content">
+          <h1 class="hero-title">Connect With Us</h1>
+          <p class="hero-subtitle">We're here to listen, collaborate, and make a difference together. Reach out to us for partnerships, inquiries, or to learn more about our initiatives.</p>
+          <div class="hero-buttons">
+            <a href="#contact-form" class="btn-primary">Send a Message</a>
+            <a href="#contact-info" class="btn-secondary">Contact Info</a>
+          </div>
         </div>
-        <h3><i class="fa fa-map-marker-alt"></i> Our Location</h3>
-        <div class="map-container">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7562.90789488722!2d73.76316004136658!3d18.598641080040473!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2b94b7c4dd19d%3A0xdce6f74efb1b026a!2sMont%20Vert%20Seville!5e0!3m2!1sen!2sin!4v1750523811964!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <div class="hero-image">
+          <img src="Images/Contact-us.png" alt="Team collaboration" class="animated-image">
+          <div class="shape-overlay"></div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <div id="footer-placeholder"></div>
+    <section class="contact-section">
+      <div class="section-header">
+        <h2>Get In Touch</h2>
+        <p>We value your feedback and questions. Our team will respond to your message within 24 hours.</p>
+      </div>
+      
+      <div class="contact-container">
+        <div class="contact-form contact-card" id="contact-form">
+          <h2><i class="fas fa-paper-plane"></i> Send Us a Message</h2>
+          <form action="https://formspree.io/f/xkgbbnbz" method="POST" id="contactForm">
+            <div class="form-group">
+              <input type="text" name="name" placeholder="Your Name" required class="form-input" />
+              <i class="fas fa-user form-icon"></i>
+            </div>
+            <div class="form-group">
+              <input type="email" name="_replyto" placeholder="Your Email" required class="form-input" />
+              <i class="fas fa-envelope form-icon"></i>
+            </div>
+            <div class="form-group">
+              <input type="tel" name="phone" placeholder="Phone Number (Optional)" class="form-input" />
+              <i class="fas fa-phone form-icon"></i>
+            </div>
+            <div class="form-group">
+              <textarea name="message" rows="5" placeholder="Your Message" required class="form-textarea"></textarea>
+              <i class="fas fa-comment form-icon textarea-icon"></i>
+            </div>
+            <button type="submit" class="submit-btn">
+              <i class="fas fa-paper-plane"></i> Send Message
+              <span class="btn-overlay"></span>
+            </button>
+          </form>
+        </div>
+
+        <div class="contact-info contact-card" id="contact-info">
+          <h2><i class="fas fa-address-book"></i> Contact Information</h2>
+          
+          <div class="info-item">
+            <div class="info-icon">
+              <i class="fas fa-phone-alt"></i>
+            </div>
+            <div class="info-content">
+              <h3>Phone Numbers</h3>
+              <p>+91 9922954841</p>
+              <p>+91 9922954842</p>
+              <p>+91 8888843163</p>
+              <p>+91 8554003284</p>
+            </div>
+          </div>
+          
+          <div class="info-item">
+            <div class="info-icon">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <div class="info-content">
+              <h3>Email Address</h3>
+              <p><a href="mailto:rjglobalfoundation@gmail.com">rjglobalfoundation@gmail.com</a></p>
+            </div>
+          </div>
+          
+          <div class="info-item">
+            <div class="info-icon">
+              <i class="fas fa-clock"></i>
+            </div>
+            <div class="info-content">
+              <h3>Working Hours</h3>
+              <p>Monday - Friday: 9:00 AM - 6:00 PM</p>
+              <p>Saturday: 10:00 AM - 4:00 PM</p>
+            </div>
+          </div>
+          
+          <div class="social-links">
+            <h3>Connect With Us</h3>
+            <div class="social-icons">
+              <a href="#" class="social-icon facebook" aria-label="Facebook">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a href="#" class="social-icon instagram" aria-label="Instagram">
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a href="#" class="social-icon linkedin" aria-label="LinkedIn">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+              <a href="#" class="social-icon twitter" aria-label="Twitter">
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a href="#" class="social-icon youtube" aria-label="YouTube">
+                <i class="fab fa-youtube"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="map-section">
+      <div class="section-header">
+        <h2>Our Location</h2>
+        <p>Visit our office or connect with us virtually. We're always happy to meet people who share our vision.</p>
+      </div>
+      
+      <div class="map-container">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7562.90789488722!2d73.76316004136658!3d18.598641080040473!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2b94b7c4dd19d%3A0xdce6f74efb1b026a!2sMont%20Vert%20Seville!5e0!3m2!1sen!2sin!4v1750523811964!5m2!1sen!2sin" 
+                width="100%" 
+                height="450" 
+                style="border:0;" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade"
+                aria-label="Our location on Google Maps"></iframe>
+        <div class="map-overlay">
+          <div class="location-card">
+            <h3><i class="fas fa-map-marker-alt"></i> Office Address</h3>
+            <p>Mont Vert Seville, Pune, Maharashtra 411057, India</p>
+            <a href="https://maps.google.com?q=Mont+Vert+Seville,Pune" class="direction-btn" target="_blank">
+              <i class="fas fa-directions"></i> Get Directions
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="faq-section">
+      <div class="section-header">
+        <h2>Frequently Asked Questions</h2>
+        <p>Find quick answers to common questions about contacting and working with us.</p>
+      </div>
+      
+      <div class="faq-container">
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>How can I volunteer with RJ Global Foundation?</span>
+            <i class="fas fa-chevron-down"></i>
+          </button>
+          <div class="faq-answer">
+            <p>We're always looking for passionate volunteers! Please send us a message through the contact form mentioning your areas of interest and availability. Our volunteer coordinator will get back to you with opportunities that match your skills and interests.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>What are your office hours?</span>
+            <i class="fas fa-chevron-down"></i>
+          </button>
+          <div class="faq-answer">
+            <p>Our main office is open Monday to Friday from 9:00 AM to 6:00 PM, and Saturdays from 10:00 AM to 4:00 PM. We're closed on Sundays and public holidays. For field projects, timings may vary based on the activity.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>How can I donate to your foundation?</span>
+            <i class="fas fa-chevron-down"></i>
+          </button>
+          <div class="faq-answer">
+            <p>We appreciate your generosity! You can donate through various methods including online transfers, UPI, or cheques. Please contact our donations team at rjglobalfoundation@gmail.com or call +91 9922954841 for more details on donation options and tax benefits.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>How long does it take to get a response?</span>
+            <i class="fas fa-chevron-down"></i>
+          </button>
+          <div class="faq-answer">
+            <p>We strive to respond to all inquiries within 24 hours during business days. For more complex questions that require input from specific team members, it may take up to 48 hours. If your matter is urgent, please mention it in your message or call our helpline numbers.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-row">
+        <div class="footer-col footer-about">
+          <div class="footer-logo-container">
+            <img src="Images/rjgf.jpg" alt="RJGF Logo" class="footer-logo">
+            <span class="footer-logo-text">RJ Global Foundation</span>
+          </div>
+          <p class="footer-about-text">Committed to creating sustainable change through education, healthcare, and environmental initiatives. Together, we can build a better future.</p>
+          <div class="footer-social">
+            <a href="#" class="footer-social-icon"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="footer-social-icon"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="footer-social-icon"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="footer-social-icon"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" class="footer-social-icon"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+        
+        <div class="footer-col footer-links">
+          <h3 class="footer-title">Quick Links</h3>
+          <ul>
+            <li><a href="rjhomepg.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+            <li><a href="aboutusrjgf.html"><i class="fas fa-chevron-right"></i> About Us</a></li>
+            <li><a href="team.html"><i class="fas fa-chevron-right"></i> Our Team</a></li>
+            <li><a href="media.html"><i class="fas fa-chevron-right"></i> Media & Recognition</a></li>
+            <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact Us</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-col footer-work">
+          <h3 class="footer-title">Our Work</h3>
+          <ul>
+            <li><a href="education_index.html"><i class="fas fa-chevron-right"></i> Education Initiatives</a></li>
+            <li><a href="healthcare_index.html"><i class="fas fa-chevron-right"></i> Healthcare Programs</a></li>
+            <li><a href="enviornment_index.html"><i class="fas fa-chevron-right"></i> Environmental Projects</a></li>
+            <li><a href="#"><i class="fas fa-chevron-right"></i> Success Stories</a></li>
+            <li><a href="#"><i class="fas fa-chevron-right"></i> Annual Reports</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-col footer-contact">
+          <h3 class="footer-title">Contact Info</h3>
+          <ul>
+            <li><i class="fas fa-map-marker-alt"></i> Mont Vert Seville, Pune, Maharashtra 411057</li>
+            <li><i class="fas fa-phone-alt"></i> +91 9922954841</li>
+            <li><i class="fas fa-envelope"></i> rjglobalfoundation@gmail.com</li>
+            <li><i class="fas fa-clock"></i> Mon-Fri: 9AM - 6PM</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <div class="footer-copyright">
+          <p>&copy; <span id="current-year"></span> RJ Global Foundation. All Rights Reserved.</p>
+        </div>
+        <div class="footer-legal">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Sitemap</a>
+        </div>
+      </div>
+    </div>
+  </footer>
 
   <script>
-    const header = document.querySelector('header');
+    // Mobile menu toggle
+    document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+      document.querySelector('.main-nav').classList.toggle('active');
+    });
+
+    // FAQ accordion functionality
+    const faqQuestions = document.querySelectorAll('.faq-question');
+    faqQuestions.forEach(question => {
+      question.addEventListener('click', () => {
+        const answer = question.nextElementSibling;
+        const icon = question.querySelector('i');
+        
+        // Toggle this item
+        question.classList.toggle('active');
+        answer.classList.toggle('active');
+        icon.classList.toggle('fa-chevron-down');
+        icon.classList.toggle('fa-chevron-up');
+        
+        // Close other items
+        faqQuestions.forEach(otherQuestion => {
+          if (otherQuestion !== question) {
+            otherQuestion.classList.remove('active');
+            otherQuestion.nextElementSibling.classList.remove('active');
+            otherQuestion.querySelector('i').classList.remove('fa-chevron-up');
+            otherQuestion.querySelector('i').classList.add('fa-chevron-down');
+          }
+        });
+      });
+    });
+
+    // Form submission handler
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      // Show loading state
+      const submitBtn = this.querySelector('button[type="submit"]');
+      const originalText = submitBtn.innerHTML;
+      submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+      submitBtn.disabled = true;
+      
+      // Simulate form submission (replace with actual form submission code)
+      setTimeout(() => {
+        submitBtn.innerHTML = '<i class="fas fa-check"></i> Message Sent!';
+        
+        // Show success message
+        const successMessage = document.createElement('div');
+        successMessage.className = 'form-success';
+        successMessage.innerHTML = `
+          <i class="fas fa-check-circle"></i>
+          <h3>Thank You!</h3>
+          <p>Your message has been successfully sent. We'll get back to you within 24 hours.</p>
+        `;
+        this.parentNode.insertBefore(successMessage, this.nextSibling);
+        this.style.display = 'none';
+        
+        // Reset form after 5 seconds (for demo purposes)
+        setTimeout(() => {
+          this.reset();
+          submitBtn.innerHTML = originalText;
+          submitBtn.disabled = false;
+          successMessage.remove();
+          this.style.display = 'block';
+        }, 5000);
+      }, 1500);
+    });
+
+    // Update copyright year
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+
+    // Header scroll effect
+    const header = document.querySelector('.sticky-header');
     let lastScrollY = window.scrollY;
 
     window.addEventListener('scroll', () => {
@@ -98,21 +383,26 @@
       lastScrollY = window.scrollY;
     });
 
-    document.getElementById('contactForm').addEventListener('submit', function (e) {
-      alert('Your message has been sent to the organizers!');
-    });
-
-    fetch("footer.html")
-      .then(response => {
-        if (!response.ok) throw new Error("Network response was not ok");
-        return response.text();
-      })
-      .then(data => {
-        document.getElementById("footer-placeholder").innerHTML = data;
-      })
-      .catch(error => {
-        console.error("Error fetching footer:", error);
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        const targetId = this.getAttribute('href');
+        if (targetId === '#') return;
+        
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          window.scrollTo({
+            top: targetElement.offsetTop - 100,
+            behavior: 'smooth'
+          });
+          
+          // Close mobile menu if open
+          document.querySelector('.main-nav').classList.remove('active');
+        }
       });
+    });
   </script>
 </body>
 </html>
