@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <link rel="stylesheet" href="CSS/rjgf.css">
+<link rel="icon" type="image/png" href="Images/rjgf.jpg">
+  <meta charset="UTF-8" />
+  <title>Our Inspiration - Tribute to Mr. Raveendra Jadhav</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@700&display=swap" rel="stylesheet" />
+ 
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+  <img src="Images/rjgf.jpg" alt="RJGF Logo" class="logo">
+ <nav>
+      <a href="rjhomepg.html">Home</a>
+      <a href="aboutusrjgf.html">About Us</a>
+      <a href="team.html">Team</a>
+      <a href="media.html">Media & Recognition</a>
+      <div class="dropdown">
+      <a href="#">Our Work</a>
+      <div class="dropdown-content">
+        <a href="education_index.html">Education</a>
+        <a href="healthcare_index.html">Health</a>
+        <a href="enviornment_index.html">Environment</a>
+      </div>
+    </div>
+      <a href="#">Gallery</a>
+      <a href="contact.html">Contact Us</a>
+    </nav>
+</header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="inspiration-title">Our Inspiration</div>
+    <div class="hero-image">
+      <img src="Images/ORIGINALPICRJ1.png" alt="Mr. Ravindra Jadhav">
+    </div>
+    <div class="hero-text">
+      <h2>Tribute to Late Mr. Raveendra Jadhav</h2>
+      <p><strong>A Journey of Humble Beginnings, Unshakable Determination, and Inspiring Legacy</strong></p>
+      <p>Late Mr. Raveendra Jadhav was not only an outstanding officer but also a compassionate, visionary, and deeply committed human being whose life continues to inspire generations. His unwavering dedication to his duty, coupled with his profound empathy for those around him, set him apart as a true leader.</p>
+      <p>Throughout his career, he exemplified integrity, courage, and an unshakable commitment to justice. He was not just a guardian of the law but a beacon of hope for those in need. His ability to balance firmness with kindness made him a respected figure among colleagues and the community alike.</p>
+      <p>Even in his absence, his ideals continue to guide and inspire. His life serves as a testament to the power of integrity, compassion, and vision. He was not just an officer; he was a mentor, a leader, and a force for good whose impact will be felt for generations to come.</p>
+    </div>
+  </section>
+
+  <!-- Image Slider -->
+  <section class="slider-container">
+    <div class="slider-track">
+      <img src="Images/1rj.png" alt="">
+      <img src="Images/2rj.png" alt="">
+      <img src="Images/3rj.png" alt="">
+      <img src="Images/5rj.png" alt="">
+      <img src="Images/6.png" alt="">
+      <img src="Images/1rj.png" alt="">
+      <img src="Images/2rj.png" alt="">
+      <img src="Images/3rj.png" alt="">
+      <img src="Images/4rj.png" alt="">
+      <img src="Images/5rj.png" alt="">
+    </div>
+  </section>
+
+  <!-- Info Cards -->
+  <section class="info">
+    <div class="info-card">
+      <h3>His Early Life</h3>
+      <p>Born in the small village of Takarkheda in Buldhana district, Maharashtra, Raveendra Jadhav showed remarkable academic brilliance and leadership qualities from a young age. Recognizing his extraordinary potential, his maternal uncle enrolled him in Chikhaldara Boarding School in Amravati district, where his talent began to shine.</p>
+      <p>One unforgettable moment came when Madam Pratibha Tai Patil visited the school. Young Raveendra gave a welcome speech that impressed her so much that she said:<br>
+        <em>“This boy will reach great heights in life.”</em>
+      </p>
+    </div>
+    <div class="info-card">
+      <h3>A Career of Service</h3>
+      <p>After completing his basic education, Mr. Jadhav successfully cleared the UPSC examinations and was issued a call letter for the final interview. Unfortunately, due to postal delays, he missed the opportunity. Yet, true to his resilient spirit, he never gave up. He went on to clear the MPSC examinations and served with distinction as Deputy Collector. Rising through the ranks, he became the District Collector of Amravati, where he initiated numerous developmental and public welfare programs.</p>
+    </div>
+    <div class="info-card">
+      <h3>Reunion with Destiny</h3>
+      <p>Years later, destiny came full circle when he served as Personal Secretary to Madam Pratibha Patil during her presidency. It was a proud moment that embodied perseverance and grace.</p>
+    </div>
+    <div class="info-card">
+      <h3>The Foundation's Purpose</h3>
+      <p>Today, his values and vision live on through the <strong>Raveendra Jadhav Global Foundation</strong>. Its core mission revolves around empowering lives in the fields of healthcare, education, and environmental protection. The Foundation continues to reflect Mr. Jadhav’s passion for service and social transformation. It uplifts communities, especially those from rural and underprivileged backgrounds, echoing the path he once walked himself.</p>
+    </div>
+    <div class="info-card">
+      <h3>A Legacy of Hope</h3>
+      <p>Let Mr. Raveendra Jadhav’s story remind us all: even when faced with setbacks, unwavering faith, purpose, and integrity can guide us toward greatness. From a small village in Maharashtra to Rashtrapati Bhavan — his life is a glowing testament to the heights that character and courage can reach.</p>
+      <p>May his legacy continue to inspire and illuminate many more lives to come.</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+   <script>
+let lastScrollY = window.scrollY;
+const header = document.querySelector('header');
+
+window.addEventListener('scroll', () => {
+ // Shadow effect
+ if (window.scrollY > 10) {
+     header.classList.add('scrolled');
+ } else {
+    header.classList.remove('scrolled');
+ }
+ // Hide on scroll down, show on scroll up
+ if (window.scrollY > lastScrollY && window.scrollY > 80) {
+   header.classList.add('hide-header');
+ } else {
+   header.classList.remove('hide-header');
+ }
+ lastScrollY = window.scrollY;
+});
+</script>
+  <footer class="footer">
+    &copy; 2025 Ravindra Jadhav Global Foundation. All rights reserved.
+  </footer>
+</body>
+</html>
