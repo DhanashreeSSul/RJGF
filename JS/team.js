@@ -17,7 +17,17 @@
       }
       lastScrollY = window.scrollY;
     });
+     const currentLocation = window.location.pathname;
+  const navLinks = document.querySelectorAll("nav a");
 
+  navLinks.forEach(link => {
+    const linkPath = link.getAttribute("href");
+    if (currentLocation.includes(linkPath)) {
+      link.classList.add("active");
+    } else {
+      link.classList.remove("active");
+    }
+  });
     // Team card hover effect
     const teamCards = document.querySelectorAll('.team-card');
     teamCards.forEach(card => {
