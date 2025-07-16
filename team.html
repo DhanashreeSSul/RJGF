@@ -6,19 +6,7 @@
   <title>Our Team | Raveendra Jadhav Global Foundation</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="icon" type="image/png" href="Images/rjgf.jpg">
-  <style>
-    :root {
-      --green-main: #7fb77e;
-      --green-accent: #4a7c3b;
-      --green-light: #d6e8d6;
-      --green-mint: #a8d8d8;
-      --green-shadow: rgba(74, 124, 59, 0.08);
-      --green-card: #e8f0e8;
-      --green-dark: #114d1a;
-      --text-dark: #2e3a2e;
-      --partner-bg: linear-gradient(135deg, #d6e8d6, #a8d8d8);
-    }
-  </style>
+ 
   <link rel="stylesheet" href="CSS/team.css">
 </head>
 <body>
@@ -58,14 +46,15 @@
 
   <!-- Team Section -->
   <main class="team-page">
-    <!-- Hero Section -->
-    <section class="team-hero">
-      <div class="hero-content">
-        <h1>Meet Our Team</h1>
-        <p>The passionate individuals driving our mission forward</p>
-        <div class="hero-pattern"></div>
-      </div>
-    </section>
+   <section class="team-hero" id="teamHero">
+  <div class="hero-content">
+    <h1>Meet Our Team</h1>
+    <p>The passionate individuals driving our mission forward</p>
+    <div class="hero-pattern"></div>
+  </div>
+</section>
+
+
 
     <!-- Board of Advisors -->
     <section class="team-section">
@@ -491,6 +480,38 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 });
+
+
+
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const heroSection = document.getElementById('teamHero');
+
+    const images = [
+      'Images/0M4A8662_converted.png',
+      'Images/0M4A8707_converted.png',
+      'Images/volunteer2.jpg'
+    ];
+
+
+    let index = 0;
+
+    function changeBackground() {
+      heroSection.style.backgroundImage = `url('${images[index]}')`;
+      index = (index + 1) % images.length;
+    }
+
+    // Initial background
+    changeBackground();
+
+    // Change every 6 seconds
+    setInterval(changeBackground, 6000);
+  });
+
+
+
+
+
 </script>
 </body>
 </html>
