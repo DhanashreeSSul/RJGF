@@ -12,26 +12,39 @@
 
 <body>
 
-<header>
-  <img src="images/logo.jpeg" alt="RJGF Logo" class="logo">
- <nav>
-      <a href="#">Home</a>
-      <a href="#">About Us</a>
-      <a href="team.html">Team</a>
-      <a href="#">Media & Recognition</a>
-      <div class="dropdown">
-      <a href="#">Our Work</a>
-      <div class="dropdown-content">
-        <a href="education_index.html">Education</a>
-        <a href="healthcare_index.html">Health</a>
-        <a href="enviornment_index.html">Environment</a>
-      </div>
+ <header>
+  <div class="logo-container">
+    <img src="Images/rjgf.jpg" alt="RJGF Logo" class="logo">
+    <div class="logo-text">
+      <h1>Raveendra Jadhav</h1>
+      <p>Global Foundation</p>
     </div>
-      <a href="#">Gallery</a>
-      <a href="contact.html">Contact Us</a>
-    </nav>
+  </div>
+  <nav>
+    <div class="mobile-menu-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <div class="nav-links">
+      <a href="rjhomepg.html"><i class="fas fa-home"></i> Home</a>
+      <a href="aboutusrjgf.html"><i class="fas fa-info-circle"></i> About Us</a>
+      <a href="team.html"><i class="fas fa-users"></i> Team</a>
+      <a href="media.html"><i class="fas fa-photo-video"></i> Media & Recognition</a>
+      <div class="dropdown">
+        <a href="#"><i class="fas fa-hands-helping"></i> Our Work <i class="fas fa-chevron-down dropdown-arrow"></i></a>
+        <div class="dropdown-content">
+          <a href="education_index.html"><i class="fas fa-book"></i> Education</a>
+          <a href="healthcare_index.html"><i class="fas fa-heartbeat"></i> Health</a>
+          <a href="enviornment_index.html"><i class="fas fa-leaf"></i> Environment</a>
+        </div>
+      </div>
+      <a href="#"><i class="fas fa-images"></i> Gallery</a>
+      <a href="contact.html"><i class="fas fa-envelope"></i> Contact Us</a>
+    </div>
+  </nav>
 </header>
-<!-- Your content here -->
+
 <script>
 let lastScrollY = window.scrollY;
 const header = document.querySelector('header');
@@ -337,6 +350,125 @@ window.addEventListener('scroll', () => {
     </div>
   </footer>
 
-  <script src="js/enviornment_script.js"></script>
+ <script>
+// Header scroll effect
+document.addEventListener('DOMContentLoaded', function() {
+  let lastScrollY = window.scrollY;
+  const header = document.querySelector('header');
+  const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+  const navLinks = document.querySelector('.nav-links');
+  
+  // Scroll effects
+  window.addEventListener('scroll', () => {
+    // Shadow effect
+    if (window.scrollY > 10) {
+      header.classList.add('scrolled');
+    } else {
+      header.classList.remove('scrolled');
+    }
+    
+    // Hide on scroll down, show on scroll up
+    if (window.scrollY > lastScrollY && window.scrollY > 80) {
+      header.classList.add('hide-header');
+    } else {
+      header.classList.remove('hide-header');
+    }
+    lastScrollY = window.scrollY;
+  });
+
+  // Mobile menu toggle
+  mobileMenuToggle.addEventListener('click', () => {
+    mobileMenuToggle.classList.toggle('active');
+    navLinks.classList.toggle('active');
+    
+    // Close dropdowns when menu is toggled
+    if (!navLinks.classList.contains('active')) {
+      document.querySelectorAll('.dropdown-content').forEach(dropdown => {
+        dropdown.style.display = 'none';
+      });
+    }
+  });
+
+  // Close mobile menu when clicking on a link
+  document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+      if (window.innerWidth <= 992) {
+        mobileMenuToggle.classList.remove('active');
+        navLinks.classList.remove('active');
+      }
+    });
+  });
+
+  // Active link highlighting
+  const currentLocation = window.location.pathname;
+  const navAnchors = document.querySelectorAll("nav a");
+
+  navAnchors.forEach(link => {
+    const linkPath = link.getAttribute('href');
+    if (currentLocation.includes(linkPath)) {
+      link.classList.add('active');
+    } else {
+      link.classList.remove('active');
+    }
+  });
+
+  // Team card hover effect (if exists on page)
+  const teamCards = document.querySelectorAll('.team-card');
+  if (teamCards.length > 0) {
+    teamCards.forEach(card => {
+      card.addEventListener('mouseenter', () => {
+        card.style.transform = 'translateY(-10px)';
+        card.style.boxShadow = '0 15px 30px rgba(0,0,0,0.1)';
+      });
+      card.addEventListener('mouseleave', () => {
+        card.style.transform = 'translateY(0)';
+        card.style.boxShadow = '0 5px 15px rgba(0,0,0,0.1)';
+      });
+    });
+  }
+
+  // Close dropdown when clicking outside
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('.dropdown')) {
+      document.querySelectorAll('.dropdown-content').forEach(dropdown => {
+        dropdown.style.display = 'none';
+      });
+    }
+  });
+
+  // Initialize dropdowns
+  document.querySelectorAll('.dropdown > a').forEach(dropdownToggle => {
+    dropdownToggle.addEventListener('click', (e) => {
+      if (window.innerWidth <= 992) {
+        e.preventDefault();
+        const dropdownContent = dropdownToggle.nextElementSibling;
+        const isOpen = dropdownContent.style.display === 'block';
+        
+        // Close all dropdowns first
+        document.querySelectorAll('.dropdown-content').forEach(dropdown => {
+          dropdown.style.display = 'none';
+        });
+        
+        // Open current dropdown if it was closed
+        if (!isOpen) {
+          dropdownContent.style.display = 'block';
+        }
+      }
+    });
+  });
+
+  // Handle dropdown hover on desktop
+  if (window.innerWidth > 992) {
+    document.querySelectorAll('.dropdown').forEach(dropdown => {
+      dropdown.addEventListener('mouseenter', () => {
+        dropdown.querySelector('.dropdown-content').style.display = 'block';
+      });
+      dropdown.addEventListener('mouseleave', () => {
+        dropdown.querySelector('.dropdown-content').style.display = 'none';
+      });
+    });
+  }
+});
+</script>
 </body>
 </html>
