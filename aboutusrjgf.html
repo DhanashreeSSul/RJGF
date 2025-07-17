@@ -8,6 +8,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
   <!-- Google Fonts -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
@@ -28,22 +29,35 @@
 <body>
 <!-- HEADER -->
 <header>
-  <img src="Images/rjgf.jpg" alt="RJGF Logo" class="logo">
-  <nav>
-    <a href="rjhomepg.html">Home</a>
-    <a href="aboutusrjgf.html" class="active">About Us</a>
-    <a href="team.html">Team</a>
-    <a href="media.html">Media & Recognition</a>
-    <div class="dropdown">
-      <a href="#">Our Work</a>
-      <div class="dropdown-content">
-        <a href="education_index.html">Education</a>
-        <a href="healthcare_index.html">Health</a>
-        <a href="enviornment_index.html">Environment</a>
-      </div>
+  <div class="logo-container">
+    <img src="Images/rjgf.jpg" alt="RJGF Logo" class="logo">
+    <div class="logo-text">
+      <h1>Raveendra Jadhav</h1>
+      <p>Global Foundation</p>
     </div>
-    <a href="#">Gallery</a>
-    <a href="contact.html">Contact Us</a>
+  </div>
+  <nav>
+    <div class="mobile-menu-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <div class="nav-links">
+      <a href="rjhomepg.html"><i class="fas fa-home"></i> Home</a>
+      <a href="aboutusrjgf.html" class="active"><i class="fas fa-info-circle"></i> About Us</a>
+      <a href="team.html"><i class="fas fa-users"></i> Team</a>
+      <a href="media.html"><i class="fas fa-photo-video"></i> Media & Recognition</a>
+      <div class="dropdown">
+        <a href="#"><i class="fas fa-hands-helping"></i> Our Work <i class="fas fa-chevron-down dropdown-arrow"></i></a>
+        <div class="dropdown-content">
+          <a href="education_index.html"><i class="fas fa-book"></i> Education</a>
+          <a href="healthcare_index.html"><i class="fas fa-heartbeat"></i> Health</a>
+          <a href="enviornment_index.html"><i class="fas fa-leaf"></i> Environment</a>
+        </div>
+      </div>
+      <a href="#"><i class="fas fa-images"></i> Gallery</a>
+      <a href="contact.html"><i class="fas fa-envelope"></i> Contact Us</a>
+    </div>
   </nav>
 </header>
 
@@ -53,29 +67,10 @@
     <div class="slide active" style="background-image: url('Images/health1.png');">
       <div class="slide-content">
         <div class="icon-shape"><i class="bi bi-heart-pulse"></i></div>
-        <h2>Healthcare for All</h2>
-        <p>Free medical camps, maternal & child health, nutrition drives.</p>
+        <h2>About Our Foundation</h2>
+        <p>Learn about our mission, vision, and the values that drive our work.</p>
       </div>
     </div>
-    <div class="slide" style="background-image: url('Images/edu1.jpg');">
-      <div class="slide-content">
-        <div class="icon-shape"><i class="bi bi-mortarboard"></i></div>
-        <h2>Education Empowerment</h2>
-        <p>Scholarships, digital learning, girl-child education.</p>
-      </div>
-    </div>
-    <div class="slide" style="background-image: url('Images/tree.jpg');">
-      <div class="slide-content">
-        <div class="icon-shape"><i class="bi bi-tree"></i></div>
-        <h2>Environmental Conservation</h2>
-        <p>Tree plantation, plastic-free, water conservation.</p>
-      </div>
-    </div>
-  </div>
-  <div class="slide-controls">
-    <span class="control active" data-index="0"></span>
-    <span class="control" data-index="1"></span>
-    <span class="control" data-index="2"></span>
   </div>
 </section>
 
@@ -342,27 +337,11 @@
             </div>
           </div>
         </div>
-        
-        <!-- Testimonial 5 (optional duplicate for scrolling effect) -->
-        <div class="testimonial-box">
-          <div class="testimonial-content">
-            <div class="quote-icon">
-              <i class="bi bi-quote"></i>
-            </div>
-            <p>"The free medical camp helped my entire family. We couldn't afford treatment otherwise."</p>
-            <div class="testimonial-author">
-              <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Priya Patel">
-              <div class="author-info">
-                <h4>Priya Patel</h4>
-                <p>Beneficiary</p>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   </div>
 </section>
+
 <!-- Call to Action Section -->
 <section class="cta-section">
   <div class="container">

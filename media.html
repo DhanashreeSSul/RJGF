@@ -1,587 +1,246 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>RJGF Foundation Media Highlights</title>
-  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
-  <style>
-    :root {
-  --green-main: #7fb77e;
-  --green-accent: #4a7c3b;
-  --green-light: #d6e8d6;
-  --green-mint: #a8d8d8;
-  --green-shadow: rgba(74, 124, 59, 0.08);
-  --green-card: #e8f0e8;
-  --green-dark: #114d1a;
-  --text-dark: #2e3a2e;
-  --partner-bg: linear-gradient(135deg, #d6e8d6, #a8d8d8);
-}
-
-
-header {
-  background: linear-gradient(90deg, var(--green-accent) 60%, var(--green-main) 100%);
-  color: white;
-  padding: 1em 3em;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: sticky;
-  top: 0;
-  z-index: 10;
-  box-shadow: 0 4px 20px var(--green-shadow);
-  border-bottom: 3px solid var(--green-main);
-  animation: headerGlow 3s ease-in-out infinite alternate;
-}
-
-@keyframes headerGlow {
-  0% {
-    box-shadow: 0 4px 20px var(--green-shadow), 0 0 0 var(--green-main);
-  }
-  100% {
-    box-shadow: 0 6px 40px var(--green-shadow), 0 0 16px var(--green-main);
-  }
-}
-
-/* LOGO */
-.logo-container {
-  display: flex;
-  align-items: center;
-}
-
-.logo {
-  height: 70px;
-  width: 70px;
-  border-radius: 50%;
-  object-fit: cover;
-  box-shadow: 0 4px 14px #a8d8d8, 0 0 8px var(--green-main);
-  margin-right: 1.5em;
-  transition: transform 0.4s ease;
-  animation: logoPulse 2.5s infinite alternate;
-}
-
-@keyframes logoPulse {
-  0% {
-    box-shadow: 0 4px 14px #a8d8d8, 0 0 0 var(--green-main);
-  }
-  100% {
-    box-shadow: 0 8px 24px #a8d8d8, 0 0 16px var(--green-main);
-  }
-}
-
-.logo:hover {
-  transform: scale(1.1) rotate(-3deg);
-}
-
-/* NAVIGATION */
-nav {
-  display: flex;
-  gap: 2em;
-}
-
-nav a {
-  color: white;
-  text-decoration: none;
-  font-size: 1.4em;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: all 0.3s ease;
-}
-
-nav a i {
-  pointer-events: none;
-}
-
-nav a::after {
-  content: "";
-  position: absolute;
-  bottom: -8px;
-  height: 2px;
-  width: 0%;
-  background: var(--green-mint);
-  transition: width 0.3s ease;
-  border-radius: 2px;
-}
-
-nav a:hover::after {
-  width: 100%;
-}
-
-nav a:hover {
-  color: var(--green-mint);
-  transform: scale(1.2) rotate(-5deg);
-}
-
-/* DROPDOWN */
-.dropdown {
-  position: relative;
-  display: flex;
-  align-items: center;
-}
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background: linear-gradient(135deg, var(--green-accent), var(--green-main));
-  border-radius: 10px;
-  padding: 10px 0;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-  z-index: 999;
-  min-width: 200px;
-  top: 130%;
-  left: 0;
-  opacity: 0;
-  transform: translateY(-15px);
-  transition: all 0.35s ease;
-}
-
-.dropdown-content a {
-  color: white;
-  padding: 10px 20px;
-  text-decoration: none;
-  font-weight: 500;
-  font-family: "Montserrat", sans-serif;
-  font-size: 1em;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  transition: background 0.3s ease, transform 0.3s;
-}
-
-.dropdown-content a:hover {
-  background: rgba(255, 255, 255, 0.15);
-  transform: translateX(5px);
-}
-
-.dropdown:hover .dropdown-content {
-  display: block;
-  opacity: 1;
-  transform: translateY(0);
-}
-
-    body {
-      background: var(--green-light);
-      font-family: 'Montserrat', sans-serif;
-      margin: 0;
-      padding: 0;
-      color: var(--text-dark);
-    }
-    .container {
-      max-width: 1200px;
-      margin: 40px auto;
-      padding: 20px 30px;
-      background: white;
-      border-radius: 20px;
-      box-shadow: 0 8px 24px var(--green-shadow);
-    }
-    h1 {
-      color: var(--green-dark);
-      text-align: center;
-      font-size: 2.8em;
-      margin-bottom: 40px;
-      letter-spacing: 1.5px;
-      font-weight: 700;
-    }
-    .section h2 {
-      color: var(--green-accent);
-      font-size: 2.2em;
-      margin-bottom: 20px;
-      text-align: center;
-      letter-spacing: 1px;
-      font-weight: 600;
-    }
-    .section p {
-      max-width: 700px;
-      margin: 0 auto 40px auto;
-      font-size: 1.1em;
-      line-height: 1.5;
-      color: var(--green-dark);
-      text-align: center;
-    }
-    .media-gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 28px;
-      margin-bottom: 50px;
-    }
-    .media-card {
-      background: var(--green-card);
-      border-radius: 18px;
-      box-shadow: 0 6px 20px var(--green-shadow);
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      cursor: pointer;
-    }
-    .media-card:hover {
-      transform: translateY(-10px) scale(1.05);
-      box-shadow: 0 12px 36px var(--green-shadow);
-    }
-    .media-image {
-      width: 100%;
-      height: 220px;
-      object-fit: cover;
-      border-bottom: 2px solid var(--green-accent);
-      transition: opacity 0.4s ease;
-      opacity: 0.95;
-    }
-    .media-card:hover .media-image {
-      opacity: 1;
-    }
-    .media-content {
-      padding: 20px 18px 24px 18px;
-      text-align: center;
-    }
-    .media-title {
-      color: var(--green-dark);
-      font-size: 1.25em;
-      font-weight: 700;
-      margin-bottom: 8px;
-      letter-spacing: 0.5px;
-    }
-    .media-date {
-      color: var(--green-accent);
-      font-size: 0.95em;
-      margin-bottom: 12px;
-      font-style: italic;
-    }
-    .media-desc {
-      color: var(--text-dark);
-      font-size: 1em;
-      line-height: 1.4;
-    }
-    .articles-section {
-      background: var(--green-card);
-      border-radius: 16px;
-      box-shadow: 0 4px 20px var(--green-shadow);
-      padding: 36px 28px;
-      margin-top: 40px;
-    }
-    .articles-section h2 {
-      color: var(--green-accent);
-      font-size: 2.4em;
-      margin-bottom: 28px;
-      text-align: center;
-      letter-spacing: 1px;
-      font-weight: 700;
-    }
-    .articles {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 1.8em;
-      margin-top: 1em;
-      padding-bottom: 3em;
-    }
-    .article-card {
-      background: white;
-      border-radius: 12px;
-      box-shadow: 0 6px 18px var(--green-shadow);
-      width: 100%;
-      max-width: 720px;
-      padding: 1.8em 2em;
-      text-align: left;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      border-left: 6px solid var(--green-main);
-      cursor: pointer;
-    }
-    .article-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 12px 28px var(--green-shadow);
-    }
-    .article-card h3 {
-      margin-top: 0;
-      color: var(--green-dark);
-      font-weight: 700;
-    }
-    .article-card p {
-      margin: 0.6em 0 0;
-      color: var(--text-dark);
-      font-size: 1em;
-      line-height: 1.5;
-    }
-    .article-card small {
-      display: block;
-      color: var(--green-accent);
-      font-size: 0.9em;
-      margin-top: 0.6em;
-    }
-    .link-button {
-      display: inline-block;
-      margin-top: 1.2em;
-      padding: 0.7em 1.4em;
-      background: var(--green-main);
-      color: white;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: 700;
-      transition: background 0.3s ease, transform 0.3s ease;
-      border: none;
-      cursor: pointer;
-      box-shadow: 0 4px 12px rgba(127, 183, 126, 0.4);
-    }
-    .link-button:hover {
-      background: var(--green-accent);
-      transform: translateY(-3px);
-      box-shadow: 0 6px 16px rgba(74, 124, 59, 0.5);
-    }
-
-    /* Modal Styles */
-    .modal {
-      display: none;
-      position: fixed;
-      z-index: 1100;
-      padding-top: 60px;
-      left: 0; top: 0; width: 100%; height: 100%;
-      overflow: auto;
-      background: rgba(17, 77, 26, 0.85);
-      animation: fadeIn 0.3s ease;
-    }
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to   { opacity: 1; }
-    }
-    .modal-content {
-      margin: auto;
-      display: block;
-      max-width: 90vw;
-      max-height: 80vh;
-      border-radius: 14px;
-      box-shadow: 0 6px 32px rgba(17, 77, 26, 0.7);
-      animation: zoomIn 0.2s ease;
-    }
-    @keyframes zoomIn {
-      from { transform: scale(0.8); }
-      to   { transform: scale(1); }
-    }
-    #modalCaption {
-      color: white;
-      text-align: center;
-      margin-top: 1em;
-      font-size: 1.3em;
-      letter-spacing: 0.5px;
-    }
-    .close {
-      position: absolute;
-      top: 30px;
-      right: 48px;
-      color: white;
-      font-size: 3em;
-      font-weight: 700;
-      cursor: pointer;
-      transition: color 0.3s ease;
-      z-index: 1110;
-    }
-    .close:hover {
-      color: var(--green-main);
-    }
-
-    @media (max-width: 900px) {
-      .media-gallery {
-        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      }
-    }
-    @media (max-width: 600px) {
-      .container {
-        padding: 20px 15px;
-      }
-      .media-gallery {
-        grid-template-columns: 1fr;
-        gap: 20px;
-      }
-      .articles-section {
-        padding: 24px 16px;
-      }
-    }
-    .header-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 5%;
-    background-color: #fff;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
-
-  </style>
+    <meta charset="UTF-8">
+    <title>RJGF Foundation Media Highlights</title>
+    <link rel="stylesheet" href="CSS/media.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header>
-  <div class="logo-container">
-    <img src="Images/rjgf.jpg" alt="RJGF Logo" class="logo" />
-  </div>
-  <nav>
-    <a href="rjhomepg.html" title="Home">
-      <i class="fas fa-home"></i>
-    </a>
-    <a href="aboutusrjgf.html" title="About Us">
-      <i class="fas fa-info-circle"></i>
-    </a>
-    <a href="team.html" title="Team">
-      <i class="fas fa-users"></i>
-    </a>
-    <a href="media.html" title="Media & Recognition">
-      <i class="fas fa-award"></i>
-    </a>
-    <div class="dropdown">
-      <a href="#" title="Our Work">
-        <i class="fas fa-briefcase"></i>
-      </a>
-      <div class="dropdown-content">
-        <a href="education_index.html"><i class="fas fa-book"></i> Education</a>
-        <a href="healthcare_index.html"><i class="fas fa-heartbeat"></i> Health</a>
-        <a href="enviornment_index.html"><i class="fas fa-leaf"></i> Environment</a>
-      </div>
-    </div>
-    <a href="#" title="Gallery">
-      <i class="fas fa-images"></i>
-    </a>
-    <a href="contact.html" title="Contact Us">
-      <i class="fas fa-envelope"></i>
-    </a>
-  </nav>
-</header>
-  <div class="container">
-    <h1>RJGF Foundation Media Highlights</h1>
-    <div class="section">
-      <h2>Media & Recognition</h2>
-      <p>Over the years, RJGF Foundation has been recognized for its impactful work and contributions. Here's a glimpse of our media highlights and features.</p>
-    </div>
-    <div class="media-gallery">
-      <div class="media-card">
-        <img class="media-image" src="Images\image1.jpeg" alt="Grand Launch Pune">
-        <div class="media-content">
-          <div class="media-title">Grand Launch in Pune</div>
-          <div class="media-date">March 29, 2025</div>
-          <div class="media-desc">Read about the grand launch of RJGF Foundation in Pune, attended by prominent dignitaries and media.</div>
+    <header>
+        <div class="logo-container">
+            <img src="Images/rjgf.jpg" alt="RJGF Logo" class="logo">
+            <div class="logo-text">
+                <h1>Raveendra Jadhav</h1>
+                <p>Global Foundation</p>
+            </div>
         </div>
-      </div>
-      <div class="media-card">
-        <img class="media-image" src="Images\image2.jpeg" alt="Lokpath's cover">
-        <div class="media-content">
-          <div class="media-title">Lokapath's newletter article</div>
-          <div class="media-date">March 29, 2025</div>
-          <div class="media-desc">Lokpath's covers about the late Ranveendra Jadhav sir.</div>
-        </div>
-      </div>
-      <div class="media-card">
-        <img class="media-image" src="Images\image3.jpeg" alt="TO EK RAJHANS">
-        <div class="media-content">
-          <div class="media-title">TO EK RAJHANS</div>
-          <div class="media-date">March 29, 2025</div>
-          <div class="media-desc">Laksha Maharashtra's covers about the late Ranveendra Jadhav sir's dedication.</div>
-        </div>
-      </div>
-      <div class="media-card">
-        <img class="media-image" src="Images\image4.jpeg" alt="Lokapth article">
-        <div class="media-content">
-          <div class="media-title">Grand launch Pune</div>
-          <div class="media-date">April 15, 2025</div>
-          <div class="media-desc">Lokapth article about Grand lanuch Pune.</div>
-        </div>
-      </div>
-      <div class="media-card">
-        <img class="media-image" src="Images\image5.jpeg" alt="Marathwadasathi">
-        <div class="media-content">
-          <div class="media-title">Marathwadasathi's article</div>
-          <div class="media-date">May 10, 2025</div>
-          <div class="media-desc">Marathwadasathi's article about Grand lanuch Pune.</div>
-        </div>
-      </div>
-      <div class="media-card">
-        <img class="media-image" src="Images\image6.jpeg" alt="Grand Launch Pune">
-        <div class="media-content">
-          <div class="media-title">Grand Lanuch Pune</div>
-          <div class="media-date">June 5, 2025</div>
-          <div class="media-desc">Read about the grand launch of RJGF Foundation in Pune, attended by prominent dignitaries and media.</div>
-        </div>
-      </div>
-      <div class="media-card">
-        <img class="media-image" src="Images\image7.jpeg" alt="Atulya Maharashtra Article">
-        <div class="media-content">
-          <div class="media-title">Atulya Maharashtra Article</div>
-          <div class="media-date">June 20, 2025</div>
-          <div class="media-desc">Atulya Maharashtra Article about RJGF grand lanuch.</div>
-        </div>
-      </div>
-      <div class="media-card">
-        <img class="media-image" src="Images\image8.jpeg" alt="TO EK RAJHANS">
-        <div class="media-content">
-          <div class="media-title">TO EK RAJHANS</div>
-          <div class="media-date">July 1, 2025</div>
-          <div class="media-desc">Atulya Maharashtra's covers about the late Ranveendra Jadhav sir's dedication..</div>
-        </div>
-      </div>
-      <div class="media-card">
-        <img class="media-image" src="Images\image9.jpeg" alt="TO EK RAJHANS">
-        <div class="media-content">
-          <div class="media-title">TO EK RAJHANS</div>
-          <div class="media-date">July 15, 2025</div>
-          <div class="media-desc">Our efforts towards promoting sustainability and environmental awareness in local areas.</div>
-        </div>
-      </div>
-    </div>
-    <!-- Modal for Image Preview -->
-    <div id="photoModal" class="modal">
-      <span class="close">&times;</span>
-      <img class="modal-content" id="modalImg" alt="">
-      <div id="modalCaption"></div>
-    </div>
+        <nav>
+            <div class="mobile-menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="nav-links">
+                <a href="rjhomepg.html" title="Home"><i class="fas fa-home"></i> Home</a>
+                <a href="aboutusrjgf.html" title="About Us"><i class="fas fa-info-circle"></i> About Us</a>
+                <a href="team.html" title="Team"><i class="fas fa-users"></i> Team</a>
+                <a href="media.html" title="Media & Recognition"><i class="fas fa-photo-video"></i> Media & Recognition</a>
+                <div class="dropdown">
+                    <a href="#" title="Our Work"><i class="fas fa-hands-helping"></i> Our Work <i class="fas fa-chevron-down dropdown-arrow"></i></a>
+                    <div class="dropdown-content">
+                        <a href="education_index.html"><i class="fas fa-book"></i> Education</a>
+                        <a href="healthcare_index.html"><i class="fas fa-heartbeat"></i> Health</a>
+                        <a href="enviornment_index.html"><i class="fas fa-leaf"></i> Environment</a>
+                    </div>
+                </div>
+                <a href="#" title="Gallery"><i class="fas fa-images"></i> Gallery</a>
+                <a href="contact.html" title="Contact Us"><i class="fas fa-envelope"></i> Contact Us</a>
+            </div>
+        </nav>
+    </header>
 
-    <div class="articles-section">
-      <h2>Articles & Press Coverage</h2>
-      <div class="articles">
-        <div class="article-card">
-          <h3>Foundation Launch Covered by DDBATMI Portal</h3>
-          <p>Read about the grand launch of RJGF Foundation in Pune, attended by prominent dignitaries and media.</p>
-          <small>Published: March 29, 2025</small>
-          <a href="https://ddbatmi-m2m.blogspot.com/2025/03/blog-post_78.html" target="_blank" class="link-button">Read Full Article</a>
+    <div class="container">
+        <h1>RJGF Foundation Media Highlights</h1>
+        <div class="section">
+            <h2>Media & Recognition</h2>
+            <p>Over the years, RJGF Foundation has been recognized for its impactful work and contributions. Here's a glimpse of our media highlights and features.</p>
         </div>
-        <div class="article-card">
-          <h3>Sanwad Media Features Foundation Inauguration</h3>
-          <p>Sanwad Media reports on the establishment of RJGF Foundation and its vision for social impact.</p>
-          <small>Published: March 29, 2025</small>
-          <a href="https://sanwadmedia.com/167253/" target="_blank" class="link-button">Read Full Article</a>
+        <div class="media-gallery">
+            <div class="media-card">
+                <img class="media-image" src="Images/image1.jpeg" alt="Grand Launch Pune">
+                <div class="media-content">
+                    <div class="media-title">Grand Launch in Pune</div>
+                    <div class="media-date">March 29, 2025</div>
+                    <div class="media-desc">Read about the grand launch of RJGF Foundation in Pune, attended by prominent dignitaries and media.</div>
+                </div>
+            </div>
+            <div class="media-card">
+                <img class="media-image" src="Images/image2.jpeg" alt="Lokpath's cover">
+                <div class="media-content">
+                    <div class="media-title">Lokapath's newsletter article</div>
+                    <div class="media-date">March 29, 2025</div>
+                    <div class="media-desc">Lokpath's covers about the late Ranveendra Jadhav sir.</div>
+                </div>
+            </div>
+            <div class="media-card">
+                <img class="media-image" src="Images/image3.jpeg" alt="TO EK RAJHANS">
+                <div class="media-content">
+                    <div class="media-title">TO EK RAJHANS</div>
+                    <div class="media-date">March 29, 2025</div>
+                    <div class="media-desc">Laksha Maharashtra's covers about the late Ranveendra Jadhav sir's dedication.</div>
+                </div>
+            </div>
+            <div class="media-card">
+                <img class="media-image" src="Images/image4.jpeg" alt="Lokapth article">
+                <div class="media-content">
+                    <div class="media-title">Grand launch Pune</div>
+                    <div class="media-date">April 15, 2025</div>
+                    <div class="media-desc">Lokapth article about Grand launch Pune.</div>
+                </div>
+            </div>
+            <div class="media-card">
+                <img class="media-image" src="Images/image5.jpeg" alt="Marathwadasathi">
+                <div class="media-content">
+                    <div class="media-title">Marathwadasathi's article</div>
+                    <div class="media-date">May 10, 2025</div>
+                    <div class="media-desc">Marathwadasathi's article about Grand launch Pune.</div>
+                </div>
+            </div>
+            <div class="media-card">
+                <img class="media-image" src="Images/image6.jpeg" alt="Grand Launch Pune">
+                <div class="media-content">
+                    <div class="media-title">Grand Launch Pune</div>
+                    <div class="media-date">June 5, 2025</div>
+                    <div class="media-desc">Read about the grand launch of RJGF Foundation in Pune, attended by prominent dignitaries and media.</div>
+                </div>
+            </div>
+            <div class="media-card">
+                <img class="media-image" src="Images/image7.jpeg" alt="Atulya Maharashtra Article">
+                <div class="media-content">
+                    <div class="media-title">Atulya Maharashtra Article</div>
+                    <div class="media-date">June 20, 2025</div>
+                    <div class="media-desc">Atulya Maharashtra Article about RJGF grand launch.</div>
+                </div>
+            </div>
+            <div class="media-card">
+                <img class="media-image" src="Images/image8.jpeg" alt="TO EK RAJHANS">
+                <div class="media-content">
+                    <div class="media-title">TO EK RAJHANS</div>
+                    <div class="media-date">July 1, 2025</div>
+                    <div class="media-desc">Atulya Maharashtra's covers about the late Ranveendra Jadhav sir's dedication.</div>
+                </div>
+            </div>
+            <div class="media-card">
+                <img class="media-image" src="Images/image9.jpeg" alt="TO EK RAJHANS">
+                <div class="media-content">
+                    <div class="media-title">TO EK RAJHANS</div>
+                    <div class="media-date">July 15, 2025</div>
+                    <div class="media-desc">Our efforts towards promoting sustainability and environmental awareness in local areas.</div>
+                </div>
+            </div>
         </div>
-        <div class="article-card">
-          <h3>Atulya Maharashtra Highlights Foundation's Mission</h3>
-          <p>Atulya Maharashtra covers the foundation's dedication to social justice and community service.</p>
-          <small>Published: March 29, 2025</small>
-          <a href="https://atulyamaharashtra.com/2502/" target="_blank" class="link-button">Read Full Article</a>
+        <div id="photoModal" class="modal">
+            <span class="close">&times;</span>
+            <img class="modal-content" id="modalImg" alt="">
+            <div id="modalCaption"></div>
         </div>
-      </div>
-    </div>
 
+        <div class="articles-section">
+            <h2>Articles & Press Coverage</h2>
+            <div class="articles">
+                <div class="article-card">
+                    <h3>Foundation Launch Covered by DDBATMI Portal</h3>
+                    <p>Read about the grand launch of RJGF Foundation in Pune, attended by prominent dignitaries and media.</p>
+                    <small>Published: March 29, 2025</small>
+                    <a href="https://ddbatmi-m2m.blogspot.com/2025/03/blog-post_78.html" target="_blank" class="link-button">Read Full Article</a>
+                </div>
+                <div class="article-card">
+                    <h3>Sanwad Media Features Foundation Inauguration</h3>
+                    <p>Sanwad Media reports on the establishment of RJGF Foundation and its vision for social impact.</p>
+                    <small>Published: March 29, 2025</small>
+                    <a href="https://sanwadmedia.com/167253/" target="_blank" class="link-button">Read Full Article</a>
+                </div>
+                <div class="article-card">
+                    <h3>Atulya Maharashtra Highlights Foundation's Mission</h3>
+                    <p>Atulya Maharashtra covers the foundation's dedication to social justice and community service.</p>
+                    <small>Published: March 29, 2025</small>
+                    <a href="https://atulyamaharashtra.com/2502/" target="_blank" class="link-button">Read Full Article</a>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            // Modal functionality for photo grid
+            const modal = document.getElementById("photoModal");
+            const modalImg = document.getElementById("modalImg");
+            const modalCaption = document.getElementById("modalCaption");
+            const closeBtn = document.querySelector(".modal .close");
+
+            document.querySelectorAll('.media-card img').forEach(img => {
+                img.addEventListener('click', function() {
+                    modal.style.display = "block";
+                    modalImg.src = this.src;
+                    modalCaption.textContent = this.alt;
+                });
+            });
+
+            closeBtn.onclick = function() {
+                modal.style.display = "none";
+            };
+
+            window.onclick = function(event) {
+                if (event.target === modal) {
+                    modal.style.display = "none";
+                }
+            };
+            document.addEventListener('keydown', function(e) {
+                if (e.key === "Escape") modal.style.display = "none";
+            });
+        </script>
+    </div>
     <script>
-      // Modal functionality for photo grid
-      const modal = document.getElementById("photoModal");
-      const modalImg = document.getElementById("modalImg");
-      const modalCaption = document.getElementById("modalCaption");
-      const closeBtn = document.querySelector(".modal .close");
+        document.addEventListener('DOMContentLoaded', function() {
+            const modal = document.getElementById("photoModal");
+            const modalImg = document.getElementById("modalImg");
+            const modalCaption = document.getElementById("modalCaption");
+            const closeBtn = document.querySelector(".modal .close");
+            const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+            const navLinks = document.querySelector('.nav-links');
+            const header = document.querySelector('header');
 
-      document.querySelectorAll('.media-card img').forEach(img => {
-        img.addEventListener('click', function() {
-          modal.style.display = "block";
-          modalImg.src = this.src;
-          modalCaption.textContent = this.alt;
+            document.querySelectorAll('.media-card img').forEach(img => {
+                img.addEventListener('click', function() {
+                    modal.style.display = "flex";
+                    modalImg.src = this.src;
+                    modalCaption.textContent = this.alt;
+                });
+            });
+
+            closeBtn.onclick = function() {
+                modal.style.display = "none";
+            };
+
+            window.onclick = function(event) {
+                if (event.target === modal) {
+                    modal.style.display = "none";
+                }
+            };
+
+            document.addEventListener('keydown', function(e) {
+                if (e.key === "Escape") modal.style.display = "none";
+            });
+
+            let lastScrollY = window.scrollY;
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 10) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+                if (window.scrollY > lastScrollY && window.scrollY > 80) {
+                    header.classList.add('hide-header');
+                } else {
+                    header.classList.remove('hide-header');
+                }
+                lastScrollY = window.scrollY;
+            });
+
+            mobileMenuToggle.addEventListener('click', () => {
+                mobileMenuToggle.classList.toggle('active');
+                navLinks.classList.toggle('active');
+            });
+
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.addEventListener('click', () => {
+                    if (window.innerWidth <= 768) {
+                        mobileMenuToggle.classList.remove('active');
+                        navLinks.classList.remove('active');
+                    }
+                });
+            });
         });
-      });
-
-      closeBtn.onclick = function() {
-        modal.style.display = "none";
-      };
-
-      window.onclick = function(event) {
-        if (event.target === modal) {
-          modal.style.display = "none";
-        }
-      };
-      document.addEventListener('keydown', function(e) {
-        if (e.key === "Escape") modal.style.display = "none";
-      });
     </script>
-  </div>
 </body>
 </html>
