@@ -1,14 +1,3 @@
- const currentLocation = window.location.pathname;
-  const navLinks = document.querySelectorAll("nav a");
-
-  navLinks.forEach(link => {
-    const linkPath = link.getAttribute("href");
-    if (currentLocation.includes(linkPath)) {
-      link.classList.add("active");
-    } else {
-      link.classList.remove("active");
-    }
-  });
 document.addEventListener('DOMContentLoaded', function() {
   // Mobile menu toggle
   const mobileToggle = document.querySelector('.mobile-menu-toggle');
@@ -32,6 +21,7 @@ document.addEventListener('DOMContentLoaded', function() {
     } else {
       header.classList.remove('scrolled');
     }
+    
     if (window.scrollY > lastScrollY && window.scrollY > 80) {
       header.classList.add('hide-header');
     } else {
@@ -40,24 +30,30 @@ document.addEventListener('DOMContentLoaded', function() {
     lastScrollY = window.scrollY;
   });
 
+  // Active navigation link highlighting
+  const currentLocation = window.location.pathname;
+  const navLinks = document.querySelectorAll("nav a");
+
+  navLinks.forEach(link => {
+    const linkPath = link.getAttribute('href');
+    if (currentLocation.includes(linkPath)) {
+      link.classList.add('active');
+    } else {
+      link.classList.remove('active');
+    }
+  });
+
   // FAQ accordion functionality
   const faqQuestions = document.querySelectorAll('.faq-question');
-  faqQuestions.forEach(question => {
-    question.addEventListener('click', () => {
-      const answer = question.nextElementSibling;
-      const icon = question.querySelector('i');
-      
-      question.classList.toggle('active');
-      answer.classList.toggle('active');
-
-      faqQuestions.forEach(otherQuestion => {
-        if (otherQuestion !== question) {
-          otherQuestion.classList.remove('active');
-          otherQuestion.nextElementSibling.classList.remove('active');
-        }
+  if (faqQuestions.length > 0) {
+    faqQuestions.forEach(question => {
+      question.addEventListener('click', () => {
+        const answer = question.nextElementSibling;
+        question.classList.toggle('active');
+        answer.classList.toggle('active');
       });
     });
-  });
+  }
 
   // Form submission handler
   const contactForm = document.getElementById('contactForm');
@@ -78,7 +74,7 @@ document.addEventListener('DOMContentLoaded', function() {
         successMessage.innerHTML = `
           <i class="fas fa-check-circle"></i>
           <h3>Thank You!</h3>
-          <p>Your message has been successfully sent. We'll get back to you within 24 hours.</p>
+          <p>Your message has been successfully sent.</p>
         `;
         this.parentNode.insertBefore(successMessage, this.nextSibling);
         this.style.display = 'none';
@@ -94,6 +90,9 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
-  document.getElementById('current-year').textContent = new Date().getFullYear();
+  // Update copyright year
+  const yearElement = document.getElementById('current-year');
+  if (yearElement) {
+    yearElement.textContent = new Date().getFullYear();
+  }
 });
-
