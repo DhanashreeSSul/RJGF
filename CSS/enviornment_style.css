@@ -12,7 +12,17 @@
   --text-light: #5a6d5a;     /* Lighter Text */
   --shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
   --transition: all 0.3s ease;
+  --blue-main: #e6ed7f;
+  --blue-accent: #017d39df;
+  --blue-light: #e6f2f2;
+  --blue-mint: #c2e0e0;
+  --blue-shadow: rgba(1, 125, 57, 0.08);
+  --blue-card: #f0f7f7;
+  --blue-dark: #014d1a;
+  --text-dark: #2e3a2e;
+  --partner-bg: linear-gradient(135deg, #e6f2f2, #c2e0e0);
 }
+
 
 /* ----- RESET & BASE ----- */
 * {
@@ -128,6 +138,8 @@ section {
   background: transparent;
 }
 
+/* ----- HEADER ----- */
+/* Header Styles */
 
 /* ----- BANNER SLIDER ----- */
 .banner-slider {
@@ -247,7 +259,7 @@ section {
 
 /* MISSION SECTION */
 .mission-section {
-  background: var(--light-alt);
+  background: linear-gradient(to bottom, var(--accent-light) 0%, white 100%);
   position: relative;
   overflow: hidden;
 }
@@ -321,7 +333,7 @@ section {
 
 /* PROGRAMS SECTION */
 .programs-section {
-  background: var(--light-alt);
+  background: linear-gradient(to bottom, white 0%, var(--light-alt) 100%);
 }
 
 .programs-grid {
@@ -403,10 +415,25 @@ section {
   left: -100px;
   width: 300px;
   height: 300px;
-  background: var(--accent);
-  opacity: 0.05;
+  background: rgb(128, 229, 5);
+  opacity: 0.09;
+  animation: riverBallMove 8s linear infinite alternate;
   border-radius: 50%;
-  z-index: 0;
+}
+
+@keyframes riverBallMove {
+  0% {
+    transform: translateY(0) translateX(0);
+  }
+  30% {
+    transform: translateY(-40px) translateX(60px);
+  }
+  60% {
+    transform: translateY(30px) translateX(120px);
+  }
+  100% {
+    transform: translateY(0) translateX(180px);
+  }
 }
 
 .river-section:after {
@@ -416,15 +443,25 @@ section {
   right: -100px;
   width: 250px;
   height: 250px;
-  background: var(--primary);
-  opacity: 0.05;
+  background: rgb(128, 229, 5);
+  animation: riverBallMoveY 3s ease-in-out infinite alternate;
+  opacity: 0.09;
   border-radius: 50%;
   z-index: 0;
 }
 
+@keyframes riverBallMoveY {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-60px);
+  }
+}
+
 /* EDUCATION SECTION */
 .education-section {
-  background: var(--light-alt);
+  background: linear-gradient(to bottom, #c6fcf1 0%, #ffffff 100%);
 }
 
 /* STEWARDSHIP SECTION */
@@ -439,7 +476,7 @@ section {
 }
 
 .highlight-box {
-  background: var(--light-alt);
+  background: #dffef8;
   border-radius: 12px;
   padding: 2.5rem;
   position: relative;
@@ -473,7 +510,7 @@ section {
 }
 
 .highlight-box h3 i {
-  color: var(--accent);
+
   font-size: 1.8rem;
 }
 
@@ -495,112 +532,5 @@ section {
   font-weight: bold;
 }
 
-/* FOOTER */
-footer {
-  background: var(--primary-dark);
-  color: white;
-  padding: 4rem 0 2rem;
-}
-
-.footer-content {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 3rem;
-  margin-bottom: 3rem;
-}
-
-.footer-column h3 {
-  color: white;
-  font-size: 1.4rem;
-  margin-bottom: 1.5rem;
-  position: relative;
-  padding-bottom: 0.8rem;
-}
-
-.footer-column h3:after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 50px;
-  height: 3px;
-  background: var(--accent);
-}
-
-.footer-links {
-  list-style: none;
-  padding: 0;
-}
-
-.footer-links li {
-  margin-bottom: 0.8rem;
-}
-
-.footer-links a {
-  color: rgba(255, 255, 255, 0.8);
-  transition: var(--transition);
-  display: flex;
-  align-items: center;
-  gap: 0.8rem;
-}
-
-.footer-links a:hover {
-  color: var(--accent);
-  padding-left: 5px;
-}
-
-.footer-links a i {
-  color: var(--accent);
-  width: 20px;
-}
-
-.footer-bottom {
-  text-align: center;
-  padding-top: 2rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  font-size: 0.95rem;
-  color: rgba(255, 255, 255, 0.7);
-}
-
-.social-links {
-  display: flex;
-  gap: 1rem;
-  margin-top: 1.5rem;
-}
-
-.social-links a {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 40px;
-  height: 40px;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 50%;
-  transition: var(--transition);
-}
-
-.social-links a:hover {
-  background: var(--accent);
-  transform: translateY(-5px);
-  color: #333;
-}
-
-/* RESPONSIVE DESIGN */
-@media (max-width: 992px) {
-  .banner-slider {
-    height: 500px;
-  }
-  
-  .slide-content h1 {
-    font-size: 2.8rem;
-  }
-  
-  .slide-content p {
-    font-size: 1.2rem;
-  }
-  
-  .slider-track img {
-    width: 340px;
-    height: 220px;
-  }
-}
+/* Footer Styles */
+/* Footer */

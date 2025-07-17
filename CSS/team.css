@@ -24,56 +24,51 @@ body {
   line-height: 1.6;
 }
 
+/* Header Styles */
 
+/* Team Page Styles */
+.team-page {
+  padding-top: 20px;
+}
+
+/* Hero Section */
 .team-hero {
-  position: relative;
-  background-size: cover;
-  background-position: center top;
-  background-repeat: no-repeat;
+  height: 400px;
+  background: rgb(42, 177, 105);
   color: white;
-  text-align: center;
-  padding: 120px 20px 80px;
-  margin-top: 0;
-  transition: background-image 0.5s ease-in-out;
-  min-height: 500px; /* Ensures full image area */
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.team-hero::before {
-  content: "";
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 30, 60, 0.5); /* soft dark overlay */
-  z-index: 0;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 60px;
 }
 
 .hero-content {
-  position: relative;
-  z-index: 1;
-  max-width: 800px;
-  margin: 0 auto;
-  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+  text-align: center;
+  z-index: 2;
+  padding: 0 20px;
 }
 
 .hero-content h1 {
-  font-size: 3rem;
-  margin-bottom: 0.5rem;
+  font-size: 3.5rem;
+  margin-bottom: 20px;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
 .hero-content p {
-  font-size: 1.3rem;
-  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  opacity: 0.9;
+  margin-bottom: 30px;
 }
 
 .hero-pattern {
-  height: 4px;
-  width: 60px;
-  margin: 0 auto;
-  background: #ffcc00;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect fill="%23017d39df" opacity="0.05" width="50" height="50" x="0" y="0"></rect><rect fill="%23017d39df" opacity="0.05" width="50" height="50" x="50" y="50"></rect></svg>');
+  background-size: 60px 60px;
+  opacity: 0.3;
 }
 
 /* Team Sections */
@@ -231,4 +226,59 @@ body {
   color: white;
   transform: translateY(-3px);
   box-shadow: 0 5px 15px rgba(1, 125, 57, 0.3);
+}
+
+/* Footer Styles */
+/* Footer */
+
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+  .hero-content h1 {
+    font-size: 3rem;
+  }
+  
+  .hero-content p {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    padding: 1em;
+  }
+  
+  nav {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.7em;
+    margin-top: 15px;
+  }
+  
+  .team-hero {
+    height: 300px;
+  }
+  
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+  
+  .section-header h2 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+  
+  .section-header h2 {
+    font-size: 1.8rem;
+  }
+  
+  .team-grid {
+    grid-template-columns: 1fr;
+  }
 }
