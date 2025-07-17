@@ -8,38 +8,16 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <div class="logo-container">
-            <img src="Images/rjgf.jpg" alt="RJGF Logo" class="logo">
-            <div class="logo-text">
-                <h1>Raveendra Jadhav</h1>
-                <p>Global Foundation</p>
-            </div>
-        </div>
-        <nav>
-            <div class="mobile-menu-toggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-            <div class="nav-links">
-                <a href="rjhomepg.html" title="Home"><i class="fas fa-home"></i> Home</a>
-                <a href="aboutusrjgf.html" title="About Us"><i class="fas fa-info-circle"></i> About Us</a>
-                <a href="team.html" title="Team"><i class="fas fa-users"></i> Team</a>
-                <a href="media.html" title="Media & Recognition"><i class="fas fa-photo-video"></i> Media & Recognition</a>
-                <div class="dropdown">
-                    <a href="#" title="Our Work"><i class="fas fa-hands-helping"></i> Our Work <i class="fas fa-chevron-down dropdown-arrow"></i></a>
-                    <div class="dropdown-content">
-                        <a href="education_index.html"><i class="fas fa-book"></i> Education</a>
-                        <a href="healthcare_index.html"><i class="fas fa-heartbeat"></i> Health</a>
-                        <a href="enviornment_index.html"><i class="fas fa-leaf"></i> Environment</a>
-                    </div>
-                </div>
-                <a href="#" title="Gallery"><i class="fas fa-images"></i> Gallery</a>
-                <a href="contact.html" title="Contact Us"><i class="fas fa-envelope"></i> Contact Us</a>
-            </div>
-        </nav>
-    </header>
+   <div id="header"></div>
+
+<script>
+  fetch("header.html")
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById("header").innerHTML = data;
+    });
+</script>
+
 
     <div class="container">
         <h1>RJGF Foundation Media Highlights</h1>

@@ -1,474 +1,284 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Environmental Conservation | NGO Empowerment</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Green Earth Initiative</title>
   <link rel="stylesheet" href="CSS/enviornment_style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
-</head>
-
 <body>
-
- <header>
-  <div class="logo-container">
-    <img src="Images/rjgf.jpg" alt="RJGF Logo" class="logo">
-    <div class="logo-text">
-      <h1>Raveendra Jadhav</h1>
-      <p>Global Foundation</p>
-    </div>
-  </div>
-  <nav>
-    <div class="mobile-menu-toggle">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
-    <div class="nav-links">
-      <a href="rjhomepg.html"><i class="fas fa-home"></i> Home</a>
-      <a href="aboutusrjgf.html"><i class="fas fa-info-circle"></i> About Us</a>
-      <a href="team.html"><i class="fas fa-users"></i> Team</a>
-      <a href="media.html"><i class="fas fa-photo-video"></i> Media & Recognition</a>
-      <div class="dropdown">
-        <a href="#"><i class="fas fa-hands-helping"></i> Our Work <i class="fas fa-chevron-down dropdown-arrow"></i></a>
-        <div class="dropdown-content">
-          <a href="education_index.html"><i class="fas fa-book"></i> Education</a>
-          <a href="healthcare_index.html"><i class="fas fa-heartbeat"></i> Health</a>
-          <a href="enviornment_index.html"><i class="fas fa-leaf"></i> Environment</a>
-        </div>
-      </div>
-      <a href="#"><i class="fas fa-images"></i> Gallery</a>
-      <a href="contact.html"><i class="fas fa-envelope"></i> Contact Us</a>
-    </div>
-  </nav>
-</header>
+  <div id="header"></div>
 
 <script>
-let lastScrollY = window.scrollY;
-const header = document.querySelector('header');
-
-window.addEventListener('scroll', () => {
- // Shadow effect
- if (window.scrollY > 10) {
-     header.classList.add('scrolled');
- } else {
-    header.classList.remove('scrolled');
- }
- // Hide on scroll down, show on scroll up
- if (window.scrollY > lastScrollY && window.scrollY > 80) {
-   header.classList.add('hide-header');
- } else {
-   header.classList.remove('hide-header');
- }
- lastScrollY = window.scrollY;
-});
-</script>
-
-<div class="banner-slider">
-  <div class="slide active" style="background-image: url('images/env1.jpg');">
-    <div class="slide-content">
-      <h1>Together for a Greener Tomorrow</h1>
-      <p>Protecting nature, empowering lives through conservation and care</p>
-    </div>
-  </div>
-  <div class="slide" style="background-image: url('images/env2.jpeg');">
-    <div class="slide-content">
-      <h1>Join the Green Revolution</h1>
-      <p>Tree plantation drives for a sustainable future</p>
-    </div>
-  </div>
-  <div class="slide" style="background-image: url('images/env3.jpeg');">
-    <div class="slide-content">
-      <h1>Clean Water, Clean Planet</h1>
-      <p>Promoting water conservation and sanitation for all</p>
-    </div>
-  </div>
-
-  <div class="slider-indicators">
-    <span class="indicator active" data-slide="0"></span>
-    <span class="indicator" data-slide="1"></span>
-    <span class="indicator" data-slide="2"></span>
-  </div>
-</div>
-
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const slides = document.querySelectorAll(".slide");
-    const indicators = document.querySelectorAll(".indicator");
-    let current = 0;
-    let interval;
-
-    function showSlide(index) {
-      slides.forEach((slide, i) => {
-        slide.classList.toggle("active", i === index);
-      });
-      indicators.forEach((dot, i) => {
-        dot.classList.toggle("active", i === index);
-      });
-      current = index;
-    }
-
-    function nextSlide() {
-      const nextIndex = (current + 1) % slides.length;
-      showSlide(nextIndex);
-    }
-
-    function startAutoSlide() {
-      interval = setInterval(nextSlide, 4000);
-    }
-
-    function stopAutoSlide() {
-      clearInterval(interval);
-    }
-
-    indicators.forEach(dot => {
-      dot.addEventListener("click", () => {
-        stopAutoSlide();
-        const index = parseInt(dot.dataset.slide);
-        showSlide(index);
-        startAutoSlide();
-      });
+  fetch("header.html")
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById("header").innerHTML = data;
     });
-
-    showSlide(current);
-    startAutoSlide();
-  });
 </script>
 
- <main>
-      <section class="mission-section">
-      <div class="mission-content">
-        <h2>Our Environmental Vision</h2>
-        <p>Our environmental campaigns reflect the vision of "<strong>Harit Bharat, Swachh Bharat</strong>", rooted in action, awareness, and long-term impact. We conduct tree plantation drives, organize plastic-free rallies, and lead riverbank cleanups—collaborating with schools, municipal bodies, volunteers, and grassroots organizations. From schoolyards to city parks, we believe every green patch makes a difference.</p>
+  <!-- Banner Slider -->
+  <div class="banner-slider">
+    <div class="slide active" style="background-image: url('https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');">
+      <div class="slide-content">
+        <h1>Together for a Greener Tomorrow</h1>
+        <p>Protecting nature, empowering lives through conservation and care</p>
         
-        <div class="mission-stats">
-          <div class="stat-item">
-            <div class="stat-number">100,000+</div>
-            <div class="stat-label">Saplings Planted</div>
-          </div>
-          <div class="stat-item">
-            <div class="stat-number">80%</div>
-            <div class="stat-label">Survival Rate</div>
-          </div>
-        </div>
       </div>
-    </section>
-     <section class="programs-section">
-  <h2>Our Green Action Programs</h2>
-  <div class="programs-container">
-    <div class="programs-track">
-      <div class="program-box">
-        <i class="fas fa-tree"></i>
-        <h3>Tree Plantation Drives</h3>
-        <p>Across cities and villages, our volunteers have planted over 100,000 saplings with 80% survival rate.</p>
+    </div>
+    <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1502082553048-f009c37129b9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');">
+      <div class="slide-content">
+        <h1>Join the Green Revolution</h1>
+        <p>Tree plantation drives for a sustainable future</p>
+        
       </div>
-      <div class="program-box">
-        <i class="fas fa-leaf"></i>
-        <h3>Care for Existing Plants</h3>
-        <p>We organize periodic drives where citizens adopt trees, water saplings, prune foliage, and ensure physical protection from damage.</p>
+    </div>
+    <div class="slide" style="background-image: url('images/env3.jpeg');">
+      <div class="slide-content">
+        <h1>Clean Water, Clean Planet</h1>
+        <p>Promoting water conservation and sanitation for all</p>
+        
       </div>
-      <div class="program-box">
-        <i class="fas fa-water"></i>
-        <h3>River Cleaning</h3>
-        <p>Restoring the health of water bodies through organized cleanup drives and awareness campaigns.</p>
-      </div>
-      <div class="program-box">
-        <i class="fas fa-recycle"></i>
-        <h3>Zero-Waste Living</h3>
-        <p>Educating citizens to adopt sustainable alternatives in daily life, reduce consumption, and recycle more.</p>
-      </div>
+    </div>
+
+    <div class="slider-indicators">
+      <span class="indicator active" data-slide="0"></span>
+      <span class="indicator" data-slide="1"></span>
+      <span class="indicator" data-slide="2"></span>
     </div>
   </div>
 
-  <style>
-    .programs-section {
-      padding: 5rem 2rem;
-      background: linear-gradient(135deg, var(--white), var(--green-light));
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-    .programs-section h2 {
-      color: var(--green-accent);
-      font-size: 2.2rem;
-      margin-bottom: 3rem;
-      position: relative;
-    }
-    .programs-section h2::after {
-      content: '';
-      position: absolute;
-      bottom: -10px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 80px;
-      height: 4px;
-      background: linear-gradient(90deg, var(--green-main), var(--green-accent));
-    }
-    .programs-container {
-      width: 100%;
-      overflow: hidden;
-      margin: 0 auto;
-    }
-    .programs-track {
-      display: flex;
-      gap: 2rem;
-      animation: slide 20s linear infinite;
-      width: max-content;
-    }
-    .program-box {
-      width: 300px;
-      background: var(--white);
-      border-radius: 16px;
-      padding: 2rem;
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
-      transition: all 0.3s ease;
-      text-align: center;
-      border-top: 5px solid var(--green-accent);
-      flex-shrink: 0;
-    }
-    .program-box:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 12px 30px rgba(255, 216, 43, 0.991);
-    }
-    .program-box i {
-      font-size: 2.5rem;
-      color: var(--green-accent);
-      margin-bottom: 1.5rem;
-    }
-    .program-box h3 {
-      color: var(--green-dark);
-      font-size: 1.5rem;
-      margin-bottom: 1rem;
-    }
-    .program-box p {
-      color: var(--text-dark);
-      line-height: 1.6;
-    }
-    @keyframes slide {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(calc(-300px * 4 - 8rem)); } /* 4 boxes + gaps */
-    }
-    @media (max-width: 768px) {
-      .program-box {
-        width: 280px;
-        padding: 1.5rem;
-      }
-      .program-box i {
-        font-size: 2rem;
-      }
-      .program-box h3 {
-        font-size: 1.3rem;
-      }
-    }
-  </style>
-</section>
-     <section class="community-awareness">
-      <div class="floating-balls">
-        <div class="ball ball-1"></div>
-        <div class="ball ball-2"></div>
-        <div class="ball ball-3"></div>
-        <div class="ball ball-4"></div>
-        <div class="ball ball-5"></div>
+  <!-- Mission Section -->
+  <section class="mission-section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Our Environmental Mission</h2>
+        <p>Rooted in action, awareness, and long-term impact for a sustainable future</p>
       </div>
-      <div class="awareness-content">
+      
+      <div class="content">
+        <p>Our environmental campaigns reflect the vision of “<strong>Harit Bharat, Swachh Bharat</strong>”. We conduct tree plantation drives, organize plastic-free rallies, and lead riverbank cleanups—collaborating with schools, municipal bodies, volunteers, and grassroots organizations. From schoolyards to city parks, we believe every green patch makes a difference.</p>
+        <p>We are committed to fostering a plastic-free lifestyle by promoting sustainable alternatives, encouraging behavioral change, and supporting local eco-friendly businesses. Our workshops and community programs empower individuals to adopt mindful consumption and responsible waste management.</p>
+        <p>Beyond cleanliness and greenery, we focus on critical issues like water conservation, urban afforestation, and biodiversity protection. Whether it's rejuvenating dried ponds, protecting native species, or greening neglected spaces, our work is hands-on and driven by community participation.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Awareness Section -->
+  <section class="awareness-section">
+    <div class="container">
+      <div class="section-header">
         <h2>Community Awareness</h2>
-        <p>Environmental change begins with awareness. We engage communities through workshops, street plays, and educational sessions focused on sustainable living, climate change, and ecological balance. Through interactive learning and creative outreach, we inspire individuals to adopt greener habits in their daily lives.</p>
+        <p>Environmental change begins with awareness and education</p>
+      </div>
+      
+      <div class="content">
+        <p>We engage communities through workshops, street plays, and educational sessions focused on sustainable living, climate change, and ecological balance. Through interactive learning and creative outreach, we inspire individuals to adopt greener habits in their daily lives.</p>
         <p>Regular campaigns promote essential practices like waste segregation, rainwater harvesting, and composting. We also celebrate key environmental days with public events, exhibitions, and creative competitions—encouraging mass participation and deepening environmental consciousness across all age groups.</p>
       </div>
-    </section>
-     <section class="community-program">
-   
-      <div class="auto-slider">
-        <div class="slider-track">
-          <img src="images/p1.jpg" alt="Program 1">
-          <img src="images/p2.jpg" alt="Program 2">
-          <img src="images/p3.jpg" alt="Program 3">
-          <img src="images/p4.jpg" alt="Program 4">
-          <img src="images/p5.jpg" alt="Program 5">
-          <img src="images/p6.jpg" alt="Program 6">
-          <img src="images/p7.jpg" alt="Program 7">
-          <img src="images/p8.jpg" alt="Program 8">
-          <img src="images/p9.jpg" alt="Program 9">
-          <img src="images/p10.jpg" alt="Program 10">
-          <!-- Duplicate images for seamless looping -->
-          <img src="images/p1.jpg" alt="Program 1">
-          <img src="images/p2.jpg" alt="Program 2">
-          <img src="images/p3.jpg" alt="Program 3">
-          <img src="images/p4.jpg" alt="Program 4">
-          <img src="images/p5.jpg" alt="Program 5">
-        </div>
-      </div>
-    </section>
-<section class="eco-education">
-      <h2>Eco-Education for All</h2>
-      <p>We believe that environmental awareness is a right, not a privilege—and it must begin early. Our mission is to embed eco-consciousness into everyday learning, nurturing a generation that grows up with a deep respect for nature and a strong sense of environmental responsibility.</p>
-      <section class="eco-education-gallery">
       
-      <div class="auto-slider">
+      <!-- Image Slider -->
+      <div class="slider-container">
         <div class="slider-track">
-          <img src="images/p1.jpg" alt="Program 1">
-          <img src="images/p2.jpg" alt="Program 2">
-          <img src="images/p3.jpg" alt="Program 3">
-          <img src="images/p4.jpg" alt="Program 4">
-          <img src="images/p5.jpg" alt="Program 5">
-          <img src="images/p6.jpg" alt="Program 6">
-          <img src="images/p7.jpg" alt="Program 7">
-          <img src="images/p8.jpg" alt="Program 8">
-          <img src="images/p9.jpg" alt="Program 9">
-          <img src="images/p10.jpg" alt="Program 10">
-          <!-- Duplicate images for seamless looping -->
-          <img src="images/p1.jpg" alt="Program 1">
-          <img src="images/p2.jpg" alt="Program 2">
-          <img src="images/p3.jpg" alt="Program 3">
-          <img src="images/p4.jpg" alt="Program 4">
-          <img src="images/p5.jpg" alt="Program 5">
+        <img src="images/slide1.jpeg" alt="1">
+      <img src="images/slide2.jpeg" alt="2">
+      <img src="images/slide3.jpg" alt="3">
+      <img src="images/slide4.jpg" alt="4">
+      <img src="images/slide6.jpg" alt="6">
+      <img src="images/slide7.jpg" alt="7">
+      <img src="images/slide5.jpg" alt="5">
+      <img src="images/slide8.jpg" alt="8">
+      <img src="images/slide9.jpg" alt="9">
+      <img src="images/slide10.jpg" alt="10">  
+        </div>
+        </div>
+    </div>
+  </section>
+
+  <!-- Programs Section -->
+  <section class="programs-section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Green Action Programs</h2>
+        <p>Practical initiatives for tangible environmental impact</p>
+      </div>
+      
+      <div class="programs-grid">
+        <div class="program-card">
+          <div class="program-content">
+            <h3><i class="fas fa-tree"></i> Tree Plantation Drives</h3>
+            <p>Across cities and villages, our volunteers have planted over 100,000 saplings with 80% survival rate.</p>
+          </div>
+        </div>
+        
+        <div class="program-card">
+          <div class="program-content">
+            <h3><i class="fas fa-seedling"></i> Care for Existing Plants</h3>
+            <p>We organize periodic drives where citizens adopt trees, water saplings, prune foliage, and ensure physical protection from damage.</p>
+          </div>
+        </div>
+        
+        <div class="program-card">
+          <div class="program-content">
+            <h3><i class="fas fa-recycle"></i> Restoration Projects</h3>
+            <p>Reviving degraded lakes, barren plots, and dumping zones into urban forests and community gardens in collaboration with urban planners and green architects.</p>
+          </div>
         </div>
       </div>
-    </section>
-    </section>
-    <section class="impact-section">
-      <h2>Our Impact</h2>
-      <div class="highlight-box">
-        <p><strong>🌳 Green India is a Strong India:</strong> We strive to bring back lost forests, nourish biodiversity, and reduce pollution through active engagement with people and planet.</p>
-      </div>
-      <div class="highlight-box">
-        <p><strong>🌊 Clean Water and Sanitation:</strong> Promoting rainwater harvesting, lake rejuvenation, and bio-toilets to improve water quality and availability.</p>
-      </div>
-      <div class="highlight-box">
-        <p><strong>♻️ Zero-Waste Living:</strong> Educating citizens to adopt sustainable alternatives in daily life, reduce consumption, and recycle more.</p>
-      </div>
-    </section>
- 
-    <!-- Rest of your content sections -->
-  </main>
+    </div>
+  </section>
 
+  <!-- Volunteer Section -->
+  <section class="volunteer-section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Volunteer & Community Involvement</h2>
+        <p>Our strength lies in people-powered change</p>
+      </div>
+      
+      <div class="content">
+        <p>Volunteers from all walks of life—youth, seniors, students, and working professionals—actively participate in cleanup drives, awareness walks, and sapling care initiatives. Their energy fuels our mission on the ground.</p>
+        <p>We encourage hands-on involvement by offering training in field activities such as waste management, urban greening, and eco-campaigns. Every contribution is valued, and volunteers are recognized for their time, effort, and commitment to the environment.</p>
+      </div>
+      
+      <div style="text-align: center; margin-top: 2.5rem;">
+        <a href="contact.html" class="btn btn-outline">Become a Volunteer</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- River Section -->
+  <section class="river-section">
+    <div class="container">
+      <div class="section-header">
+        <h2>River Cleaning Initiatives</h2>
+        <p>Restoring the lifelines of our environment and culture</p>
+      </div>
+      
+      <div class="content">
+        <p>Rivers are lifelines of our environment, culture, and economy—but they are increasingly burdened by pollution, plastic waste, and untreated sewage. Our river cleaning initiatives focus on restoring the health of these water bodies through organized cleanup drives, awareness campaigns, and consistent community involvement.</p>
+        <p>Volunteers come together to remove plastic, non-biodegradable waste, and urban litter from riverbanks and nearby areas. These cleanups not only improve water quality and revive aquatic habitats, but also prevent further contamination of connected ecosystems.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Education Section -->
+  <section class="education-section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Eco-Education for All</h2>
+        <p>Nurturing a generation with deep respect for nature</p>
+      </div>
+      
+      <div class="content">
+        <p>We believe that environmental awareness is a right, not a privilege—and it must begin early. Our mission is to embed eco-consciousness into everyday learning, nurturing a generation that grows up with a deep respect for nature and a strong sense of environmental responsibility.</p>
+        <p>We promote environment-centric education in schools by introducing nature-focused curriculum, hands-on activities, and interactive storytelling sessions that spark curiosity in young minds.</p>
+      </div>
+      
+      <!-- Image Slider -->
+      <div class="slider-container">
+        <div class="slider-track">
+          <img src="images/p1.jpg" alt="1">
+      <img src="images/p10.jpg" alt="10">
+      <img src="images/p2.jpg" alt="2">
+      <img src="images/p6.jpg" alt="7">
+      <img src="images/p3.jpg" alt="3">
+      <img src="images/p7.jpg" alt="5">
+      <img src="images/p8.jpg" alt="8">
+      <img src="images/p5.jpg" alt="6">
+      <img src="images/p9.jpg" alt="9">
+      <img src="images/p4.jpg" alt="4">
+    </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stewardship Section -->
+  <section class="stewardship-section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Environmental Stewardship</h2>
+        <p>Building a resilient future where nature thrives</p>
+      </div>
+      
+      <div class="highlight-container">
+        <div class="highlight-box">
+          <h3><i class="fas fa-tree"></i> Green India is a Strong India</h3>
+          <p>We strive to bring back lost forests, nourish biodiversity, and reduce pollution through active engagement with people and planet.</p>
+        </div>
+        
+        <div class="highlight-box">
+          <h3><i class="fas fa-tint"></i> Clean Water and Sanitation</h3>
+          <p>Promoting rainwater harvesting, lake rejuvenation, and bio-toilets to improve water quality and availability.</p>
+        </div>
+        
+        <div class="highlight-box">
+          <h3><i class="fas fa-recycle"></i> Zero-Waste Living</h3>
+          <p>Educating citizens to adopt sustainable alternatives in daily life, reduce consumption, and recycle more.</p>
+        </div>
+      </div>
+      
+      <div style="text-align: center; margin-top: 2.5rem;">
+        <a href="contact.html" class="btn btn-accent">Join the Movement</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
   <footer>
-    <div class="footer-container">
-      <p>&copy; RJGF. All rights reserved.</p>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-column">
+          <h3>About Us</h3>
+          <p>We are a non-profit organization dedicated to empowering communities through environmental conservation and sustainable development since 2005.</p>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+        
+        <div class="footer-column">
+          <h3>Quick Links</h3>
+          <ul class="footer-links">
+            <li><a href="#"><i class="fas fa-chevron-right"></i> Home</a></li>
+            <li><a href="#"><i class="fas fa-chevron-right"></i> About Us</a></li>
+            <li><a href="#"><i class="fas fa-chevron-right"></i> Our Team</a></li>
+            <li><a href="#"><i class="fas fa-chevron-right"></i> Programs</a></li>
+            <li><a href="#"><i class="fas fa-chevron-right"></i> Gallery</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-column">
+          <h3>Our Initiatives</h3>
+          <ul class="footer-links">
+            <li><a href="#"><i class="fas fa-chevron-right"></i> Tree Plantation</a></li>
+            <li><a href="#"><i class="fas fa-chevron-right"></i> River Cleaning</a></li>
+            <li><a href="#"><i class="fas fa-chevron-right"></i> Eco Education</a></li>
+            <li><a href="#"><i class="fas fa-chevron-right"></i> Plastic Reduction</a></li>
+            <li><a href="#"><i class="fas fa-chevron-right"></i> Wildlife Protection</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-column">
+          <h3>Contact Us</h3>
+          <ul class="footer-links">
+            <li><a href="#"><i class="fas fa-map-marker-alt"></i> 123 Green Street, Mumbai, India</a></li>
+            <li><a href="tel:+911234567890"><i class="fas fa-phone"></i> +91 12345 67890</a></li>
+            <li><a href="mailto:info@econgp.org"><i class="fas fa-envelope"></i> info@econgp.org</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2023 Green Earth Initiative. All rights reserved. | Designed with <i class="fas fa-heart"></i> for a greener world</p>
+      </div>
     </div>
   </footer>
 
- <script>
-// Header scroll effect
-document.addEventListener('DOMContentLoaded', function() {
-  let lastScrollY = window.scrollY;
-  const header = document.querySelector('header');
-  const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
-  const navLinks = document.querySelector('.nav-links');
-  
-  // Scroll effects
-  window.addEventListener('scroll', () => {
-    // Shadow effect
-    if (window.scrollY > 10) {
-      header.classList.add('scrolled');
-    } else {
-      header.classList.remove('scrolled');
-    }
-    
-    // Hide on scroll down, show on scroll up
-    if (window.scrollY > lastScrollY && window.scrollY > 80) {
-      header.classList.add('hide-header');
-    } else {
-      header.classList.remove('hide-header');
-    }
-    lastScrollY = window.scrollY;
-  });
-
-  // Mobile menu toggle
-  mobileMenuToggle.addEventListener('click', () => {
-    mobileMenuToggle.classList.toggle('active');
-    navLinks.classList.toggle('active');
-    
-    // Close dropdowns when menu is toggled
-    if (!navLinks.classList.contains('active')) {
-      document.querySelectorAll('.dropdown-content').forEach(dropdown => {
-        dropdown.style.display = 'none';
-      });
-    }
-  });
-
-  // Close mobile menu when clicking on a link
-  document.querySelectorAll('.nav-links a').forEach(link => {
-    link.addEventListener('click', () => {
-      if (window.innerWidth <= 992) {
-        mobileMenuToggle.classList.remove('active');
-        navLinks.classList.remove('active');
-      }
-    });
-  });
-
-  // Active link highlighting
-  const currentLocation = window.location.pathname;
-  const navAnchors = document.querySelectorAll("nav a");
-
-  navAnchors.forEach(link => {
-    const linkPath = link.getAttribute('href');
-    if (currentLocation.includes(linkPath)) {
-      link.classList.add('active');
-    } else {
-      link.classList.remove('active');
-    }
-  });
-
-  // Team card hover effect (if exists on page)
-  const teamCards = document.querySelectorAll('.team-card');
-  if (teamCards.length > 0) {
-    teamCards.forEach(card => {
-      card.addEventListener('mouseenter', () => {
-        card.style.transform = 'translateY(-10px)';
-        card.style.boxShadow = '0 15px 30px rgba(0,0,0,0.1)';
-      });
-      card.addEventListener('mouseleave', () => {
-        card.style.transform = 'translateY(0)';
-        card.style.boxShadow = '0 5px 15px rgba(0,0,0,0.1)';
-      });
-    });
-  }
-
-  // Close dropdown when clicking outside
-  document.addEventListener('click', (e) => {
-    if (!e.target.closest('.dropdown')) {
-      document.querySelectorAll('.dropdown-content').forEach(dropdown => {
-        dropdown.style.display = 'none';
-      });
-    }
-  });
-
-  // Initialize dropdowns
-  document.querySelectorAll('.dropdown > a').forEach(dropdownToggle => {
-    dropdownToggle.addEventListener('click', (e) => {
-      if (window.innerWidth <= 992) {
-        e.preventDefault();
-        const dropdownContent = dropdownToggle.nextElementSibling;
-        const isOpen = dropdownContent.style.display === 'block';
-        
-        // Close all dropdowns first
-        document.querySelectorAll('.dropdown-content').forEach(dropdown => {
-          dropdown.style.display = 'none';
-        });
-        
-        // Open current dropdown if it was closed
-        if (!isOpen) {
-          dropdownContent.style.display = 'block';
-        }
-      }
-    });
-  });
-
-  // Handle dropdown hover on desktop
-  if (window.innerWidth > 992) {
-    document.querySelectorAll('.dropdown').forEach(dropdown => {
-      dropdown.addEventListener('mouseenter', () => {
-        dropdown.querySelector('.dropdown-content').style.display = 'block';
-      });
-      dropdown.addEventListener('mouseleave', () => {
-        dropdown.querySelector('.dropdown-content').style.display = 'none';
-      });
-    });
-  }
-});
-</script>
 </body>
 </html>
+
