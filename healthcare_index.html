@@ -11,13 +11,7 @@
 <body>
  <div id="header"></div>
 
-<script>
-  fetch("header.html")
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById("header").innerHTML = data;
-    });
-</script>
+
 
   <div class="banner-slider">
     <div class="slide active" style="background-image: url('images/health1.jpg');">
@@ -94,10 +88,8 @@
     <a href="#" class="btn">Join Us</a>
   </section>
 
-  <footer>
-    <p>&copy; 2025 RJGF NGO. All rights reserved. | <a href="#">Privacy Policy</a></p>
-  </footer>
-
+ 
+<script src="JS/loadheader.js"></script>
  <script>
 
     document.addEventListener("DOMContentLoaded", () => {

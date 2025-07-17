@@ -1,41 +1,37 @@
-
 :root {
-  --blue-main: #e6ed7f;          /* deep teal-blue */
-  --blue-accent: #017d39df;        /* bright teal */
-  --blue-light: #94d2bd;         /* light teal */
-  --green-main: #8aff5f;         /* original green main */
-  --green-accent: #4a7c3b;       /* original green accent */
-  --green-light: #fdf8bcf3;        /* original green light */
+  --blue-main: #e6ed7f;
+  --blue-accent: #017d39df;
+  --blue-light: #94d2bd;
+  --green-main: #8aff5f;
+  --green-accent: #4a7c3b;
+  --green-light: #fdf8bcf3;
   --blue-shadow: rgba(10, 147, 150, 0.12);
-  --blue-card:  #9df5af53;
-   --blue-dark: #023047;
-  --text-dark: #1d3557;
+  --blue-card: #9df5af53;
   --blue-dark: #023047;
   --text-dark: #1d3557;
   --white: #ffffff;
   --partner-bg: linear-gradient(135deg, var(--green-accent), var(--green-main));
-  
 }
+
+/* RESET */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-body {
+html, body {
+  margin: 0;
+  padding: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: white;
   color: var(--text-dark);
-  line-height: 1.6;
+  overflow-x: hidden;
 }
 
-
-/* Header Styles */
-header h1{
-   color: white;
-}
+/* HEADER */
 header {
-  background: linear-gradient(90deg, var(--blue-accent) 60%, var(--blue-main) 100%);
+  background: linear-gradient(90deg, var(--blue-accent) 60%, var(--blue-main));
   color: white;
   padding: 1em 3em;
   display: flex;
@@ -58,24 +54,15 @@ header {
   }
 }
 
+header h1 {
+  color: white;
+}
+
 /* LOGO */
 .logo-container {
   display: flex;
   align-items: center;
   gap: 15px;
-}
-
-.logo-text h1 {
-  font-size: 1.2rem;
-  margin: 0;
-  line-height: 1.2;
-  font-weight: 600;
-}
-
-.logo-text p {
-  font-size: 0.9rem;
-  margin: 0;
-  opacity: 0.9;
 }
 
 .logo {
@@ -101,6 +88,18 @@ header {
   transform: scale(1.1) rotate(-3deg);
 }
 
+.logo-text h1 {
+  font-size: 1.2rem;
+  margin: 0;
+  font-weight: 600;
+}
+
+.logo-text p {
+  font-size: 0.9rem;
+  margin: 0;
+  opacity: 0.9;
+}
+
 /* NAVIGATION */
 nav {
   display: flex;
@@ -116,14 +115,13 @@ nav a {
   color: white;
   text-decoration: none;
   font-size: 1.1em;
-  position: relative;
   display: flex;
   align-items: center;
   gap: 8px;
-  transition: all 0.4s ease;
   padding: 8px 12px;
   font-weight: 500;
-  overflow: hidden;
+  transition: all 0.4s ease;
+  position: relative;
 }
 
 nav a i {
@@ -131,7 +129,6 @@ nav a i {
   transition: transform 0.3s ease;
 }
 
-/* Beautiful Underline Hover Effect */
 nav a::after {
   content: '';
   position: absolute;
@@ -150,21 +147,13 @@ nav a:hover::after {
   transform-origin: left;
 }
 
+nav a.active,
 nav a:hover {
-  color: white;
-}
-
-nav a:hover i {
-  transform: translateY(-3px);
-}
-
-nav a.active {
   color: var(--blue-light);
 }
 
 nav a.active::after {
   transform: scaleX(1);
-  background: var(--blue-light);
 }
 
 /* DROPDOWN */
@@ -185,49 +174,31 @@ nav a.active::after {
 .dropdown-content {
   display: none;
   position: absolute;
+  top: 100%;
+  left: 0;
   background: linear-gradient(135deg, var(--blue-accent), var(--blue-main));
   border-radius: 10px;
   padding: 10px 0;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-  z-index: 999;
   min-width: 220px;
-  top: 100%;
-  left: 0;
   opacity: 0;
   transform: translateY(15px);
   transition: all 0.35s ease;
+  z-index: 999;
 }
 
 .dropdown-content a {
-  color: white;
   padding: 10px 20px;
-  text-decoration: none;
   font-size: 0.95em;
+  display: block;
   transition: all 0.3s ease;
-  position: relative;
-}
-
-.dropdown-content a::after {
-  content: '';
-  position: absolute;
-  bottom: 8px;
-  left: 20px;
-  width: calc(100% - 40px);
-  height: 1px;
-  background: rgba(255,255,255,0.3);
-  transform: scaleX(0);
-  transform-origin: right;
-  transition: transform 0.4s ease;
-}
-
-.dropdown-content a:hover::after {
-  transform: scaleX(1);
-  transform-origin: left;
+  color: white;
+  text-decoration: none;
 }
 
 .dropdown-content a:hover {
-  transform: translateX(8px);
-  padding-left: 25px;
+  background: rgba(255, 255, 255, 0.1);
+  padding-left: 30px;
 }
 
 .dropdown:hover .dropdown-content {
@@ -236,7 +207,7 @@ nav a.active::after {
   transform: translateY(5px);
 }
 
-/* Mobile Menu */
+/* MOBILE MENU TOGGLE */
 .mobile-menu-toggle {
   display: none;
   flex-direction: column;
@@ -256,23 +227,16 @@ nav a.active::after {
   transition: all 0.3s ease;
 }
 
-/* Responsive Styles */
-@media (max-width: 1200px) {
-  .nav-links {
-    gap: 1em;
-  }
-  
-  nav a {
-    font-size: 1em;
-    padding: 8px 10px;
-  }
-}
-
+/* RESPONSIVE STYLES */
 @media (max-width: 992px) {
   header {
     padding: 1em 2em;
   }
-  
+
+  .mobile-menu-toggle {
+    display: flex;
+  }
+
   .nav-links {
     position: fixed;
     top: 0;
@@ -280,51 +244,67 @@ nav a.active::after {
     width: 280px;
     height: 100vh;
     background: linear-gradient(135deg, var(--blue-accent), var(--blue-main));
-    flex-direction: column;
-    align-items: flex-start;
     padding: 100px 30px 30px;
-    box-shadow: -5px 0 15px rgba(0,0,0,0.1);
     transition: right 0.4s ease;
-    z-index: 1000;
+    z-index: 999;
+    flex-direction: column;
+    gap: 1em;
   }
-  
+
   .nav-links.active {
     right: 0;
   }
-  
-  .mobile-menu-toggle {
-    display: flex;
-  }
-  
+
   .mobile-menu-toggle.active span:nth-child(1) {
     transform: translateY(9px) rotate(45deg);
   }
-  
+
   .mobile-menu-toggle.active span:nth-child(2) {
     opacity: 0;
   }
-  
+
   .mobile-menu-toggle.active span:nth-child(3) {
     transform: translateY(-9px) rotate(-45deg);
   }
-  
+
+  .dropdown {
+    width: 100%;
+  }
+
+  .dropdown-toggle {
+    width: 100%;
+    justify-content: space-between;
+  }
+
   .dropdown-content {
     position: static;
     display: none;
+    width: 100%;
+    box-shadow: none;
+    background: rgba(255, 255, 255, 0.1);
+    margin-top: 0.5em;
+    padding: 0;
     opacity: 1;
     transform: none;
-    box-shadow: none;
-    background: rgba(0,0,0,0.1);
-    margin-top: 5px;
-    width: 100%;
+    border-radius: 5px;
+    overflow: hidden;
   }
-  
-  .dropdown:hover .dropdown-content {
-    transform: none;
+
+  .dropdown-content a {
+    padding: 10px 15px;
+    font-size: 0.9em;
   }
-  
-  nav a::after {
-    bottom: 5px;
+
+  .dropdown-content a:hover {
+    padding-left: 20px;
+  }
+
+  .dropdown.active .dropdown-content {
+    display: block;
+  }
+
+  .dropdown.active .dropdown-arrow {
+    transform: rotate(180deg);
   }
 }
 
@@ -332,16 +312,16 @@ nav a.active::after {
   header {
     padding: 1em;
   }
-  
+
   .logo {
     height: 60px;
     width: 60px;
   }
-  
+
   .logo-text h1 {
     font-size: 1rem;
   }
-  
+
   .logo-text p {
     font-size: 0.8rem;
   }

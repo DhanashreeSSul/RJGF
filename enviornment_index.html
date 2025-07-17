@@ -10,13 +10,6 @@
 <body>
   <div id="header"></div>
 
-<script>
-  fetch("header.html")
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById("header").innerHTML = data;
-    });
-</script>
 
   <!-- Banner Slider -->
   <div class="banner-slider">
@@ -225,60 +218,7 @@
     </div>
   </section>
 
-  <!-- Footer -->
-  <footer>
-    <div class="container">
-      <div class="footer-content">
-        <div class="footer-column">
-          <h3>About Us</h3>
-          <p>We are a non-profit organization dedicated to empowering communities through environmental conservation and sustainable development since 2005.</p>
-          <div class="social-links">
-            <a href="#"><i class="fab fa-facebook-f"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-linkedin-in"></i></a>
-            <a href="#"><i class="fab fa-youtube"></i></a>
-          </div>
-        </div>
-        
-        <div class="footer-column">
-          <h3>Quick Links</h3>
-          <ul class="footer-links">
-            <li><a href="#"><i class="fas fa-chevron-right"></i> Home</a></li>
-            <li><a href="#"><i class="fas fa-chevron-right"></i> About Us</a></li>
-            <li><a href="#"><i class="fas fa-chevron-right"></i> Our Team</a></li>
-            <li><a href="#"><i class="fas fa-chevron-right"></i> Programs</a></li>
-            <li><a href="#"><i class="fas fa-chevron-right"></i> Gallery</a></li>
-          </ul>
-        </div>
-        
-        <div class="footer-column">
-          <h3>Our Initiatives</h3>
-          <ul class="footer-links">
-            <li><a href="#"><i class="fas fa-chevron-right"></i> Tree Plantation</a></li>
-            <li><a href="#"><i class="fas fa-chevron-right"></i> River Cleaning</a></li>
-            <li><a href="#"><i class="fas fa-chevron-right"></i> Eco Education</a></li>
-            <li><a href="#"><i class="fas fa-chevron-right"></i> Plastic Reduction</a></li>
-            <li><a href="#"><i class="fas fa-chevron-right"></i> Wildlife Protection</a></li>
-          </ul>
-        </div>
-        
-        <div class="footer-column">
-          <h3>Contact Us</h3>
-          <ul class="footer-links">
-            <li><a href="#"><i class="fas fa-map-marker-alt"></i> 123 Green Street, Mumbai, India</a></li>
-            <li><a href="tel:+911234567890"><i class="fas fa-phone"></i> +91 12345 67890</a></li>
-            <li><a href="mailto:info@econgp.org"><i class="fas fa-envelope"></i> info@econgp.org</a></li>
-          </ul>
-        </div>
-      </div>
-      
-      <div class="footer-bottom">
-        <p>&copy; 2023 Green Earth Initiative. All rights reserved. | Designed with <i class="fas fa-heart"></i> for a greener world</p>
-      </div>
-    </div>
-  </footer>
-
+<script src="JS/loadheader.js"></script>
 </body>
 </html>
 

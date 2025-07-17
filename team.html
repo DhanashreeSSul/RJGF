@@ -11,16 +11,6 @@
 </head>
 <body>
  <div id="header"></div>
-
-<script>
-  fetch("header.html")
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById("header").innerHTML = data;
-    });
-</script>
-
-
   <!-- Team Section -->
   <main class="team-page">
    <section class="team-hero" id="teamHero">
@@ -30,7 +20,6 @@
     <div class="hero-pattern"></div>
   </div>
 </section>
-
 
 
     <!-- Board of Advisors -->
@@ -297,47 +286,7 @@
     </section>
   </main>
 
-  <!-- Footer -->
-  <footer class="site-footer">
-    <div class="footer-container">
-      <div class="footer-logo">
-        <img src="Images/rjgf.jpg" alt="RJGF Logo">
-        <p>Inspired by the legacy of Late Shri Raveendra Jadhav, we are dedicated to uplifting communities through compassion, integrity, and sustainable action.</p>
-      </div>
-      <div class="footer-links">
-        <div class="links-column">
-          <h4>Quick Links</h4>
-          <ul>
-            <li><a href="rjhomepg.html">Home</a></li>
-            <li><a href="aboutusrjgf.html">About Us</a></li>
-            <li><a href="team.html">Our Team</a></li>
-            <li><a href="media.html">Media & Recognition</a></li>
-            <li><a href="contact.html">Contact Us</a></li>
-          </ul>
-        </div>
-        <div class="links-column">
-          <h4>Our Work</h4>
-          <ul>
-            <li><a href="education_index.html">Education</a></li>
-            <li><a href="healthcare_index.html">Healthcare</a></li>
-            <li><a href="enviornment_index.html">Environment</a></li>
-            <li><a href="#">Gallery</a></li>
-          </ul>
-        </div>
-        <div class="links-column">
-          <h4>Contact Info</h4>
-          <ul class="contact-info">
-            <li><i class="fas fa-map-marker-alt"></i> 123 Foundation St, City, Country</li>
-            <li><i class="fas fa-phone"></i> +1 234 567 890</li>
-            <li><i class="fas fa-envelope"></i> info@rjgf.org</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <p>&copy; 2023 Raveendra Jadhav Global Foundation. All rights reserved.</p>
-    </div>
-  </footer>
+  
 <script>
 // Header scroll effect
 document.addEventListener('DOMContentLoaded', function() {
@@ -427,11 +376,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Change every 6 seconds
     setInterval(changeBackground, 6000);
   });
-
-
-
-
-
 </script>
+<script src="JS/loadheader.js"></script>
 </body>
 </html>

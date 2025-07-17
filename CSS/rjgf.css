@@ -24,9 +24,6 @@ body {
   line-height: 1.6;
 }
 
-/* =======================
-   HERO SECTION
-   ======================= */
 .hero {
   display: flex;
   flex-wrap: wrap;
@@ -38,7 +35,7 @@ body {
   background: transparent;
   position: relative;
   z-index: 1;
-  margin-top: 4.5em; /* added margin to avoid title overlap with header */
+  margin-top: 50px;
 }
 
 .hero::before {
@@ -59,11 +56,10 @@ body {
 }
 
 .inspiration-title {
-  position: relative;
-  top: 0;
-  left: 0;
-  transform: none;
-  margin: 0 auto 1.5em auto;
+  position: absolute;
+  top: -1.2em;
+  left: 50%;
+  transform: translateX(-50%);
   font-size: 2.4em;
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
@@ -71,10 +67,6 @@ body {
   letter-spacing: 2px;
   text-shadow: 0 2px 18px rgba(6,57,112,0.07);
   z-index: 2;
-  background: none; /* removed box */
-  padding: 0;       /* removed box */
-  border-radius: 0; /* removed box */
-  animation: none;  /* removed animation */
 }
 
 .hero-image img {
@@ -82,11 +74,10 @@ body {
   width: 100%;
   height: 410px;
   border-radius: 32px;
-  box-shadow: 0 8px 40px rgba(222, 233, 14, 0.6), 0 2px 8px rgba(21, 185, 6, 0.692);
+  box-shadow: 0 8px 40px rgba(138, 255, 95, 0.23), 0 2px 8px rgba(74, 124, 59, 0.18);
   border: 6px solid var(--glass-bg);
   background: var(--glass-bg);
   backdrop-filter: blur(2px);
-  animation: none; /* removed animation */
   transition: transform 1.2s cubic-bezier(.77,0,0.18,1), box-shadow 0.4s;
 }
 
@@ -238,68 +229,8 @@ body {
   .slider-track img { width: 220px; height: 140px; }
 }
 @media (max-width: 700px) {
-  header { flex-direction: column; gap: 0.7em; padding: 0.7em 1em; }
-  nav { gap: 1em; }
   .hero, .slider-container { padding: 1.2em 0.5em; }
   .info { gap: 1em; padding: 1.5em 0.5em;}
   .info-card { padding: 1.2em 1em;}
   .inspiration-title { font-size: 1.3em; padding: 0.5em 1em;}
-}
-/* Restore original .hero and .inspiration-title positioning */
-.hero {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  gap: 3em;
-  min-height: 70vh;
-  padding: 5em 2em 3em 2em;
-  background: transparent;
-  position: relative;
-  z-index: 1;
-  /* Remove any margin-top or position changes */
-}
-
-.inspiration-title {
-  position: absolute;
-  top: -1.2em;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 2.4em;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 700;
-  color: var(--blue-accent);
-  letter-spacing: 2px;
-  text-shadow: 0 2px 18px rgba(6,57,112,0.07);
-  z-index: 2;
-  background: none;
-  padding: 0;
-  border-radius: 0;
-  animation: none;
-}
-
-/* Green glow for image */
-.hero-image img {
-  max-width: 340px;
-  width: 100%;
-  height: 410px;
-  border-radius: 32px;
-  box-shadow: 0 8px 40px rgba(138, 255, 95, 0.23), 0 2px 8px rgba(74, 124, 59, 0.18);
-  border: 6px solid var(--glass-bg);
-  background: var(--glass-bg);
-  backdrop-filter: blur(2px);
-  animation: none;
-  transition: transform 1.2s cubic-bezier(.77,0,0.18,1), box-shadow 0.4s;
-}
-
-/* Green glow for tribute box (assuming .hero-text is the tribute box) */
-.hero-text {
-  max-width: 600px;
-  background: var(--glass-bg);
-  border-radius: 20px;
-  box-shadow: 0 8px 32px rgba(138, 255, 95, 0.23);
-  padding: 2.5em 2.5em 2em 2.5em;
-  z-index: 1;
-  animation: fadeInRight 1.2s cubic-bezier(.77,0,.18,1) 0.8s both, fadeInSlide 2s ease forwards;
-  transition: transform 1.1s cubic-bezier(.77,0,.18,1), box-shadow 0.4s, border 0.4s;
 }

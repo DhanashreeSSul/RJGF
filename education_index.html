@@ -8,16 +8,8 @@
   <link rel="stylesheet" href="CSS/education_style.css">
 </head>
 <body>
+<!-- Somewhere in <body> where you want the header -->
 <div id="header"></div>
-
-<script>
-  fetch("header.html")
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById("header").innerHTML = data;
-    });
-</script>
-
 
 <div class="banner-slider">
   <div class="slide active" style="background-image: url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');">
@@ -249,59 +241,7 @@
   </div>
 </section>
 
-<footer>
-  <div class="container">
-    <div class="footer-content">
-      <div class="footer-column">
-        <h3>About Us</h3>
-        <p style="color: rgba(255,255,255,0.8);">We are a non-profit organization dedicated to empowering communities through education, healthcare, and environmental initiatives since 2005.</p>
-        <div class="social-links">
-          <a href="#"><i class="fab fa-facebook-f"></i></a>
-          <a href="#"><i class="fab fa-twitter"></i></a>
-          <a href="#"><i class="fab fa-instagram"></i></a>
-          <a href="#"><i class="fab fa-linkedin-in"></i></a>
-          <a href="#"><i class="fab fa-youtube"></i></a>
-        </div>
-      </div>
-      
-      <div class="footer-column">
-        <h3>Quick Links</h3>
-        <ul class="footer-links">
-          <li><a href="#"><i class="fas fa-chevron-right"></i> Home</a></li>
-          <li><a href="#"><i class="fas fa-chevron-right"></i> About Us</a></li>
-          <li><a href="team.html"><i class="fas fa-chevron-right"></i> Our Team</a></li>
-          <li><a href="#"><i class="fas fa-chevron-right"></i> Programs</a></li>
-          <li><a href="#"><i class="fas fa-chevron-right"></i> Gallery</a></li>
-        </ul>
-      </div>
-      
-      <div class="footer-column">
-        <h3>Our Programs</h3>
-        <ul class="footer-links">
-          <li><a href="education_index.html"><i class="fas fa-chevron-right"></i> Education Initiatives</a></li>
-          <li><a href="healthcare_index.html"><i class="fas fa-chevron-right"></i> Healthcare Projects</a></li>
-          <li><a href="enviornment_index.html"><i class="fas fa-chevron-right"></i> Environment Programs</a></li>
-          <li><a href="#"><i class="fas fa-chevron-right"></i> Women Empowerment</a></li>
-          <li><a href="#"><i class="fas fa-chevron-right"></i> Rural Development</a></li>
-        </ul>
-      </div>
-      
-      <div class="footer-column">
-        <h3>Contact Us</h3>
-        <ul class="footer-links">
-          <li><a href="#"><i class="fas fa-map-marker-alt"></i> 123 NGO Street, Mumbai, India</a></li>
-          <li><a href="tel:+911234567890"><i class="fas fa-phone"></i> +91 12345 67890</a></li>
-          <li><a href="mailto:info@ngopower.org"><i class="fas fa-envelope"></i> info@ngopower.org</a></li>
-          <li><a href="#"><i class="fas fa-clock"></i> Monday-Friday: 9AM - 6PM</a></li>
-        </ul>
-      </div>
-    </div>
-    
-    <div class="footer-bottom">
-      <p>&copy; 2023 RJGF NGO Empowerment. All rights reserved. | Designed with <i class="fas fa-heart" style="color: var(--accent);"></i> for a better world</p>
-    </div>
-  </div>
-</footer>
 
+<script src="JS/loadheader.js"></script>
 </body>
 </html>

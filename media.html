@@ -9,16 +9,7 @@
 </head>
 <body>
    <div id="header"></div>
-
-<script>
-  fetch("header.html")
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById("header").innerHTML = data;
-    });
-</script>
-
-
+   
     <div class="container">
         <h1>RJGF Foundation Media Highlights</h1>
         <div class="section">
@@ -129,7 +120,10 @@
             </div>
         </div>
 
-        <script>
+       
+    </div>
+    <script>
+     
             // Modal functionality for photo grid
             const modal = document.getElementById("photoModal");
             const modalImg = document.getElementById("modalImg");
@@ -156,69 +150,8 @@
             document.addEventListener('keydown', function(e) {
                 if (e.key === "Escape") modal.style.display = "none";
             });
-        </script>
-    </div>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const modal = document.getElementById("photoModal");
-            const modalImg = document.getElementById("modalImg");
-            const modalCaption = document.getElementById("modalCaption");
-            const closeBtn = document.querySelector(".modal .close");
-            const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
-            const navLinks = document.querySelector('.nav-links');
-            const header = document.querySelector('header');
-
-            document.querySelectorAll('.media-card img').forEach(img => {
-                img.addEventListener('click', function() {
-                    modal.style.display = "flex";
-                    modalImg.src = this.src;
-                    modalCaption.textContent = this.alt;
-                });
-            });
-
-            closeBtn.onclick = function() {
-                modal.style.display = "none";
-            };
-
-            window.onclick = function(event) {
-                if (event.target === modal) {
-                    modal.style.display = "none";
-                }
-            };
-
-            document.addEventListener('keydown', function(e) {
-                if (e.key === "Escape") modal.style.display = "none";
-            });
-
-            let lastScrollY = window.scrollY;
-            window.addEventListener('scroll', () => {
-                if (window.scrollY > 10) {
-                    header.classList.add('scrolled');
-                } else {
-                    header.classList.remove('scrolled');
-                }
-                if (window.scrollY > lastScrollY && window.scrollY > 80) {
-                    header.classList.add('hide-header');
-                } else {
-                    header.classList.remove('hide-header');
-                }
-                lastScrollY = window.scrollY;
-            });
-
-            mobileMenuToggle.addEventListener('click', () => {
-                mobileMenuToggle.classList.toggle('active');
-                navLinks.classList.toggle('active');
-            });
-
-            document.querySelectorAll('.nav-links a').forEach(link => {
-                link.addEventListener('click', () => {
-                    if (window.innerWidth <= 768) {
-                        mobileMenuToggle.classList.remove('active');
-                        navLinks.classList.remove('active');
-                    }
-                });
-            });
-        });
+       
     </script>
+    <script src="JS/loadheader.js"></script>
 </body>
 </html>
