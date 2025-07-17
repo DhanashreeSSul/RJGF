@@ -6,14 +6,32 @@
     <link rel="stylesheet" href="CSS/media.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
+    <style>
+      body, .container, .section, .media-content, .media-date, .media-desc, .article-card, 
+      .article-card p, .article-card small, .nav-links a, .dropdown-content a {
+          font-family: 'Lato', Arial, sans-serif;
+      }
+      h1, .section > h2, .articles-section > h2 {
+          font-family: 'Roboto Slab', serif;
+          font-weight: 700;
+          color: #0e4122;
+          padding: 0.4em 1em;
+          margin-bottom: 16px;
+          border-radius: 0 15px 15px 0;
+          box-shadow: 1px 1px 10px 0 rgba(190,190,190,0.07);
+      }
+      .media-title {
+          font-family: 'Roboto Slab', serif;
+          font-weight: 700;
+      }
+    </style>
 </head>
+
 <body>
    <div id="header"></div>
-   
-    <div class="container">
+  <div class="container">
         <h1>RJGF Foundation Media Highlights</h1>
         <div class="section">
-            <h2>Media & Recognition</h2>
             <p>Over the years, RJGF Foundation has been recognized for its impactful work and contributions. Here's a glimpse of our media highlights and features.</p>
         </div>
         <div class="media-gallery">
@@ -122,6 +140,14 @@
 
        
     </div>
+    <div id="footer-placeholder"></div>
+<script>
+  fetch("footer.html")
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById("footer-placeholder").innerHTML = data;
+    });
+</script>
     <script>
      
             // Modal functionality for photo grid

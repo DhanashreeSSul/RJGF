@@ -1,10 +1,39 @@
-       
+
+body, 
+.container, 
+.section, 
+.media-content, 
+.media-date, 
+.media-desc, 
+.article-card, 
+.article-card p, 
+.article-card small, 
+.nav-links a, 
+.dropdown-content a {
+    font-family: 'Lato', Arial, sans-serif;
+}
+
+/* Headings: Roboto Slab & green color only */
+h1, .section > h2, .articles-section > h2 {
+    font-family: 'Roboto Slab', serif;
+    font-weight: 700;
+    color: #0c5f31;         /* Green color, adjust #169c53 to your preferred shade */
+    background: none;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    padding: 0;
+    margin-bottom: 16px;
+}
+
+
+
 :root {
   --blue-main: #e6ed7f;          /* deep teal-blue */
   --blue-accent: #017d39df;        /* bright teal */
   --blue-light: #94d2bd;         /* light teal */
-  --green-main: #8aff5f;         /* original green main */
-  --green-accent: #4a7c3b;       /* original green accent */
+  --green-main: #0c4621;         /* original green main */
+  --green-accent: #104a29;       /* original green accent */
   --green-light: #fdf8bcf3;        /* original green light */
   --blue-shadow: rgba(10, 147, 150, 0.12);
   --blue-card:  #9df5af53;
@@ -14,7 +43,17 @@
   --partner-bg: linear-gradient(135deg, var(--green-accent), var(--green-main));
   
 }
-   
+        :root {
+            --green-main: #115c2a;
+            --green-accent: #165226;
+            --green-light: #d6e8d6;
+            --green-mint: #a8d8d8;
+            --green-shadow: rgba(74, 124, 59, 0.08);
+            --green-card: #e8f0e8;
+            --green-dark: #114d1a;
+            --text-dark: #2e3a2e;
+            --partner-bg: linear-gradient(135deg, #d6e8d6, #a8d8d8);
+        }
 * {
   margin: 0;
   padding: 0;
@@ -36,6 +75,7 @@ body {
             background: white;
             border-radius: 20px;
             box-shadow: 0 8px 24px var(--green-shadow);
+            font-size: large;
         }
         h1 {
             color: var(--green-dark);
@@ -64,8 +104,8 @@ body {
         .media-gallery {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 28px;
-            margin-bottom: 50px;
+            gap: 40px;
+            margin-bottom: 60px;
         }
         .media-card {
             background: var(--green-card);
@@ -123,7 +163,7 @@ body {
             margin-top: 40px;
         }
         .articles-section h2 {
-            color: var(--green-accent);
+            color: rgb(11, 71, 11);
             font-size: 2.4em;
             margin-bottom: 28px;
             text-align: center;
@@ -175,7 +215,7 @@ body {
             display: inline-block;
             margin-top: 1.2em;
             padding: 0.7em 1.4em;
-            background: var(--green-main);
+            background: rgb(7, 95, 41);
             color: white;
             border-radius: 8px;
             text-decoration: none;
