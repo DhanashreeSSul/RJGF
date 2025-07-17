@@ -24,37 +24,24 @@
 <body>
   <!-- Header -->
   <header>
-  <div class="logo-container">
     <img src="Images/rjgf.jpg" alt="RJGF Logo" class="logo">
-    <div class="logo-text">
-      <h1>Raveendra Jadhav</h1>
-      <p>Global Foundation</p>
-    </div>
-  </div>
-  <nav>
-    <div class="mobile-menu-toggle">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
-    <div class="nav-links">
-      <a href="rjhomepg.html"><i class="fas fa-home"></i> Home</a>
-      <a href="aboutusrjgf.html"><i class="fas fa-info-circle"></i> About Us</a>
-      <a href="team.html"><i class="fas fa-users"></i> Team</a>
-      <a href="media.html"><i class="fas fa-photo-video"></i> Media & Recognition</a>
+    <nav>
+      <a href="rjhomepg.html">Home</a>
+      <a href="aboutusrjgf.html">About Us</a>
+      <a href="team.html" >Team</a>
+      <a href="media.html">Media & Recognition</a>
       <div class="dropdown">
-        <a href="#"><i class="fas fa-hands-helping"></i> Our Work <i class="fas fa-chevron-down dropdown-arrow"></i></a>
+        <a href="#">Our Work</a>
         <div class="dropdown-content">
-          <a href="education_index.html"><i class="fas fa-book"></i> Education</a>
-          <a href="healthcare_index.html"><i class="fas fa-heartbeat"></i> Health</a>
-          <a href="enviornment_index.html"><i class="fas fa-leaf"></i> Environment</a>
+          <a href="education_index.html">Education</a>
+          <a href="healthcare_index.html">Health</a>
+          <a href="enviornment_index.html">Environment</a>
         </div>
       </div>
-      <a href="#"><i class="fas fa-images"></i> Gallery</a>
-      <a href="contact.html"><i class="fas fa-envelope"></i> Contact Us</a>
-    </div>
-  </nav>
-</header>
+    
+      <a href="contact.html">Contact Us</a>
+    </nav>
+  </header>
 
   <!-- Team Section -->
   <main class="team-page">
@@ -334,163 +321,66 @@
   <!-- Footer -->
   <footer class="site-footer">
     <div class="footer-container">
-      <div class="footer-logo">
-        <img src="Images/rjgf.jpg" alt="RJGF Logo">
-        <p>Inspired by the legacy of Late Shri Raveendra Jadhav, we are dedicated to uplifting communities through compassion, integrity, and sustainable action.</p>
-      </div>
-      <div class="footer-links">
-        <div class="links-column">
-          <h4>Quick Links</h4>
+      <div class="footer-grid">
+        <div class="footer-col footer-about">
+          <div class="footer-logo">
+            <img src="Images/rjgf.jpg" alt="RJGF Logo">
+            <span>RJ Global Foundation</span>
+          </div>
+          <p>Committed to creating sustainable change through education, healthcare, and environmental initiatives. Together, we can build a better future.</p>
+          <div class="footer-social">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+        
+        <div class="footer-col">
+          <h3>Quick Links</h3>
           <ul>
             <li><a href="rjhomepg.html">Home</a></li>
             <li><a href="aboutusrjgf.html">About Us</a></li>
             <li><a href="team.html">Our Team</a></li>
-            <li><a href="media.html">Media & Recognition</a></li>
+          
             <li><a href="contact.html">Contact Us</a></li>
           </ul>
         </div>
-        <div class="links-column">
-          <h4>Our Work</h4>
+        
+        <div class="footer-col">
+          <h3>Our Work</h3>
           <ul>
             <li><a href="education_index.html">Education</a></li>
             <li><a href="healthcare_index.html">Healthcare</a></li>
             <li><a href="enviornment_index.html">Environment</a></li>
-            <li><a href="#">Gallery</a></li>
+            <li><a href="#">Success Stories</a></li>
+            <li><a href="#">Annual Reports</a></li>
           </ul>
         </div>
-        <div class="links-column">
-          <h4>Contact Info</h4>
-          <ul class="contact-info">
-            <li><i class="fas fa-map-marker-alt"></i> 123 Foundation St, City, Country</li>
-            <li><i class="fas fa-phone"></i> +1 234 567 890</li>
-            <li><i class="fas fa-envelope"></i> info@rjgf.org</li>
+        
+        <div class="footer-col">
+          <h3>Contact Info</h3>
+          <ul>
+            <li><i class="fas fa-map-marker-alt"></i> Mont Vert Seville, Pune</li>
+            <li><i class="fas fa-phone-alt"></i> +91 9922954841</li>
+            <li><i class="fas fa-envelope"></i> rjglobalfoundation@gmail.com</li>
           </ul>
         </div>
       </div>
-    </div>
-    <div class="footer-bottom">
-      <p>&copy; 2023 Raveendra Jadhav Global Foundation. All rights reserved.</p>
+      
+      <div class="footer-bottom">
+        <div class="copyright">
+          <p>&copy; <span id="current-year"></span> RJ Global Foundation. All rights reserved.</p>
+        </div>
+        <div class="footer-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Sitemap</a>
+        </div>
+      </div>
     </div>
   </footer>
-<script>
-// Header scroll effect
-document.addEventListener('DOMContentLoaded', function() {
-  let lastScrollY = window.scrollY;
-  const header = document.querySelector('header');
-  const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
-  const navLinks = document.querySelector('.nav-links');
-  
-  // Scroll effects
-  window.addEventListener('scroll', () => {
-    // Shadow effect
-    if (window.scrollY > 10) {
-      header.classList.add('scrolled');
-    } else {
-      header.classList.remove('scrolled');
-    }
-    
-    // Hide on scroll down, show on scroll up
-    if (window.scrollY > lastScrollY && window.scrollY > 80) {
-      header.classList.add('hide-header');
-    } else {
-      header.classList.remove('hide-header');
-    }
-    lastScrollY = window.scrollY;
-  });
-
-  // Mobile menu toggle
-  mobileMenuToggle.addEventListener('click', () => {
-    mobileMenuToggle.classList.toggle('active');
-    navLinks.classList.toggle('active');
-    
-    // Close dropdowns when menu is toggled
-    if (!navLinks.classList.contains('active')) {
-      document.querySelectorAll('.dropdown-content').forEach(dropdown => {
-        dropdown.style.display = 'none';
-      });
-    }
-  });
-
-  // Close mobile menu when clicking on a link
-  document.querySelectorAll('.nav-links a').forEach(link => {
-    link.addEventListener('click', () => {
-      if (window.innerWidth <= 992) {
-        mobileMenuToggle.classList.remove('active');
-        navLinks.classList.remove('active');
-      }
-    });
-  });
-
-  // Active link highlighting
-  const currentLocation = window.location.pathname;
-  const navAnchors = document.querySelectorAll("nav a");
-
-  navAnchors.forEach(link => {
-    const linkPath = link.getAttribute('href');
-    if (currentLocation.includes(linkPath)) {
-      link.classList.add('active');
-    } else {
-      link.classList.remove('active');
-    }
-  });
-
-  // Team card hover effect (if exists on page)
-  const teamCards = document.querySelectorAll('.team-card');
-  if (teamCards.length > 0) {
-    teamCards.forEach(card => {
-      card.addEventListener('mouseenter', () => {
-        card.style.transform = 'translateY(-10px)';
-        card.style.boxShadow = '0 15px 30px rgba(0,0,0,0.1)';
-      });
-      card.addEventListener('mouseleave', () => {
-        card.style.transform = 'translateY(0)';
-        card.style.boxShadow = '0 5px 15px rgba(0,0,0,0.1)';
-      });
-    });
-  }
-
-  // Close dropdown when clicking outside
-  document.addEventListener('click', (e) => {
-    if (!e.target.closest('.dropdown')) {
-      document.querySelectorAll('.dropdown-content').forEach(dropdown => {
-        dropdown.style.display = 'none';
-      });
-    }
-  });
-
-  // Initialize dropdowns
-  document.querySelectorAll('.dropdown > a').forEach(dropdownToggle => {
-    dropdownToggle.addEventListener('click', (e) => {
-      if (window.innerWidth <= 992) {
-        e.preventDefault();
-        const dropdownContent = dropdownToggle.nextElementSibling;
-        const isOpen = dropdownContent.style.display === 'block';
-        
-        // Close all dropdowns first
-        document.querySelectorAll('.dropdown-content').forEach(dropdown => {
-          dropdown.style.display = 'none';
-        });
-        
-        // Open current dropdown if it was closed
-        if (!isOpen) {
-          dropdownContent.style.display = 'block';
-        }
-      }
-    });
-  });
-
-  // Handle dropdown hover on desktop
-  if (window.innerWidth > 992) {
-    document.querySelectorAll('.dropdown').forEach(dropdown => {
-      dropdown.addEventListener('mouseenter', () => {
-        dropdown.querySelector('.dropdown-content').style.display = 'block';
-      });
-      dropdown.addEventListener('mouseleave', () => {
-        dropdown.querySelector('.dropdown-content').style.display = 'none';
-      });
-    });
-  }
-});
-</script>
+<script src="JS/team.js"></script>
 </body>
 </html>
