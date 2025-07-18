@@ -240,8 +240,7 @@ body {
   .slider-track img { width: 220px; height: 140px; }
 }
 @media (max-width: 700px) {
-  header { flex-direction: column; gap: 0.7em; padding: 0.7em 1em; }
-  nav { gap: 1em; }
+ 
   .hero, .slider-container { padding: 1.2em 0.5em; }
   .info { gap: 1em; padding: 1.5em 0.5em;}
   .info-card { padding: 1.2em 1em;}

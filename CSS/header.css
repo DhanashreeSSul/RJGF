@@ -54,9 +54,7 @@ header {
   }
 }
 
-header h1 {
-  color: white;
-}
+
 
 /* LOGO */
 .logo-container {
@@ -92,6 +90,8 @@ header h1 {
   font-size: 1.2rem;
   margin: 0;
   font-weight: 600;
+  color: white;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .logo-text p {
@@ -176,14 +176,15 @@ nav a.active::after {
   position: absolute;
   top: 100%;
   left: 0;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  opacity: 1;
+  visibility: visible;
   background: linear-gradient(135deg, var(--blue-accent), var(--blue-main));
   border-radius: 10px;
   padding: 10px 0;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
   min-width: 220px;
-  opacity: 0;
   transform: translateY(15px);
-  transition: all 0.35s ease;
   z-index: 999;
 }
 
@@ -195,7 +196,10 @@ nav a.active::after {
   color: white;
   text-decoration: none;
 }
-
+.dropdown-content.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
 .dropdown-content a:hover {
   background: rgba(255, 255, 255, 0.1);
   padding-left: 30px;
