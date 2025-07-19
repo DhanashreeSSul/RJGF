@@ -12,41 +12,7 @@
 
 </head>
 <body>
-  <header>
-  <div class="logo-container">
-    <img src="Images/rjgf.jpg" alt="RJGF Logo" class="logo" />
-  </div>
-  <nav>
-    <a href="rjhomepg.html" title="Home">
-      <i class="fas fa-home"></i>
-    </a>
-    <a href="aboutusrjgf.html" title="About Us">
-      <i class="fas fa-info-circle"></i>
-    </a>
-    <a href="team.html" title="Team">
-      <i class="fas fa-users"></i>
-    </a>
-    <a href="media.html" title="Media & Recognition">
-      <i class="fas fa-award"></i>
-    </a>
-    <div class="dropdown">
-      <a href="#" title="Our Work">
-        <i class="fas fa-briefcase"></i>
-      </a>
-      <div class="dropdown-content">
-        <a href="education_index.html"><i class="fas fa-book"></i> Education</a>
-        <a href="healthcare_index.html"><i class="fas fa-heartbeat"></i> Health</a>
-        <a href="enviornment_index.html"><i class="fas fa-leaf"></i> Environment</a>
-      </div>
-    </div>
-    <a href="#" title="Gallery">
-      <i class="fas fa-images"></i>
-    </a>
-    <a href="contact.html" title="Contact Us">
-      <i class="fas fa-envelope"></i>
-    </a>
-  </nav>
-</header>
+  <div id="header"></div>
 
   <!-- HERO SECTION WITH VIDEO -->
   <section class="hero-section">
@@ -56,7 +22,7 @@
     <div class="hero-overlay">
       <div class="hero-box">
         <h1>UNITED FOR THE BRIGHT FUTURE</h1>
-        <button class="donate-btn">DONATE NOW</button>
+        <button href="contact.html" class="donate-btn">DONATE NOW</button>
       </div>
     </div>
   </section>
@@ -122,12 +88,39 @@
       <div class="card-header">
         <img class="card-icon" src="Images/Screenshot 2025-06-24 124030.png" alt="Logo">
         <div class="card-title">
-          BLESSINGS FROM SHRI NITIN JI GADKARI<br>CABINET MINISTER OF ROAD TRANSPORT AND HIGHWAYS
+          BLESSINGS FROM SHRI   NITIN    JI GADKARI<br>CABINET MINISTER OF ROAD TRANSPORT AND HIGHWAYS
         </div>
       </div>
       <img src="Images/Picture3.png" alt="Garden View" class="card-image">
     </div>
   </div>
+  <section id="get-involved" class="involvement-section">
+  <div class="section-header">
+    <h2>Get Involved</h2>
+    <div class="header-decoration"></div>
+  </div>
+  
+  <div class="involvement-options">
+    <div class="involvement-card volunteer">
+      <div class="card-icon"><i class="fas fa-hands-helping"></i></div>
+      <h3>Volunteer</h3>
+      <p>Share your time and skills to make a direct impact in children's lives.</p>
+      <a href="contact.html" class="card-cta">Learn More</a>
+    </div>
+    <div class="involvement-card donate">
+      <div class="card-icon"><i class="fas fa-donate"></i></div>
+      <h3>Donate</h3>
+      <p>Your financial support helps us reach more children in need.</p>
+      <a href="contact.html" class="card-cta">Donate Now</a>
+    </div>
+    <div class="involvement-card partner">
+      <div class="card-icon"><i class="fas fa-handshake"></i></div>
+      <h3>Partner</h3>
+      <p>Corporate partnerships that create lasting change.</p>
+      <a href="contact.html" class="card-cta">Partner With Us</a>
+    </div>
+  </div>
+</section>
 
   <!-- PARTNERS -->
   <section class="partners-section">
@@ -160,23 +153,17 @@
       </div>
     </div>
   </section>
-
-  <script>
-    let lastScrollY = window.scrollY;
-    const header = document.querySelector('header');
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 10) {
-        header.classList.add('scrolled');
-      } else {
-        header.classList.remove('scrolled');
-      }
-      if (window.scrollY > lastScrollY && window.scrollY > 80) {
-        header.classList.add('hide-header');
-      } else {
-        header.classList.remove('hide-header');
-      }
-      lastScrollY = window.scrollY;
+  <div id="footer-placeholder"></div>
+<script>
+  fetch("footer.html")
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById("footer-placeholder").innerHTML = data;
     });
+</script>
+<script src="JS/loadheader.js"></script>
+ <script>
+
 
     // Animate partners on viewport
     const logos = document.querySelectorAll('.partner-logo');
@@ -190,5 +177,6 @@
 
     logos.forEach(logo => observer.observe(logo));
   </script>
+
 </body>
 </html>

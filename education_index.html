@@ -4,67 +4,33 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Education | NGO Empowerment</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="CSS/education_style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-
-<header>
-  <div class="logo-container">
-    <img src="Images/rjgf.jpg" alt="RJGF Logo" class="logo" />
-  </div>
-  <nav>
-    <a href="rjhomepg.html" title="Home">
-      <i class="fas fa-home"></i>
-    </a>
-    <a href="aboutusrjgf.html" title="About Us">
-      <i class="fas fa-info-circle"></i>
-    </a>
-    <a href="team.html" title="Team">
-      <i class="fas fa-users"></i>
-    </a>
-    <a href="media.html" title="Media & Recognition">
-      <i class="fas fa-award"></i>
-    </a>
-    <div class="dropdown">
-      <a href="#" title="Our Work">
-        <i class="fas fa-briefcase"></i>
-      </a>
-      <div class="dropdown-content">
-        <a href="education_index.html"><i class="fas fa-book"></i> Education</a>
-        <a href="healthcare_index.html"><i class="fas fa-heartbeat"></i> Health</a>
-        <a href="enviornment_index.html"><i class="fas fa-leaf"></i> Environment</a>
-      </div>
-    </div>
-    <a href="#" title="Gallery">
-      <i class="fas fa-images"></i>
-    </a>
-    <a href="contact.html" title="Contact Us">
-      <i class="fas fa-envelope"></i>
-    </a>
-  </nav>
-</header>
+<!-- Somewhere in <body> where you want the header -->
+<div id="header"></div>
 
 <div class="banner-slider">
-  <div class="slide active" style="background-image: url('images/edu1.jpg');">
+  <div class="slide active" style="background-image: url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');">
     <div class="slide-content">
       <h1>Empowering Children Through Education</h1>
       <p>Together, we build futures through learning and mentorship</p>
-      <a href="#get-involved" class="cta-button">Join Our Mission</a>
+      
     </div>
   </div>
-  <div class="slide" style="background-image: url('images/edu2.jpg');">
+  <div class="slide" style="background-image: url('images/education1.jpeg');">
     <div class="slide-content">
       <h1>Education is not just a right</h1>
-      <p>It's the first step toward dignity, opportunity, and freedom</p>
-      <a href="#programs" class="cta-button">Explore Programs</a>
+      <p>It’s the first step toward dignity, opportunity, and freedom</p>
+      
     </div>
   </div>
-  <div class="slide" style="background-image: url('images/edu3.jpg');">
+  <div class="slide" style="background-image: url('images/education2.jpeg');">
     <div class="slide-content">
       <h1>Learning Today, Leading Tomorrow</h1>
       <p>Equipping young minds with tools for lifelong success</p>
-      <a href="#donate" class="cta-button">Support Education</a>
+      
     </div>
   </div>
 
@@ -75,360 +41,215 @@
   </div>
 </div>
 
-<!-- Stats Section -->
-<div class="stats-container">
-  <div class="stat-card">
-    <div class="stat-number">50,000+</div>
-    <div class="stat-label">Students Helped</div>
-    <i class="fas fa-graduation-cap stat-icon"></i>
-  </div>
-  <div class="stat-card">
-    <div class="stat-number">120+</div>
-    <div class="stat-label">Classrooms Built</div>
-    <i class="fas fa-school stat-icon"></i>
-  </div>
-  <div class="stat-card">
-    <div class="stat-number">150,000+</div>
-    <div class="stat-label">Learning Kits Distributed</div>
-    <i class="fas fa-book stat-icon"></i>
-  </div>
-  <div class="stat-card">
-    <div class="stat-number">1,000+</div>
-    <div class="stat-label">Volunteers</div>
-    <i class="fas fa-hands-helping stat-icon"></i>
-  </div>
-</div>
-
-<section id="why-education" class="feature-section">
-  <div class="section-header">
-    <h2>Why Education Matters</h2>
-    <div class="header-decoration"></div>
-  </div>
-  <div class="feature-content">
-    <div class="feature-text">
-      <p>Education is the cornerstone of a progressive society. It empowers individuals to break the cycle of poverty, improves health outcomes, and boosts economic growth. Children who receive quality education are more likely to become responsible citizens and contribute meaningfully to their communities.</p>
-      <p>Education fosters creativity, critical thinking, and the skills necessary for meaningful participation in society. It not only helps children imagine a better world, but equips them to create it.</p>
-      <div class="highlight-fact">
-        <i class="fas fa-exclamation-circle"></i>
-        <span>Over 35 million children in India aged 6-14 years do not attend school.</span>
-      </div>
+<section class="why-education">
+  <div class="container">
+    <div class="section-header">
+      <h2>Why Education Matters</h2>
+      <p>Education is the cornerstone of a progressive society. It empowers individuals to break the cycle of poverty, improves health outcomes, and boosts economic growth.</p>
     </div>
-    <div class="feature-image">
-      <img src="images/edu-importance.jpg" alt="Children learning">
-      <div class="image-caption">Our students in a classroom session</div>
-    </div>
-  </div>
-</section>
-
-<section id="programs" class="programs-section">
-  <div class="section-header">
-    <h2>Our Educational Initiatives</h2>
-    <div class="header-decoration"></div>
-  </div>
-  <p class="section-intro">We support several government programs in association with trusted partners like Y4D, CRY, and MS. Our goal is to ensure every child has access to quality education and a brighter tomorrow.</p>
-  
-  <div class="program-grid">
-    <div class="program-card">
-      <div class="program-icon"><i class="fas fa-female"></i></div>
-      <h3>Beti Bachao, Beti Padhao</h3>
-      <p>Promoting girls' education and gender equality in rural communities.</p>
-    </div>
-    <div class="program-card">
-      <div class="program-icon"><i class="fas fa-laptop"></i></div>
-      <h3>Digital Learning</h3>
-      <p>Bringing technology education to underserved areas.</p>
-    </div>
-    <div class="program-card">
-      <div class="program-icon"><i class="fas fa-book-open"></i></div>
-      <h3>Sarva Shiksha Abhiyan</h3>
-      <p>Universalizing elementary education across India.</p>
-    </div>
-    <div class="program-card">
-      <div class="program-icon"><i class="fas fa-graduation-cap"></i></div>
-      <h3>Scholarship Programs</h3>
-      <p>Financial support for deserving students.</p>
-    </div>
-    <div class="program-card">
-      <div class="program-icon"><i class="fas fa-chalkboard-teacher"></i></div>
-      <h3>Teacher Training</h3>
-      <p>Enhancing educational quality through teacher development.</p>
-    </div>
-    <div class="program-card">
-      <div class="program-icon"><i class="fas fa-utensils"></i></div>
-      <h3>Mid-Day Meals</h3>
-      <p>Ensuring nutrition to support learning.</p>
-    </div>
-  </div>
-  
-  <div class="partners-container">
-    <h3>Our Trusted Partners</h3>
-    <div class="partner-logos">
-      <img src="images/partner1.png" alt="Partner 1">
-      <img src="images/partner2.png" alt="Partner 2">
-      <img src="images/partner3.png" alt="Partner 3">
-      <img src="images/partner4.png" alt="Partner 4">
-    </div>
-  </div>
-</section>
-
-<section id="training" class="training-section">
-  <div class="section-header">
-    <h2>Training Camps & Workshops</h2>
-    <div class="header-decoration"></div>
-  </div>
-  
-  <div class="training-container">
-    <div class="training-description">
-      <p>We organize regular workshops and training camps on skill development, computer literacy, and vocational training to empower children and young adults. These camps not only equip participants with job-ready skills but also boost self-esteem and community involvement.</p>
-      <ul class="training-benefits">
-        <li><i class="fas fa-check-circle"></i> Practical skill development</li>
-        <li><i class="fas fa-check-circle"></i> Career guidance sessions</li>
-        <li><i class="fas fa-check-circle"></i> Hands-on learning experiences</li>
-        <li><i class="fas fa-check-circle"></i> Industry expert interactions</li>
-      </ul>
-    </div>
-    <div class="training-gallery">
-      <div class="gallery-main">
-        <img src="images/training1.jpeg" alt="Training Session" class="active">
-      </div>
-      <div class="gallery-thumbnails">
-        <img src="images/training1.jpeg" alt="Training 1" class="active">
-        <img src="images/training2.jpeg" alt="Training 2">
-        <img src="images/training3.jpeg" alt="Training 3">
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="mentoring" class="mentoring-section">
-  <div class="section-header">
-    <h2>Mentoring Programs</h2>
-    <div class="header-decoration"></div>
-  </div>
-  
-  <div class="mentoring-container">
-    <div class="mentoring-image">
-      <img src="images/mentor-main.jpg" alt="Mentorship program">
-      <div class="image-quote">
-        <i class="fas fa-quote-left"></i>
-        <p>My mentor helped me see possibilities I never imagined</p>
-      </div>
-    </div>
-    <div class="mentoring-details">
-      <h3>Guiding the Next Generation</h3>
-      <p>We connect students with mentors who help build essential life skills and guide them in career development, boosting their confidence and ambition. Our mentorship includes:</p>
-      
-      <div class="mentoring-features">
-        <div class="feature-box">
-          <div class="feature-icon"><i class="fas fa-user-graduate"></i></div>
-          <h4>One-on-One Sessions</h4>
-          <p>Personalized guidance tailored to each student's needs.</p>
-        </div>
-        <div class="feature-box">
-          <div class="feature-icon"><i class="fas fa-laptop"></i></div>
-          <h4>Career Webinars</h4>
-          <p>Interactions with professionals from various fields.</p>
-        </div>
-        <div class="feature-box">
-          <div class="feature-icon"><i class="fas fa-bullseye"></i></div>
-          <h4>Goal Setting</h4>
-          <p>Workshops to help students plan their future.</p>
-        </div>
-        <div class="feature-box">
-          <div class="feature-icon"><i class="fas fa-network-wired"></i></div>
-          <h4>Alumni Network</h4>
-          <p>Connections with successful program graduates.</p>
-        </div>
-      </div>
-      
-      <a href="#" class="mentor-cta">Become a Mentor Today <i class="fas fa-arrow-right"></i></a>
-    </div>
-  </div>
-</section>
-
-<section id="get-involved" class="involvement-section">
-  <div class="section-header">
-    <h2>Get Involved</h2>
-    <div class="header-decoration"></div>
-  </div>
-  
-  <div class="involvement-options">
-    <div class="involvement-card volunteer">
-      <div class="card-icon"><i class="fas fa-hands-helping"></i></div>
-      <h3>Volunteer</h3>
-      <p>Share your time and skills to make a direct impact in children's lives.</p>
-      <a href="#" class="card-cta">Learn More</a>
-    </div>
-    <div class="involvement-card donate">
-      <div class="card-icon"><i class="fas fa-donate"></i></div>
-      <h3>Donate</h3>
-      <p>Your financial support helps us reach more children in need.</p>
-      <a href="#" class="card-cta">Donate Now</a>
-    </div>
-    <div class="involvement-card partner">
-      <div class="card-icon"><i class="fas fa-handshake"></i></div>
-      <h3>Partner</h3>
-      <p>Corporate partnerships that create lasting change.</p>
-      <a href="#" class="card-cta">Partner With Us</a>
-    </div>
-  </div>
-</section>
-
-<section id="testimonials" class="testimonial-section">
-  <div class="section-header">
-    <h2>Success Stories</h2>
-    <div class="header-decoration"></div>
-  </div>
-  
-  <div class="testimonial-container">
-    <div class="testimonial-card">
-      <div class="testimonial-content">
-        <i class="fas fa-quote-left quote-icon"></i>
-        <p>Because of the scholarship I received, I'm now the first person in my family to attend college. I'm studying to become a teacher so I can give back to my community.</p>
-      </div>
-      <div class="testimonial-author">
-        <img src="images/student1.jpg" alt="Priya K.">
-        <div class="author-info">
-          <h4>Priya K.</h4>
-          <p>College Student</p>
-        </div>
-      </div>
-    </div>
-    <div class="testimonial-card">
-      <div class="testimonial-content">
-        <i class="fas fa-quote-left quote-icon"></i>
-        <p>The computer classes changed everything for me. I got a job at a local tech company and can now support my family while continuing my education in the evenings.</p>
-      </div>
-      <div class="testimonial-author">
-        <img src="images/student2.jpg" alt="Rahul S.">
-        <div class="author-info">
-          <h4>Rahul S.</h4>
-          <p>IT Assistant</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<footer>
-  <div class="footer-container">
-    <div class="footer-about">
-      <img src="images/logo-white.png" alt="RJGF Logo" class="footer-logo">
-      <p>Empowering communities through education, healthcare, and environmental initiatives since 2010.</p>
-      <div class="social-icons">
-        <a href="#"><i class="fab fa-facebook-f"></i></a>
-        <a href="#"><i class="fab fa-twitter"></i></a>
-        <a href="#"><i class="fab fa-instagram"></i></a>
-        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-      </div>
-    </div>
-    <div class="footer-links">
-      <h3>Quick Links</h3>
-      <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">About Us</a></li>
-        <li><a href="team.html">Our Team</a></li>
-        <li><a href="#">Programs</a></li>
-        <li><a href="#">Gallery</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </div>
-    <div class="footer-contact">
-      <h3>Contact Us</h3>
-      <p><i class="fas fa-map-marker-alt"></i> 123 Education Street, Mumbai, India</p>
-      <p><i class="fas fa-phone"></i> +91 98765 43210</p>
-      <p><i class="fas fa-envelope"></i> info@rjgfeducation.org</p>
-    </div>
-    <div class="footer-newsletter">
-      <h3>Stay Updated</h3>
-      <p>Subscribe to our newsletter for the latest updates</p>
-      <form class="newsletter-form">
-        <input type="email" placeholder="Your email address">
-        <button type="submit">Subscribe</button>
-      </form>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <p>&copy; 2023 RJGF. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
-  </div>
-</footer>
-
-<script>
-  // Header scroll effect
-  let lastScrollY = window.scrollY;
-  const header = document.querySelector('header');
-
-  window.addEventListener('scroll', () => {
-    // Shadow effect
-    if (window.scrollY > 10) {
-      header.classList.add('scrolled');
-    } else {
-      header.classList.remove('scrolled');
-    }
-    // Hide on scroll down, show on scroll up
-    if (window.scrollY > lastScrollY && window.scrollY > 80) {
-      header.classList.add('hide-header');
-    } else {
-      header.classList.remove('hide-header');
-    }
-    lastScrollY = window.scrollY;
-  });
-
-  // Banner slider
-  document.addEventListener("DOMContentLoaded", () => {
-    const slides = document.querySelectorAll(".slide");
-    const indicators = document.querySelectorAll(".indicator");
-    let current = 0;
-    let interval;
-
-    function showSlide(index) {
-      slides.forEach((slide, i) => {
-        slide.classList.toggle("active", i === index);
-      });
-      indicators.forEach((dot, i) => {
-        dot.classList.toggle("active", i === index);
-      });
-      current = index;
-    }
-
-    function nextSlide() {
-      const nextIndex = (current + 1) % slides.length;
-      showSlide(nextIndex);
-    }
-
-    function startAutoSlide() {
-      interval = setInterval(nextSlide, 4000);
-    }
-
-    function stopAutoSlide() {
-      clearInterval(interval);
-    }
-
-    indicators.forEach(dot => {
-      dot.addEventListener("click", () => {
-        stopAutoSlide();
-        const index = parseInt(dot.dataset.slide);
-        showSlide(index);
-        startAutoSlide();
-      });
-    });
-
-    showSlide(current);
-    startAutoSlide();
-
-    // Training gallery interaction
-    const trainingThumbs = document.querySelectorAll('.gallery-thumbnails img');
-    const trainingMain = document.querySelector('.gallery-main img');
     
-    trainingThumbs.forEach(thumb => {
-      thumb.addEventListener('click', () => {
-        trainingThumbs.forEach(t => t.classList.remove('active'));
-        thumb.classList.add('active');
-        trainingMain.src = thumb.src;
-      });
+    <div class="content">
+      <p>Children who receive quality education are more likely to become responsible citizens and contribute meaningfully to their communities. In rural India, where educational infrastructure may be limited, our NGO acts as a bridge, bringing resources and hope to those most in need.</p>
+      <p>Education fosters creativity, critical thinking, and the skills necessary for meaningful participation in society. It not only helps children imagine a better world, but equips them to create it. For families in underserved communities, education becomes the ladder that elevates them from generations of hardship into hope and opportunity.</p>
+      <p>Over 35 million children in India aged 6–14 years do not attend school. We are changing this narrative by working in the most neglected areas to build strong educational foundations. Every school built, every child taught, is a step closer to eradicating illiteracy.</p>
+      <p>Our approach goes beyond classrooms. We instill values, self-respect, and confidence in every student we reach. Because when a child believes in themselves, their potential becomes limitless.</p>
+    </div>
+  </div>
+</section>
+
+<section class="programs-section">
+  <div class="container">
+    <div class="section-header">
+      <h2>Our Educational Initiatives</h2>
+      <p>We support several government programs in association with trusted partners to ensure every child has access to quality education.</p>
+    </div>
+    
+    <div class="programs-grid">
+      <div class="program-card">
+        <div class="program-content">
+          <h3><i class="fas fa-book-open"></i> Sarva Shiksha Abhiyan (SSA)</h3>
+          <p>A flagship program for universalizing elementary education.</p>
+        </div>
+      </div>
+      
+      <div class="program-card">
+        <div class="program-content">
+          <h3><i class="fas fa-balance-scale"></i> Right to Education (RTE) Act</h3>
+          <p>Ensuring free and compulsory education for children aged 6-14 years.</p>
+        </div>
+      </div>
+      
+      <div class="program-card">
+        <div class="program-content">
+          <h3><i class="fas fa-female"></i> Beti Bachao, Beti Padhao (BBBP)</h3>
+          <p>Empowering girls through education and awareness programs.</p>
+        </div>
+      </div>
+      
+      <div class="program-card">
+        <div class="program-content">
+          <h3><i class="fas fa-graduation-cap"></i> Rashtriya Madhyamik Shiksha Abhiyan (RMSA)</h3>
+          <p>Improving access to secondary education and its quality.</p>
+        </div>
+      </div>
+      
+      <div class="program-card">
+        <div class="program-content">
+          <h3><i class="fas fa-laptop"></i> CBSE Udaan Program</h3>
+          <p>Providing free online resources for underprivileged students.</p>
+        </div>
+      </div>
+      
+      <div class="program-card">
+        <div class="program-content">
+          <h3><i class="fas fa-school"></i> Samagra Shiksha</h3>
+          <p>An integrated scheme for school education extending support to states.</p>
+        </div>
+      </div>
+    </div>
+    
+    <div style="text-align: center; margin-top: 3rem;">
+      
+    </div>
+  </div>
+</section>
+
+<section class="volunteer-section">
+  <div class="container">
+    <div class="section-header">
+      <h2>Volunteer & Community Involvement</h2>
+      <p>Our strength lies in our people. Thousands of volunteers across states contribute time, skills, and compassion to mentor students and mobilize local support.</p>
+    </div>
+    
+    <p>We offer structured volunteer programs with training, resources, and certificates, enabling passionate citizens to be real changemakers in the field of education. If you can spare time, you can spark a transformation.</p>
+    
+    <div style="text-align: center; margin-top: 2.5rem;">
+      <a href="contact.html" class="btn btn-outline">Become a Volunteer</a>
+    </div>
+  </div>
+</section>
+
+<section class="mentoring-section">
+  <div class="container">
+    <div class="section-header">
+      <h2>Mentoring Programs</h2>
+      <p>Guiding the next generation of leaders through personalized mentorship</p>
+    </div>
+    
+    <div class="content">
+      <p>We connect students with mentors who help build essential life skills and guide them in career development, boosting their confidence and ambition. Our mentorship includes one-on-one sessions, webinars with professionals, and goal-setting workshops.</p>
+      <p>Mentors come from diverse industries and include alumni of our programs, creating a full-circle community of learners and leaders. These relationships often become lifelong support systems for our students, inspiring them to give back and mentor others.</p>
+    </div>
+    
+    <div style="text-align: center; margin-top: 3rem;">
+      <a href="contact.html" class="btn">Become mentor</a>
+    </div>
+
+    <!-- Image Slider -->
+    <div class="slider-container">
+      <div class="slider-track">
+      <img src="images/edu8.jpg" alt="10">
+      <img src="images/edu2.jpg" alt="2">
+      <img src="images/edu3.jpg" alt="3">
+      <img src="images/edu9.jpg" alt="5">
+      <img src="images/edu5.jpg" alt="8">
+      <img src="images/edu6.jpeg" alt="6">
+      <img src="images/edu7.jpeg" alt="9">
+      <img src="images/edu10.jpg" alt="7">
+      <img src="images/edu1.jpg" alt="1">
+      <img src="images/edu4.jpg" alt="4">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="training-section">
+  <div class="container">
+    <div class="section-header">
+      <h2>Training Camps</h2>
+      <p>We organize regular workshops and training camps to empower children and young adults with practical skills and knowledge.</p>
+    </div>
+    
+    <div class="image-grid">
+      <div class="image-card">
+        <img src="images/mentor1.jpeg">
+        <div class="image-overlay">
+        </div>
+      </div>
+      
+      <div class="image-card">
+        <img src="images/mentor2.jpeg">
+        <div class="image-overlay">
+        </div>
+      </div>
+      
+      <div class="image-card">
+        <img src="images/mentor3.jpeg">
+        <div class="image-overlay">
+        </div>
+      </div>
+    </div>
+    
+    <p class="training-description">Beyond technical knowledge, our programs foster soft skills, team-building exercises, leadership modules, and entrepreneurial thinking to prepare youth for holistic development in the competitive world.</p>
+  </div>
+</section>
+
+<section class="highlight-section">
+  <div class="container">
+    <div class="section-header">
+      <h2>Empowering Through Education</h2>
+    </div>
+    
+    <div class="highlight-container">
+      <div class="highlight-box">
+        <h3><i class="fas fa-pencil-alt"></i> Building Foundations</h3>
+        <p>Education is the most powerful tool for a bright future, and the foundation is supporting underprivileged children through:</p>
+        <ul>
+          <li>Educational aid and scholarships</li>
+          <li>Digital learning programs</li>
+          <li>Personalized mentoring</li>
+          <li>Infrastructure development</li>
+        </ul>
+      </div>
+      
+      <div class="highlight-box">
+        <h3><i class="fas fa-seedling"></i> Rural Education Culture</h3>
+        <p>Fostering a learning culture in rural and remote areas:</p>
+        <ul>
+          <li>Distribution of school supplies</li>
+          <li>Career guidance programs</li>
+          <li>Skill development training</li>
+          <li>Parental awareness workshops</li>
+        </ul>
+      </div>
+      
+      <div class="highlight-box">
+        <h3><i class="fas fa-female"></i> Girls' Education</h3>
+        <p>Encouraging girls' education through dedicated initiatives:</p>
+        <ul>
+          <li>Scholarships for female students</li>
+          <li>Safe learning environments</li>
+          <li>STEM education programs</li>
+          <li>Reinforcing the mission of "Beti Bachao, Beti Padhao"</li>
+        </ul>
+      </div>
+    </div>
+    
+    <p>
+      These combined efforts form the heart of our mission — creating a future where every child, regardless of gender or background, has the opportunity to learn, grow, and shine. Through compassionate guidance, innovative programs, and shared hope, we strive for a world where education empowers dreams.
+    </p>
+  </div>
+</section>
+
+<div id="footer-placeholder"></div>
+<script>
+  fetch("footer.html")
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById("footer-placeholder").innerHTML = data;
     });
-  });
 </script>
+<script src="JS/loadheader.js"></script>
 
 </body>
 </html>

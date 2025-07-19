@@ -10,32 +10,22 @@
 </head>
 <body>
 
-  <!-- Header -->
-  <header>
-  <img src="Images/rjgf.jpg" alt="RJGF Logo" class="logo">
- <nav>
-      <a href="rjhomepg.html">Home</a>
-      <a href="aboutusrjgf.html">About Us</a>
-      <a href="team.html">Team</a>
-      <a href="media.html">Media & Recognition</a>
-      <div class="dropdown">
-      <a href="#">Our Work</a>
-      <div class="dropdown-content">
-        <a href="education_index.html">Education</a>
-        <a href="healthcare_index.html">Health</a>
-        <a href="enviornment_index.html">Environment</a>
-      </div>
-    </div>
-      <a href="#">Gallery</a>
-      <a href="contact.html">Contact Us</a>
-    </nav>
-</header>
+ <div id="header"></div>
+
+<script>
+  fetch("header.html")
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById("header").innerHTML = data;
+    });
+</script>
+
 
   <!-- Hero Section -->
   <section class="hero">
     <div class="inspiration-title">Our Inspiration</div>
     <div class="hero-image">
-      <img src="Images/ORIGINALPICRJ1.png" alt="Mr. Ravindra Jadhav">
+      <img src="Images/ORIGINALPICRJ1.png" alt="Mr. Raveendra Jadhav">
     </div>
     <div class="hero-text">
       <h2>Tribute to Late Mr. Raveendra Jadhav</h2>
@@ -90,29 +80,14 @@
     </div>
   </section>
 
-  <!-- Footer -->
-   <script>
-let lastScrollY = window.scrollY;
-const header = document.querySelector('header');
-
-window.addEventListener('scroll', () => {
- // Shadow effect
- if (window.scrollY > 10) {
-     header.classList.add('scrolled');
- } else {
-    header.classList.remove('scrolled');
- }
- // Hide on scroll down, show on scroll up
- if (window.scrollY > lastScrollY && window.scrollY > 80) {
-   header.classList.add('hide-header');
- } else {
-   header.classList.remove('hide-header');
- }
- lastScrollY = window.scrollY;
-});
+<div id="footer-placeholder"></div>
+<script>
+  fetch("footer.html")
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById("footer-placeholder").innerHTML = data;
+    });
 </script>
-  <footer class="footer">
-    &copy; 2025 Ravindra Jadhav Global Foundation. All rights reserved.
-  </footer>
+  <script src="JS/loadheader.js"></script>
 </body>
 </html>

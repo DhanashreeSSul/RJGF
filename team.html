@@ -6,53 +6,21 @@
   <title>Our Team | Raveendra Jadhav Global Foundation</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="icon" type="image/png" href="Images/rjgf.jpg">
-  <style>
-    :root {
-      --green-main: #7fb77e;
-      --green-accent: #4a7c3b;
-      --green-light: #d6e8d6;
-      --green-mint: #a8d8d8;
-      --green-shadow: rgba(74, 124, 59, 0.08);
-      --green-card: #e8f0e8;
-      --green-dark: #114d1a;
-      --text-dark: #2e3a2e;
-      --partner-bg: linear-gradient(135deg, #d6e8d6, #a8d8d8);
-    }
-  </style>
+ 
   <link rel="stylesheet" href="CSS/team.css">
 </head>
 <body>
-  <!-- Header -->
-  <header>
-    <img src="Images/rjgf.jpg" alt="RJGF Logo" class="logo">
-    <nav>
-      <a href="rjhomepg.html">Home</a>
-      <a href="aboutusrjgf.html">About Us</a>
-      <a href="team.html" class="active">Team</a>
-      <a href="media.html">Media & Recognition</a>
-      <div class="dropdown">
-        <a href="#">Our Work</a>
-        <div class="dropdown-content">
-          <a href="education_index.html">Education</a>
-          <a href="healthcare_index.html">Health</a>
-          <a href="enviornment_index.html">Environment</a>
-        </div>
-      </div>
-      <a href="#">Gallery</a>
-      <a href="contact.html">Contact Us</a>
-    </nav>
-  </header>
-
+ <div id="header"></div>
   <!-- Team Section -->
   <main class="team-page">
-    <!-- Hero Section -->
-    <section class="team-hero">
-      <div class="hero-content">
-        <h1>Meet Our Team</h1>
-        <p>The passionate individuals driving our mission forward</p>
-        <div class="hero-pattern"></div>
-      </div>
-    </section>
+   <section class="team-hero" id="teamHero">
+  <div class="hero-content">
+    <h1>Meet Our Team</h1>
+    <p>The passionate individuals driving our mission forward</p>
+    <div class="hero-pattern"></div>
+  </div>
+</section>
+
 
     <!-- Board of Advisors -->
     <section class="team-section">
@@ -63,6 +31,18 @@
       </div>
 
       <div class="team-grid">
+        <!-- Uttamsinh Pawar -->
+        <div class="team-card">
+          <div class="card-header advisor">
+            <img src="Images/Uttam Singh Pawar.png" alt="Uttamsinh Pawar">
+          </div>
+          <div class="card-body">
+            <h3>Uttamsinh Pawar</h3>
+            <p class="role">Ex. MP Aurangabad</p>
+           
+          </div>
+        </div>
+
         <!-- Rajendra Gill -->
         <div class="team-card">
           <div class="card-header advisor">
@@ -71,27 +51,31 @@
           <div class="card-body">
             <h3>Rajendra Gill</h3>
             <p class="role">Worldwide Partner</p>
-            <div class="contact-info">
-              <a href="mailto:rajendra@example.com" class="email-btn">
-                <i class="fas fa-envelope"></i> Email
-              </a>
-            </div>
+           
           </div>
         </div>
 
-        <!-- Suhas Gokhale -->
+        <!-- Tikamchand Bhal -->
         <div class="team-card">
           <div class="card-header advisor">
-            <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Suhas Gokhale">
+            <img src="Images/T. S. Bhal.png" alt="Tikamchand Bhal">
           </div>
           <div class="card-body">
-            <h3>Suhas Gokhale</h3>
-            <p class="role">Partner</p>
-            <div class="contact-info">
-              <a href="mailto:suhas@example.com" class="email-btn">
-                <i class="fas fa-envelope"></i> Email
-              </a>
-            </div>
+            <h3>Tikamchand Bhal</h3>
+            <p class="role">Retired IPS</p>
+            
+          </div>
+        </div>
+        
+        <!-- Purushottam Bhapkar -->
+        <div class="team-card">
+          <div class="card-header advisor">
+            <img src="Images/Purushottam Bhapkar.png" alt="Dr. Purushottam Bhapkar">
+          </div>
+          <div class="card-body">
+            <h3>Dr. Purushottam Bhapkar</h3>
+            <p class="role">Retired IAS</p>
+           
           </div>
         </div>
 
@@ -103,11 +87,7 @@
           <div class="card-body">
             <h3>Umakant Dangat</h3>
             <p class="role">Retired IAS</p>
-            <div class="contact-info">
-              <a href="mailto:umakant@example.com" class="email-btn">
-                <i class="fas fa-envelope"></i> Email
-              </a>
-            </div>
+            
           </div>
         </div>
 
@@ -119,64 +99,25 @@
           <div class="card-body">
             <h3>Arun Dongare</h3>
             <p class="role">Retired IAS</p>
-            <div class="contact-info">
-              <a href="mailto:arun@example.com" class="email-btn">
-                <i class="fas fa-envelope"></i> Email
-              </a>
-            </div>
+           
           </div>
         </div>
 
-        <!-- Tikamchand Bhal -->
+        <!-- Suhas Gokhale -->
         <div class="team-card">
           <div class="card-header advisor">
-            <img src="Images/T. S. Bhal.png" alt="Tikamchand Bhal">
+            <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Suhas Gokhale">
           </div>
           <div class="card-body">
-            <h3>Tikamchand Bhal</h3>
-            <p class="role">Retired IAS</p>
-            <div class="contact-info">
-              <a href="mailto:tikamchand@example.com" class="email-btn">
-                <i class="fas fa-envelope"></i> Email
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Purushottam Bhapkar -->
-        <div class="team-card">
-          <div class="card-header advisor">
-            <img src="Images/Purushottam Bhapkar.png" alt="Dr. Purushottam Bhapkar">
-          </div>
-          <div class="card-body">
-            <h3>Dr. Purushottam Bhapkar</h3>
-            <p class="role">Retired IAS</p>
-            <div class="contact-info">
-              <a href="mailto:purushottam@example.com" class="email-btn">
-                <i class="fas fa-envelope"></i> Email
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Uttamsinh Pawar -->
-        <div class="team-card">
-          <div class="card-header advisor">
-            <img src="Images/Uttam Singh Pawar.png" alt="Uttamsinh Pawar">
-          </div>
-          <div class="card-body">
-            <h3>Uttamsinh Pawar</h3>
-            <p class="role">Ex. MP Aurangabad</p>
-            <div class="contact-info">
-              <a href="mailto:uttamsinh@example.com" class="email-btn">
-                <i class="fas fa-envelope"></i> Email
-              </a>
-            </div>
+            <h3>Suhas Gokhale</h3>
+            <p class="role">Partner</p>
+            
           </div>
         </div>
       </div>
     </section>
 
+  
     <!-- Board of Directors -->
     <section class="team-section">
       <div class="section-header">
@@ -194,11 +135,7 @@
           <div class="card-body">
             <h3>Shital Jadhav</h3>
             <p class="role">Associate Partner</p>
-            <div class="contact-info">
-              <a href="mailto:shital@example.com" class="email-btn">
-                <i class="fas fa-envelope"></i> Email
-              </a>
-            </div>
+            
           </div>
         </div>
 
@@ -210,11 +147,7 @@
           <div class="card-body">
             <h3>Virendra Borade</h3>
             <p class="role">Creative Leader</p>
-            <div class="contact-info">
-              <a href="mailto:virendra@example.com" class="email-btn">
-                <i class="fas fa-envelope"></i> Email
-              </a>
-            </div>
+            
           </div>
         </div>
       </div>
@@ -232,16 +165,13 @@
         <!-- Sucheta Jadhav -->
         <div class="team-card">
           <div class="card-header secretary">
-            <img src="https://randomuser.me/api/portraits/women/50.jpg" alt="Sucheta Jadhav">
+            <img src="Images/Sucheta Thoke.png" alt="Sucheta Jadhav">
           </div>
           <div class="card-body">
             <h3>Sucheta Jadhav</h3>
             <p class="role">Secretary</p>
-            <div class="contact-info">
-              <a href="mailto:sucheta@example.com" class="email-btn">
-                <i class="fas fa-envelope"></i> Email
-              </a>
-            </div>
+            
+             
           </div>
         </div>
       </div>
@@ -255,22 +185,6 @@
         <p>Overseeing our foundation's daily operations</p>
       </div>
 
-      <div class="team-grid">
-        <!-- Vikramsinh Rajebhosale -->
-        <div class="team-card">
-          <div class="card-header executive">
-            <img src="Images/Vikramsingh Rajebhosale.png" alt="Vikramsinh Rajebhosale">
-          </div>
-          <div class="card-body">
-            <h3>Vikramsinh Rajebhosale</h3>
-            <p class="role">Secretary</p>
-            <div class="contact-info">
-              <a href="mailto:vikramsinh@example.com" class="email-btn">
-                <i class="fas fa-envelope"></i> Email
-              </a>
-            </div>
-          </div>
-        </div>
 
         <!-- Shubhangi Rajebhosale -->
         <div class="team-card">
@@ -280,11 +194,7 @@
           <div class="card-body">
             <h3>Shubhangi Rajebhosale</h3>
             <p class="role">Secretary</p>
-            <div class="contact-info">
-              <a href="mailto:shubhangi@example.com" class="email-btn">
-                <i class="fas fa-envelope"></i> Email
-              </a>
-            </div>
+           
           </div>
         </div>
       </div>
@@ -307,58 +217,43 @@
           <div class="card-body">
             <h3>Smt. Pratibha Jadhav</h3>
             <p class="role">Territory Manager</p>
-            <div class="contact-info">
-              <a href="mailto:pratibha@example.com" class="email-btn">
-                <i class="fas fa-envelope"></i> Email
-              </a>
-            </div>
+            
           </div>
         </div>
       </div>
     </section>
   </main>
+<div id="footer-placeholder"></div>
 
-  <!-- Footer -->
-  <footer class="site-footer">
-    <div class="footer-container">
-      <div class="footer-logo">
-        <img src="Images/rjgf.jpg" alt="RJGF Logo">
-        <p>Inspired by the legacy of Late Shri Raveendra Jadhav, we are dedicated to uplifting communities through compassion, integrity, and sustainable action.</p>
-      </div>
-      <div class="footer-links">
-        <div class="links-column">
-          <h4>Quick Links</h4>
-          <ul>
-            <li><a href="rjhomepg.html">Home</a></li>
-            <li><a href="aboutusrjgf.html">About Us</a></li>
-            <li><a href="team.html">Our Team</a></li>
-            <li><a href="media.html">Media & Recognition</a></li>
-            <li><a href="contact.html">Contact Us</a></li>
-          </ul>
-        </div>
-        <div class="links-column">
-          <h4>Our Work</h4>
-          <ul>
-            <li><a href="education_index.html">Education</a></li>
-            <li><a href="healthcare_index.html">Healthcare</a></li>
-            <li><a href="enviornment_index.html">Environment</a></li>
-            <li><a href="#">Gallery</a></li>
-          </ul>
-        </div>
-        <div class="links-column">
-          <h4>Contact Info</h4>
-          <ul class="contact-info">
-            <li><i class="fas fa-map-marker-alt"></i> 123 Foundation St, City, Country</li>
-            <li><i class="fas fa-phone"></i> +1 234 567 890</li>
-            <li><i class="fas fa-envelope"></i> info@rjgf.org</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <p>&copy; 2023 Raveendra Jadhav Global Foundation. All rights reserved.</p>
-    </div>
-  </footer>
-<script src="JS/team.js"></script>
+  
+<script>
+    // Dynamic header background switcher
+    document.addEventListener('DOMContentLoaded', () => {
+      const heroSection = document.getElementById('teamHero');
+      const images = [
+        'Images/0M4A8707_converted.png',
+        'Images/0M4A8948_converted.png'
+      ];
+      let index = 0;
+
+      function changeBackground() {
+        heroSection.style.backgroundImage = `url('${images[index]}')`;
+        heroSection.style.backgroundSize = 'cover';
+        heroSection.style.backgroundPosition = 'center';
+        index = (index + 1) % images.length;
+      }
+
+      changeBackground();
+      setInterval(changeBackground, 6000);
+    });
+
+    // Load footer HTML
+    fetch("footer.html")
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById("footer-placeholder").innerHTML = data;
+      });
+  </script>
+<script src="JS/loadheader.js"></script>
 </body>
 </html>

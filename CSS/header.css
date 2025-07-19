@@ -1,0 +1,332 @@
+:root {
+  --blue-main: #e6ed7f;
+  --blue-accent: #017d39df;
+  --blue-light: #94d2bd;
+  --green-main: #8aff5f;
+  --green-accent: #4a7c3b;
+  --green-light: #fdf8bcf3;
+  --blue-shadow: rgba(10, 147, 150, 0.12);
+  --blue-card: #9df5af53;
+  --blue-dark: #023047;
+  --text-dark: #1d3557;
+  --white: #ffffff;
+  --partner-bg: linear-gradient(135deg, var(--green-accent), var(--green-main));
+}
+
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: white;
+  color: var(--text-dark);
+  overflow-x: hidden;
+}
+
+/* HEADER */
+header {
+  background: linear-gradient(90deg, var(--blue-accent) 60%, var(--blue-main));
+  color: white;
+  padding: 1em 3em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 20px var(--blue-shadow);
+  border-bottom: 3px solid var(--blue-main);
+  animation: headerGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes headerGlow {
+  0% {
+    box-shadow: 0 4px 20px var(--blue-shadow), 0 0 0 var(--blue-main);
+  }
+  100% {
+    box-shadow: 0 6px 40px var(--blue-shadow), 0 0 16px var(--blue-main);
+  }
+}
+
+
+
+/* LOGO */
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.logo {
+  height: 70px;
+  width: 70px;
+  border-radius: 5%;
+  object-fit: cover;
+  box-shadow: 0 4px 14px var(--blue-light), 0 0 8px var(--blue-main);
+  transition: transform 0.4s ease;
+  animation: logoPulse 2.5s infinite alternate;
+}
+
+@keyframes logoPulse {
+  0% {
+    box-shadow: 0 4px 14px var(--blue-light), 0 0 0 var(--blue-main);
+  }
+  100% {
+    box-shadow: 0 8px 24px var(--blue-light), 0 0 16px var(--blue-main);
+  }
+}
+
+.logo:hover {
+  transform: scale(1.1) rotate(-3deg);
+}
+
+.logo-text h1 {
+  font-size: 1.2rem;
+  margin: 0;
+  font-weight: 600;
+  color: white;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.logo-text p {
+  font-size: 0.9rem;
+  margin: 0;
+  opacity: 0.9;
+}
+
+/* NAVIGATION */
+nav {
+  display: flex;
+  align-items: center;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.5em;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.1em;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  font-weight: 500;
+  transition: all 0.4s ease;
+  position: relative;
+}
+
+nav a i {
+  font-size: 0.9em;
+  transition: transform 0.3s ease;
+}
+
+nav a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--blue-light);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.5s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+nav a:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+nav a.active,
+nav a:hover {
+  color: var(--blue-light);
+}
+
+nav a.active::after {
+  transform: scaleX(1);
+}
+
+/* DROPDOWN */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-arrow {
+  transition: transform 0.3s ease;
+  font-size: 0.7em;
+  margin-left: 5px;
+}
+
+.dropdown:hover .dropdown-arrow {
+  transform: rotate(180deg);
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  opacity: 1;
+  visibility: visible;
+  background: linear-gradient(135deg, var(--blue-accent), var(--blue-main));
+  border-radius: 10px;
+  padding: 10px 0;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  min-width: 220px;
+  transform: translateY(15px);
+  z-index: 999;
+}
+
+.dropdown-content a {
+  padding: 10px 20px;
+  font-size: 0.95em;
+  display: block;
+  transition: all 0.3s ease;
+  color: white;
+  text-decoration: none;
+}
+.dropdown-content.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+.dropdown-content a:hover {
+  background: rgba(255, 255, 255, 0.1);
+  padding-left: 30px;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+  opacity: 1;
+  transform: translateY(5px);
+}
+
+/* MOBILE MENU TOGGLE */
+.mobile-menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 21px;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.mobile-menu-toggle span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background-color: white;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+}
+
+/* RESPONSIVE STYLES */
+@media (max-width: 992px) {
+  header {
+    padding: 1em 2em;
+  }
+
+  .mobile-menu-toggle {
+    display: flex;
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 280px;
+    height: 100vh;
+    background: linear-gradient(135deg, var(--blue-accent), var(--blue-main));
+    padding: 100px 30px 30px;
+    transition: right 0.4s ease;
+    z-index: 999;
+    flex-direction: column;
+    gap: 1em;
+  }
+
+  .nav-links.active {
+    right: 0;
+  }
+
+  .mobile-menu-toggle.active span:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+  }
+
+  .mobile-menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .mobile-menu-toggle.active span:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+  }
+
+  .dropdown {
+    width: 100%;
+  }
+
+  .dropdown-toggle {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .dropdown-content {
+    position: static;
+    display: none;
+    width: 100%;
+    box-shadow: none;
+    background: rgba(255, 255, 255, 0.1);
+    margin-top: 0.5em;
+    padding: 0;
+    opacity: 1;
+    transform: none;
+    border-radius: 5px;
+    overflow: hidden;
+  }
+
+  .dropdown-content a {
+    padding: 10px 15px;
+    font-size: 0.9em;
+  }
+
+  .dropdown-content a:hover {
+    padding-left: 20px;
+  }
+
+  .dropdown.active .dropdown-content {
+    display: block;
+  }
+
+  .dropdown.active .dropdown-arrow {
+    transform: rotate(180deg);
+  }
+}
+
+@media (max-width: 576px) {
+  header {
+    padding: 1em;
+  }
+
+  .logo {
+    height: 60px;
+    width: 60px;
+  }
+
+  .logo-text h1 {
+    font-size: 1rem;
+  }
+
+  .logo-text p {
+    font-size: 0.8rem;
+  }
+}
