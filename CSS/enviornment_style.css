@@ -67,7 +67,7 @@ h2:after {
 p {
   margin-bottom: 1.2rem;
   font-size: 1.1rem;
-  color: var(--text-light);
+  
 }
 
 a {
@@ -138,8 +138,6 @@ section {
   background: transparent;
 }
 
-/* ----- HEADER ----- */
-/* Header Styles */
 
 /* ----- BANNER SLIDER ----- */
 .banner-slider {
@@ -532,5 +530,3 @@ section {
   font-weight: bold;
 }
 
-/* Footer Styles */
-/* Footer */
