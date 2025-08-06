@@ -106,7 +106,7 @@ section {
 
 section h2 {
   font-size: 1.8em;
-  color: #075327;
+  color: #0db30b;
   margin-bottom: 20px;
   display: flex;
   align-items: center;
@@ -148,7 +148,7 @@ ul li {
 .cta {
   text-align: center;
   font-size: large;
-  background: #ccebd6;
+  background: #f7ff9c81;
   padding: 60px 20px;
   border-radius: 14px;
   margin: 60px auto;

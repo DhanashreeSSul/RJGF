@@ -159,3 +159,10 @@
     flex-wrap: wrap;
   }
 }
+.site-footer, 
+.site-footer * {
+  color: #fff !important;
+  fill: #fff !important;
+  stroke: #fff !important;
+  opacity: 1 !important;
+}

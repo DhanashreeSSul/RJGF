@@ -529,4 +529,6 @@ section {
   color: var(--accent);
   font-weight: bold;
 }
-
+a.btn.btn-outline {
+  color: yellow;
+}

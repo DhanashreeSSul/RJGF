@@ -178,3 +178,24 @@
         grid-template-columns: 1fr;
       }
     }
+    .team-card {
+  max-width: 240px;  /* or 220px, adjust as you prefer */
+}
+.team-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px;
+  justify-content: center;     /* Centers the grid group */
+  justify-items: center;       /* Centers each card in its cell */
+}
+
+.team-card {
+  max-width: 220px;
+  width: 100%;
+}

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Contact Us | RJ Global Foundation</title>
+  <title>RJGF/Contact Us </title>
   <meta name="description" content="Get in touch with RJ Global Foundation. We'd love to hear from you about our initiatives in education, healthcare, and environment.">
 
   <!-- Font Awesome for icons -->
@@ -53,33 +53,74 @@
               <p>We'll respond within 24 hours</p>
             </div>
             
-            <form action="https://formspree.io/f/xkgbbnbz" method="POST" id="contactForm">
-              <div class="form-group">
-                <label for="name">Your Name</label>
-                <input type="text" id="name" name="name" required>
+                      
+              <!-- EmailJS Script -->
+              <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+              <script>
+                (function () {
+                  emailjs.init("qmzBOHA-SXHysVTC0"); // Replace with your EmailJS Public Key
+                })();
+              </script>
+
+              <!-- Contact Form Section -->
+              <div class="contact-form-container" id="contact-form">
+                <div class="form-header">
+                  <h3>Send us a message</h3>
+                  <p>We'll respond within 24 hours</p>
+                </div>
+
+                <form id="contactForm">
+                  <div class="form-group">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" name="name" required />
+                  </div>
+
+                  <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" required />
+                  </div>
+
+                  <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" />
+                  </div>
+
+                  <div class="form-group">
+                    <label for="message">Your Message</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                  </div>
+
+                  <button type="submit" class="btn btn-primary btn-block">
+                    <span class="btn-text">Send Message</span>
+                  </button>
+                </form>
               </div>
-              
-              <div class="form-group">
-                <label for="email">Email Address</label>
-                <input type="email" id="email" name="_replyto" required>
-              </div>
-              
-              <div class="form-group">
-                <label for="phone">Phone Number (Optional)</label>
-                <input type="tel" id="phone" name="phone">
-              </div>
-              
-              <div class="form-group">
-                <label for="message">Your Message</label>
-                <textarea id="message" name="message" rows="5" required></textarea>
-              </div>
-              
-              <button type="submit" class="btn btn-primary btn-block">
-                <span class="btn-text">Send Message</span>
-              </button>
-            </form>
-          </div>
-          
+
+              <!-- EmailJS Submission Script -->
+              <script>
+                document.getElementById("contactForm").addEventListener("submit", function (e) {
+                  e.preventDefault();
+
+                  // Gather form data
+                  const templateParams = {
+                    name: document.getElementById("name").value,
+                    email: document.getElementById("email").value,
+                    phone: document.getElementById("phone").value,
+                    message: document.getElementById("message").value,
+                  };
+
+                  // Send email
+                  emailjs.send("service_z1d44qz", "template_pe69zga", templateParams)
+                    .then(function (response) {
+                      alert("Message sent successfully!");
+                      document.getElementById("contactForm").reset();
+                    }, function (error) {
+                      alert("Failed to send message. Please try again later.");
+                      console.error("EmailJS Error:", error);
+                    });
+                });
+              </script>
+          </div>           
           <!-- Contact Info -->
           <div class="contact-info-container" id="contact-info">
             <div class="info-header">

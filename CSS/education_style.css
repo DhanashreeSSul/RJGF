@@ -813,3 +813,6 @@
     padding: 1.5rem;
   }
 }
+a.btn.btn-outline {
+  color: yellow;
+}
