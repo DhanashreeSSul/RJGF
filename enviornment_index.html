@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Green Earth Initiative</title>
+  <title>RJGF/Environmental Mission</title>
   <link rel="stylesheet" href="CSS/enviornment_style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -51,7 +51,7 @@
       </div>
       
       <div class="content">
-        <p>Our environmental campaigns reflect the vision of “<strong>Harit Bharat, Swachh Bharat</strong>”. We conduct tree plantation drives, organize plastic-free rallies, and lead riverbank cleanups—collaborating with schools, municipal bodies, volunteers, and grassroots organizations. From schoolyards to city parks, we believe every green patch makes a difference.</p>
+        <p>Our environmental campaigns reflect the vision of “<strong>Harit Bharat, Swachh Bharat</strong>”. We conduct tree plantation drives, organize plastic-free rallies, and lead riverbank cleanups. From schoolyards to city parks, we believe every green patch makes a difference.</p>
         <p>We are committed to fostering a plastic-free lifestyle by promoting sustainable alternatives, encouraging behavioral change, and supporting local eco-friendly businesses. Our workshops and community programs empower individuals to adopt mindful consumption and responsible waste management.</p>
         <p>Beyond cleanliness and greenery, we focus on critical issues like water conservation, urban afforestation, and biodiversity protection. Whether it's rejuvenating dried ponds, protecting native species, or greening neglected spaces, our work is hands-on and driven by community participation.</p>
       </div>
@@ -67,8 +67,8 @@
       </div>
       
       <div class="content">
-        <p>We engage communities through workshops, street plays, and educational sessions focused on sustainable living, climate change, and ecological balance. Through interactive learning and creative outreach, we inspire individuals to adopt greener habits in their daily lives.</p>
-        <p>Regular campaigns promote essential practices like waste segregation, rainwater harvesting, and composting. We also celebrate key environmental days with public events, exhibitions, and creative competitions—encouraging mass participation and deepening environmental consciousness across all age groups.</p>
+        <p>We engage communities through workshops and educational sessions focused on sustainable living, climate change, and ecological balance. Through interactive learning and creative outreach, we inspire individuals to adopt greener habits in their daily lives.</p>
+        <p>Regular campaigns promote essential practices like waste segregation, rainwater harvesting, and composting. We also celebrate key environmental days with public events, exhibitions, and creative competitions encouraging mass participation and deepening environmental consciousness across all age groups.</p>
       </div>
       
       <!-- Image Slider -->
@@ -101,7 +101,7 @@
         <div class="program-card">
           <div class="program-content">
             <h3><i class="fas fa-tree"></i> Tree Plantation Drives</h3>
-            <p>Across cities and villages, our volunteers have planted over 100,000 saplings with 80% survival rate.</p>
+            <p>Across cities and villages, our volunteers have planted over 5000 saplings with 80% survival rate.</p>
           </div>
         </div>
         
@@ -131,7 +131,7 @@
       </div>
       
       <div class="content">
-        <p>Volunteers from all walks of life—youth, seniors, students, and working professionals—actively participate in cleanup drives, awareness walks, and sapling care initiatives. Their energy fuels our mission on the ground.</p>
+        <p>Volunteers from all walks of life -  youth, seniors, students, and working professionals actively participate in cleanup drives, awareness walks, and sapling care initiatives. Their energy fuels our mission on the ground.</p>
         <p>We encourage hands-on involvement by offering training in field activities such as waste management, urban greening, and eco-campaigns. Every contribution is valued, and volunteers are recognized for their time, effort, and commitment to the environment.</p>
       </div>
       
@@ -150,7 +150,7 @@
       </div>
       
       <div class="content">
-        <p>Rivers are lifelines of our environment, culture, and economy—but they are increasingly burdened by pollution, plastic waste, and untreated sewage. Our river cleaning initiatives focus on restoring the health of these water bodies through organized cleanup drives, awareness campaigns, and consistent community involvement.</p>
+        <p>Rivers are lifelines of our environment, culture, and economy but they are increasingly burdened by pollution, plastic waste, and untreated sewage. Our river cleaning initiatives focus on restoring the health of these water bodies through organized cleanup drives, awareness campaigns, and consistent community involvement.</p>
         <p>Volunteers come together to remove plastic, non-biodegradable waste, and urban litter from riverbanks and nearby areas. These cleanups not only improve water quality and revive aquatic habitats, but also prevent further contamination of connected ecosystems.</p>
       </div>
     </div>
@@ -165,8 +165,8 @@
       </div>
       
       <div class="content">
-        <p>We believe that environmental awareness is a right, not a privilege—and it must begin early. Our mission is to embed eco-consciousness into everyday learning, nurturing a generation that grows up with a deep respect for nature and a strong sense of environmental responsibility.</p>
-        <p>We promote environment-centric education in schools by introducing nature-focused curriculum, hands-on activities, and interactive storytelling sessions that spark curiosity in young minds.</p>
+        <p>We believe that environmental awareness is a right, not a privilege and it must begin early. Our mission is to embed eco-consciousness into everyday learning, nurturing a generation that grows up with a deep respect for nature and a strong sense of environmental responsibility.</p>
+       
       </div>
       
       <!-- Image Slider -->
@@ -225,6 +225,36 @@
       document.getElementById("footer-placeholder").innerHTML = data;
     });
 </script>
+<script>
+  let currentSlide = 0;
+  const slides = document.querySelectorAll(".banner-slider .slide");
+  const indicators = document.querySelectorAll(".slider-indicators .indicator");
+
+  function showSlide(index) {
+    slides.forEach((slide, i) => {
+      slide.classList.toggle("active", i === index);
+    });
+    indicators.forEach((indicator, i) => {
+      indicator.classList.toggle("active", i === index);
+    });
+    currentSlide = index;
+  }
+
+  function nextSlide() {
+    let nextIndex = (currentSlide + 1) % slides.length;
+    showSlide(nextIndex);
+  }
+
+  setInterval(nextSlide, 5000); // Change slide every 5 seconds
+
+  indicators.forEach(indicator => {
+    indicator.addEventListener("click", () => {
+      const index = parseInt(indicator.getAttribute("data-slide"));
+      showSlide(index);
+    });
+  });
+</script>
+
 <script src="JS/loadheader.js"></script>
 </body>
 </html>

@@ -3,30 +3,50 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Education | NGO Empowerment</title>
+  <title>RJGF/Education Mission</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="CSS/education_style.css">
+  <style>
+    /* ----- VARIABLES ----- */
+    :root {
+      --primary: #2E7D32;  /* Deep green */
+      --primary-dark: #1B5E20; /* Darker green */
+      --primary-light: #4CAF50; /* Lighter green */
+      --accent: #FFD600; /* Bright yellow */
+      --accent-light: #FFECB3; /* Light yellow */
+      --light: #f8f8f5;
+      --light-alt: #f0f5f0;
+      --text: #333333;
+      --text-light: #5a6d5a;
+      --shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+      --transition: all 0.3s ease;
+      --border-radius: 10px;
+    }
+
+    
+  </style>
 </head>
 <body>
 <!-- Somewhere in <body> where you want the header -->
 <div id="header"></div>
 
 <div class="banner-slider">
-  <div class="slide active" style="background-image: url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');">
+  <div class="slide active" style="background-image: url('Images/edu4.jpg');">
     <div class="slide-content">
       <h1>Empowering Children Through Education</h1>
       <p>Together, we build futures through learning and mentorship</p>
       
     </div>
   </div>
-  <div class="slide" style="background-image: url('images/education1.jpeg');">
+  <div class="slide" style="background-image: url('Images/edu2.jpg');">
     <div class="slide-content">
       <h1>Education is not just a right</h1>
       <p>It’s the first step toward dignity, opportunity, and freedom</p>
       
     </div>
   </div>
-  <div class="slide" style="background-image: url('images/education2.jpeg');">
+  <div class="slide" style="background-image: url('Images/edu3.jpg');">
+
     <div class="slide-content">
       <h1>Learning Today, Leading Tomorrow</h1>
       <p>Equipping young minds with tools for lifelong success</p>
@@ -49,7 +69,7 @@
     </div>
     
     <div class="content">
-      <p>Children who receive quality education are more likely to become responsible citizens and contribute meaningfully to their communities. In rural India, where educational infrastructure may be limited, our NGO acts as a bridge, bringing resources and hope to those most in need.</p>
+      <p>Children who receive quality education are more likely to become responsible citizens and contribute meaningfully to their communities. In rural India, where educational infrastructure may be limited, our Foundation acts as a bridge, bringing resources and hope to those most in need.</p>
       <p>Education fosters creativity, critical thinking, and the skills necessary for meaningful participation in society. It not only helps children imagine a better world, but equips them to create it. For families in underserved communities, education becomes the ladder that elevates them from generations of hardship into hope and opportunity.</p>
       <p>Over 35 million children in India aged 6–14 years do not attend school. We are changing this narrative by working in the most neglected areas to build strong educational foundations. Every school built, every child taught, is a step closer to eradicating illiteracy.</p>
       <p>Our approach goes beyond classrooms. We instill values, self-respect, and confidence in every student we reach. Because when a child believes in themselves, their potential becomes limitless.</p>
@@ -146,28 +166,14 @@
     </div>
 
     <!-- Image Slider -->
-    <div class="slider-container">
-      <div class="slider-track">
-      <img src="images/edu8.jpg" alt="10">
-      <img src="images/edu2.jpg" alt="2">
-      <img src="images/edu3.jpg" alt="3">
-      <img src="images/edu9.jpg" alt="5">
-      <img src="images/edu5.jpg" alt="8">
-      <img src="images/edu6.jpeg" alt="6">
-      <img src="images/edu7.jpeg" alt="9">
-      <img src="images/edu10.jpg" alt="7">
-      <img src="images/edu1.jpg" alt="1">
-      <img src="images/edu4.jpg" alt="4">
-      </div>
-    </div>
-  </div>
+  
 </section>
 
 <section class="training-section">
   <div class="container">
     <div class="section-header">
       <h2>Training Camps</h2>
-      <p>We organize regular workshops and training camps to empower children and young adults with practical skills and knowledge.</p>
+      <p>We organize workshops and training camps to empower children and young adults with practical skills and knowledge.</p>
     </div>
     
     <div class="image-grid">
@@ -236,7 +242,7 @@
     </div>
     
     <p>
-      These combined efforts form the heart of our mission — creating a future where every child, regardless of gender or background, has the opportunity to learn, grow, and shine. Through compassionate guidance, innovative programs, and shared hope, we strive for a world where education empowers dreams.
+      These combined efforts form the heart of our mission creating a future where every child, regardless of gender or background, has the opportunity to learn, grow, and shine. Through compassionate guidance, innovative programs, and shared hope, we strive for a world where education empowers dreams.
     </p>
   </div>
 </section>
@@ -248,6 +254,36 @@
     .then(data => {
       document.getElementById("footer-placeholder").innerHTML = data;
     });
+   
+  let currentSlide = 0;
+  const slides = document.querySelectorAll(".slide");
+  const indicators = document.querySelectorAll(".indicator");
+
+  function showSlide(index) {
+    slides.forEach((slide, i) => {
+      slide.classList.toggle("active", i === index);
+      indicators[i].classList.toggle("active", i === index);
+    });
+    currentSlide = index;
+  }
+
+  function nextSlide() {
+    const nextIndex = (currentSlide + 1) % slides.length;
+    showSlide(nextIndex);
+  }
+
+  // Change slide every 5 seconds
+  setInterval(nextSlide, 5000);
+
+  // Optional: indicator click functionality
+  indicators.forEach(indicator => {
+    indicator.addEventListener("click", () => {
+      const index = parseInt(indicator.getAttribute("data-slide"));
+      showSlide(index);
+    });
+  });
+</script>
+
 </script>
 <script src="JS/loadheader.js"></script>
 
