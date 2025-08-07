@@ -1,0 +1,759 @@
+:root {
+  --blue-main: #e6ed7f;          /* deep teal-blue */
+  --blue-accent: #017d39df;        /* bright teal */
+  --blue-light: #94d2bd;         /* light teal */
+  --green-main: #8aff5f;         /* original green main */
+  --green-accent: #4a7c3b;       /* original green accent */
+  --green-light: #fdf8bcf3;        /* original green light */
+  --blue-shadow: rgba(10, 147, 150, 0.12);
+  --blue-card:  #9df5af53;
+  --blue-dark: #023047;
+  --text-dark: #1d3557;
+  --white: #ffffff;
+  --partner-bg: linear-gradient(135deg, var(--green-accent), var(--green-main));
+}
+
+/* RESET & BASE */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: white;
+  color: var(--text-dark);
+  line-height: 1.6;
+}
+
+/* Header Styles */
+
+/* HERO SECTION */
+.hero-section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background: var(--white);
+  /* Removed bgWaves animation as it can be GPU intensive */
+}
+
+.background-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.hero-overlay {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-box {
+  border: 2px solid white;
+  padding: 10px 60px;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.2);
+  /* Removed backdrop-filter for performance */
+  animation: zoomIn 1s cubic-bezier(.5,1.5,.5,1) forwards;
+}
+
+.hero-box h1 {
+  color: white;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  font-weight: bold;
+  text-shadow: 0 2px 16px var(--blue-accent);
+}
+
+/* DONATE BUTTON */
+.donate-btn {
+  background: linear-gradient(90deg, var(--blue-main), var(--blue-accent));
+  color: white;
+  border: none;
+  padding: 12px 32px;
+  border-radius: 24px;
+  font-size: 15px;
+  cursor: pointer;
+  font-weight: bold;
+  box-shadow: 0 2px 8px var(--blue-shadow);
+  transition: background 0.3s, transform 0.2s;
+  animation: pulseBtn 2.5s infinite alternate;
+}
+
+@keyframes pulseBtn {
+  0% { box-shadow: 0 2px 8px var(--blue-shadow); }
+  100% { box-shadow: 0 2px 24px var(--blue-shadow); }
+}
+
+.donate-btn:hover {
+  background: linear-gradient(90deg, var(--blue-accent), var(--blue-light));
+  color: var(--blue-dark);
+  transform: scale(1.05);
+}
+
+/* BELOW HERO */
+.below-hero {
+  padding: 60px 20px;
+  background: var(--white);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  min-height: 340px;
+  z-index: 1;
+  /* Removed gradientMove animation for performance */
+}
+
+/* Removed floatBlob animations and their pseudo-elements for performance */
+.below-hero h2,
+.below-hero p,
+.below-hero .below-hero-btn {
+  position: relative;
+  z-index: 1;
+  opacity: 0;
+  animation: popIn 1s cubic-bezier(.5,1.5,.5,1) forwards;
+}
+.below-hero h2 { animation-delay: 0.2s; }
+.below-hero p { animation-delay: 0.6s; }
+.below-hero .below-hero-btn { animation-delay: 1s; }
+
+@keyframes popIn {
+  0% {
+    opacity: 0;
+    transform: translateY(40px) scale(0.92);
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(-8px) scale(1.04);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* OUR PROGRAM SECTION - FURTHER OPTIMIZED */
+
+.program-section {
+  text-align: center;
+  padding: 40px 0;
+  background: linear-gradient(180deg, var(--green-light) 0%, var(--white) 100%);
+}
+
+.program-section h2 {
+  color: var(--blue-dark);
+  font-size: 2.2em;
+  margin-bottom: 20px;
+  font-family: 'Georgia', serif;
+}
+
+.program-cards {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.program-card {
+  background: var(--white);
+  width: 270px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+  border-radius: 120px 120px 30px 30px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  will-change: transform, box-shadow;
+}
+
+/* Re-imagined the ::before to be a background element that scales/fades */
+.program-card::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  border-radius: inherit;
+  background: linear-gradient(135deg, var(--blue-accent), var(--blue-main));
+  z-index: -1;
+  opacity: 0;
+  transform: scale(0.98);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  will-change: opacity, transform;
+}
+
+.program-card:hover::before {
+  opacity: 1;
+  transform: scale(1.01);
+}
+
+.program-image {
+  width: 100%;
+  height: 340px;
+  object-fit: cover;
+  border-radius: 120px 120px 0 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  z-index: 1;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  will-change: transform, box-shadow;
+}
+
+.program-card:hover .program-image {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(10,147,150,0.4);
+}
+
+.program-title {
+  color: var(--blue-dark);
+  font-weight: bold;
+  margin-top: 18px;
+  margin-bottom: 5px;
+  font-size: 1.1em;
+  transition: color 0.3s, transform 0.3s;
+  will-change: color, transform;
+}
+
+.program-desc {
+  color: var(--blue-dark);
+  font-size: 1em;
+  margin: 0;
+  transition: color 0.3s, transform 0.3s;
+  will-change: color, transform;
+}
+
+.program-card:hover .program-title,
+.program-card:hover .program-desc {
+  color: white;
+  transform: scale(1.02);
+}
+
+@media (max-width: 900px) {
+  .program-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* SLIDER - FURTHER OPTIMIZED */
+.slider-container {
+  background: var(--white);
+  padding: 2.5em 0;
+  overflow: hidden;
+  position: relative;
+  z-index: 2;
+  /* Removed sliderGradientMove animation */
+}
+
+/* Slider Track */
+.slider-track {
+  display: flex;
+  gap: 2em;
+  width: max-content;
+  align-items: center;
+  animation: sliderInfiniteScroll 28s linear infinite;
+  will-change: transform;
+}
+
+@keyframes sliderInfiniteScroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* Slider Images */
+.slider-track img {
+  width: 400px;
+  height: 260px;
+  object-fit: cover;
+  border-radius: 22px;
+  box-shadow: 0 8px 32px 0 rgba(10,147,150,0.08), 0 1.5px 10px 0 rgba(13,110,134,0.10);
+  background: rgba(255,255,255,0.10);
+  /* Removed backdrop-filter for performance */
+  border: 1.5px solid rgba(149,195,188,0.18);
+  /* Removed filter from initial state to avoid constant filter recalculations */
+  transition: transform 0.45s cubic-bezier(.5,1.5,.5,1), box-shadow 0.3s;
+  will-change: transform, box-shadow;
+}
+
+.slider-track img:hover {
+  transform: scale(1.07) rotate(-2deg);
+  /* Removed filter animation on hover for performance */
+  box-shadow: 0 12px 40px 0 rgba(10,147,150,0.18), 0 2.5px 20px 0 rgba(13,110,134,0.15);
+  z-index: 2;
+}
+
+/* Decorative floating circles */
+.slider-container::before,
+.slider-container::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  opacity: 0.10;
+  z-index: 1;
+  will-change: transform;
+}
+.slider-container::before {
+  width: 120px;
+  height: 120px;
+  left: 3%;
+  top: 18%;
+  background: var(--green-light);
+  animation: sliderFloat1 9s ease-in-out infinite;
+}
+.slider-container::after {
+  width: 170px;
+  height: 170px;
+  right: 4%;
+  bottom: 12%;
+  background: var(--green-main);
+  animation: sliderFloat2 13s ease-in-out infinite;
+}
+@keyframes sliderFloat1 {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-18px) scale(1.07); }
+}
+@keyframes sliderFloat2 {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(22px) scale(1.10); }
+}
+
+/* Responsive Images */
+@media (max-width: 900px) {
+  .slider-track img { width: 280px; height: 180px; }
+  .slider-container::before { width: 70px; height: 70px; }
+  .slider-container::after { width: 100px; height: 100px; }
+}
+@media (max-width: 600px) {
+  .slider-track img { width: 170px; height: 110px; }
+}
+
+/* CARD SECTION */
+.card-section {
+  display: flex;
+  gap: 48px;
+  justify-content: center;
+  margin: 60px 0;
+  flex-wrap: wrap;
+  background: var(--white);
+  padding: 48px 20px;
+  border-radius: 28px;
+  box-shadow: 0 8px 32px rgba(32, 120, 74, 0.08);
+}
+
+.custom-card {
+  background: var(--blue-card);
+  border-radius: 36px;
+  box-shadow: 0 10px 36px rgba(10,147,150,0.18);
+  width: 480px;
+  padding: 36px 30px 32px 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.4s cubic-bezier(.5,1.5,.5,1), box-shadow 0.4s cubic-bezier(.5,1.5,.5,1);
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(40px) scale(0.96);
+  animation: cardEntrance 1.1s cubic-bezier(.5,1.5,.5,1) forwards;
+  will-change: transform, opacity;
+}
+
+.custom-card:nth-child(2) {
+  animation-delay: 0.25s;
+}
+
+.custom-card:nth-child(3) {
+  animation-delay: 0.5s;
+}
+
+@keyframes cardEntrance {
+  0%   { opacity: 0; transform: translateY(40px) scale(0.96);}
+  70%  { opacity: 1; transform: translateY(-8px) scale(1.04);}
+  100% { opacity: 1; transform: translateY(0) scale(1);}
+}
+
+.custom-card:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 20px 54px rgba(10,147,150,0.24);
+}
+
+/* Ribbon */
+
+
+.card-header {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 22px;
+}
+
+.card-icon {
+  width: 68px;
+  height: 68px;
+  border-radius: 16px;
+  margin-right: 20px;
+  box-shadow: 0 4px 14px var(--blue-light);
+  background: var(--blue-light);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  object-fit: cover;
+}
+
+.card-title {
+  color: var(--blue-dark);
+  font-size: 1.25em;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  line-height: 1.22;
+  margin: 0;
+  letter-spacing: 0.5px;
+}
+
+.card-image {
+  width: 97%;
+  margin-top: 32px;
+  border-radius: 22px;
+  box-shadow: 0 8px 26px rgba(0, 0, 0, 0.09);
+  transition: transform 0.4s;
+  will-change: transform;
+}
+
+.custom-card:hover .card-image {
+  transform: scale(1.04);
+}
+
+@media (max-width: 1000px) {
+  .custom-card {
+    width: 95vw;
+    min-width: 0;
+    max-width: 98vw;
+    padding: 22px 8vw 18px 8vw;
+  }
+  .card-section {
+    gap: 24px;
+    padding: 24px 0;
+  }
+}
+
+/* PARTNERS SECTION */
+.partners-section {
+  background: var(--green-light);
+  padding: 2rem 0;
+  box-shadow: 0 2px 10px rgba(74, 124, 59, 0.12);
+  overflow: hidden;
+  position: relative;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.section-header h2 {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+  color: var(--green-accent);
+}
+
+.carousel-container {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Seamless infinite scroll for partners */
+.carousel-track {
+  display: flex;
+  gap: 2.5em;
+  animation: partnersScroll 28s linear infinite;
+  align-items: center;
+  width: max-content;
+  will-change: transform;
+}
+
+@keyframes partnersScroll {
+  0% { transform: translateX(0);}
+  100% { transform: translateX(-50%);}
+}
+
+/* Partner logos */
+.partner-logo {
+  max-width: 140px;
+  height: 80px;
+  object-fit: contain;
+  margin: 0 1.5rem;
+  filter: none;
+  opacity: 1;
+  transform: scale(1);
+  transition: transform 0.3s, filter 0.3s;
+  will-change: transform, filter;
+}
+
+.partner-logo:hover {
+  transform: scale(1.13) rotate(-3deg);
+  
+}
+
+.carousel-container::before,
+.carousel-container::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100px;
+  z-index: 1;
+  pointer-events: none;
+}
+
+
+@media (max-width: 768px) {
+  .partner-logo {
+    max-width: 120px;
+    height: 70px;
+    margin: 0 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .partner-logo {
+    max-width: 100px;
+    height: 60px;
+    margin: 0 0.8rem;
+  }
+  .carousel-container::before,
+  .carousel-container::after {
+    width: 50px;
+  }
+}
+
+/* ANIMATION */
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-in {
+  opacity: 0;
+  animation: zoomIn 0.7s cubic-bezier(.5,1.5,.5,1) forwards;
+}
+
+
+
+/* Get Involved Section */
+.involvement-section {
+  padding: 80px 20px;
+  background: white;
+}
+
+.involvement-options {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.involvement-card {
+  flex: 1;
+  min-width: 300px;
+  padding: 40px 30px;
+  border-radius: 15px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  will-change: transform, box-shadow;
+}
+
+.involvement-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255,255,255,0.9);
+  z-index: -1;
+}
+
+.involvement-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  transition: height 0.3s ease;
+  z-index: -1;
+  will-change: height;
+}
+
+.involvement-card.volunteer::after {
+  background: #4caf50;
+}
+
+.involvement-card.donate::after {
+  background: #2196f3;
+}
+
+.involvement-card.partner::after {
+  background: #ff9800;
+}
+
+.involvement-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+}
+
+.involvement-card:hover::after {
+  height: 100%;
+}
+
+.card-icon {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 25px;
+  font-size: 2rem;
+  transition: background 0.3s ease, transform 0.3s ease;
+  will-change: background, transform;
+}
+
+.involvement-card.volunteer .card-icon {
+  background: rgba(76,175,80,0.1);
+  color: #4caf50;
+}
+
+.involvement-card.donate .card-icon {
+  background: rgba(33,150,243,0.1);
+  color: #2196f3;
+}
+
+.involvement-card.partner .card-icon {
+  background: rgba(255,152,0,0.1);
+  color: #ff9800;
+}
+
+.involvement-card:hover .card-icon {
+  background: white;
+  transform: scale(1.1);
+}
+
+.involvement-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.involvement-card p {
+  color: black;
+  margin-bottom: 25px;
+  font-size: 1rem;
+}
+
+.card-cta {
+  display: inline-block;
+  padding: 10px 25px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.3s ease, color 0.3s ease;
+  will-change: background, color;
+}
+
+.involvement-card.volunteer .card-cta {
+  background: #4caf50;
+  color: white;
+}
+
+.involvement-card.donate .card-cta {
+  background: #2196f3;
+  color: white;
+}
+
+.involvement-card.partner .card-cta {
+  background: #ff9800;
+  color: white;
+}
+
+.involvement-card:hover .card-cta {
+  background: white;
+}
+
+.involvement-card.volunteer:hover .card-cta {
+  color: #4caf50;
+}
+
+.involvement-card.donate:hover .card-cta {
+  color: #2196f3;
+}
+
+.involvement-card.partner:hover .card-cta {
+  color: #ff9800;
+}
+.card-icon {
+      display: flex; /* Keep display flex if you need it for its children */
+      margin-left: auto;
+      margin-right: auto;
+      /* Remove or adjust other margin properties as needed */
+    }
+    
+.card-icon {
+  margin-right: 10px; /* Adjust value as needed */
+  vertical-align: middle; /* Keeps it aligned nicely with the text */
+}
+.involvement-card.volunteer {
+      display: flex;
+      flex-direction: column; /* Assuming you want the children stacked vertically */
+      align-items: center; /* This will center flex items along the cross axis (horizontally in a column layout) */
+    }
+
+    .card-icon {
+      /* Remove explicit margins */
+      margin-left: initial;
+      margin-right: initial;
+    }
+    .card-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 40px; /* Adjust icon size */
+  width: 80px;      /* Adjust width if needed */
+  height: 80px;     /* Adjust height if needed */
+  margin: 0 auto;   /* Center horizontally if not using flex parent */
+  background-color: #f2f2f2; /* Optional: background circle */
+  border-radius: 50%;        /* Optional: make it circular */
+}
+.card-header {
+  display: flex;
+  align-items: center; /* Vertically center */
+  gap: 15px; /* Space between icon and text */
+}
+
+    

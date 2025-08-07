@@ -118,7 +118,7 @@ nav a {
   display: flex;
   align-items: center;
   gap: 8px;
-  padding: 8px 12px;
+  padding: 4px 5px;
   font-weight: 500;
   transition: all 0.4s ease;
   position: relative;
@@ -329,4 +329,178 @@ nav a.active::after {
   .logo-text p {
     font-size: 0.8rem;
   }
+}
+.logo {
+  width: 60px; /* Adjust as needed */
+  height: 60px; /* Adjust as needed */
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 15px;
+}
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Space between logo and text */
+}
+
+.logo-text h1, .logo-text p {
+  margin: 0;
+  white-space: nowrap;
+}
+
+.logo-text h1 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  line-height: 1; /* Tight spacing */
+}
+
+.logo-text p {
+  font-size: 1rem;
+  color: #ffffff;
+  line-height: 1;
+}
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.nav-links {
+  display: flex;
+  flex: 1;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 25px; /* Even spacing */
+}
+
+.nav-links a,
+.nav-links .dropdown-toggle {
+  display: flex;
+  align-items: center;
+  padding: 10px 16px;
+  text-decoration: none;
+  color: #ffffff;
+  position: relative;
+}
+.dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 170px;
+  background: #fff;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.10);
+  z-index: 20;
+}
+
+.dropdown:hover .dropdown-content,
+.dropdown:focus-within .dropdown-content {
+  display: block;
+  animation: fadeIn 0.15s;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-6px);}
+  to { opacity: 1; transform: translateY(0);}
+}
+
+/* Optional: Make sure dropdown links look good */
+.dropdown-content a {
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  color: #fffefe;
+  white-space: nowrap;
+}
+
+.dropdown-content a:hover {
+  background: #f5f5f5;
+}
+.nav-links a,
+.nav-links .dropdown-toggle {
+  font-size: 0.95rem;   /* Adjust as needed; try 0.9rem or 0.8rem for smaller */
+  padding: 8px 12px;    /* Slightly less padding for compact look */
+}
+
+.nav-links i {
+  font-size: 1rem;      /* Reduce icon size if using larger icons before */
+}
+
+/* Optional: Reduce dropdown content size too */
+.dropdown-content a {
+  font-size: 0.95rem;   /* Match nav size */
+  padding: 8px 16px;    /* Tidy up dropdown spacing */
+}
+@media (min-width: 993px) {
+  .nav-links a,
+  .nav-links .dropdown-toggle,
+  .dropdown-content a,
+  .nav-links i {
+    font-size: 0.95rem; /* or your desired value */
+  }
+}
+.dropdown-content {
+  background: linear-gradient(135deg, var(--blue-accent), var(--blue-main));
+  border-radius: 10px;
+  padding: 10px 0;
+  box-shadow: 0 10px 30px rgba(249, 236, 86, 0.822);
+  /* Other dropdown styles, such as display, position, etc. */
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px; /* Add or adjust horizontal padding as needed */
+  min-height: 80px;
+ background: linear-gradient(90deg, var(--blue-accent) 60%, var(--blue-main));
+  color: white;
+  /* Use your background */
+}
+ .logo-container {
+  display: flex;
+  align-items: center;
+  min-width: 270px;      /* Prevents crowding from logo/text */
+  gap: 12px;             /* Comfortable space between logo and text */
+}
+nav {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: center; /* Center within available space */
+  align-items: center;
+  flex: 1;
+  gap: 28px;   /* Increase or decrease gap as needed */
+}
+@media (max-width: 1200px) {
+  header {
+    padding: 0 12px;
+  }
+  .nav-links {
+    gap: 16px;
+  }
+  .logo-container {
+    min-width: 170px;
+  }
+}
+/* Option 1: Move the entire navigation bar to the right */
+.nav-links {
+  padding-left: 60px; /* Increase this value for a greater shift */
+}
+
+/* Option 2: Move only specific nav items to the right */
+.nav-links a[href="media.html"],
+.nav-links a[href="team.html"],
+.nav-links a[href="aboutusrjgf.html"],
+.nav-links a[href="rjhomepg.html"] {
+  margin-left: 20px; /* Adjust value for desired spacing */
 }

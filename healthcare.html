@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title> RJHealthcare Support </title>
+  <link rel="stylesheet" href="CSS/healthcare.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
+</head>
+<body>
+    <div id="header"></div>
+
+
+  <div class="banner-slider">
+    <div class="slide active" style="background-image: url('Images/iKure_pic_.jpg');">
+      <div class="slide-content">
+        <h1>Healthcare for All</h1>
+        <p>Bringing essential healthcare to underserved communities</p>
+      </div>
+    </div>
+    <div class="slide" style="background-image: url('Images/health1.png');">
+      <div class="slide-content">
+        <h1>Free Medical Camps</h1>
+        <p>Consultations, medicines, and awareness at your doorstep</p>
+      </div>
+    </div>
+    <div class="slide" style="background-image: url('Images/stethoscope-medical-pills-with-syringe.jpg');">
+      <div class="slide-content">
+        <h1>Emergency Assistance</h1>
+        <p>Support when it matters most</p>
+      </div>
+    </div>
+    <div class="slider-indicators">
+      <span class="indicator active" data-slide="0"></span>
+      <span class="indicator" data-slide="1"></span>
+      <span class="indicator" data-slide="2"></span>
+    </div>
+  </div>
+
+    <section>
+    <h2><i class="fas fa-hand-holding-medical"></i> Free Medical Camps</h2>
+    <p>We organize health check-up camps in underserved communities, offering:</p>
+    <ul>
+      <li>Free consultations with certified doctors</li>
+      <li>Distribution of essential medicines</li>
+      <li>Health awareness and hygiene education programs</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2><i class="fas fa-heartbeat"></i> Financial Assistance</h2>
+    <p>Our Foundation provides financial aid for:</p>
+    <ul>
+      <li>Critical surgeries</li>
+      <li>Emergency treatments</li>
+      <li>Life-saving medicines and post-operative care</li>
+    </ul>
+    <p>Support is provided after a transparent verification process to ensure timely help for those in crisis.</p>
+  </section>
+
+  <section>
+    <h2><i class="fas fa-info-circle"></i> Information & Guidance</h2>
+    <p>We help people access vital healthcare resources including:</p>
+    <ul>
+      <li>Contact details of nearby hospitals and health centers</li>
+      <li>Awareness about government health schemes and how to apply</li>
+      <li>NGO support lines and emergency helplines</li>
+    </ul>
+  </section>
+ 
+
+  <section class="cta redesigned-cta">
+    <div class="cta-content">
+      <h2><i class="fas fa-hands-helping"></i> Join Our Mission of Care</h2>
+      <p>Together, we can bring hope and healing to those in need. Support our healthcare initiatives by donating, volunteering, or partnering with us.</p>
+      <div class="cta-actions" style="display: flex; gap: 16px; flex-wrap: wrap; justify-content: center;">
+        <a href="contact.html" class="btn donate-btn"><i class="fas fa-donate"></i> Donate</a>
+        <a href="contact.html" class="btn volunteer-btn"><i class="fas fa-user-plus"></i> Volunteer</a>
+        <a href="contact.html" class="btn partner-btn"><i class="fas fa-handshake"></i> Partner</a>
+      </div>
+    </div>
+  </section>
+
+<div id="footer-placeholder"></div>
+<script>
+  fetch("footer.html")
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById("footer-placeholder").innerHTML = data;
+    });
+</script>
+ 
+<script src="JS/loadheader.js"></script>
+ <script>
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const slides = document.querySelectorAll(".slide");
+      const indicators = document.querySelectorAll(".indicator");
+      let current = 0;
+      let interval;
+
+      function showSlide(index) {
+        slides.forEach((slide, i) => {
+          slide.classList.toggle("active", i === index);
+        });
+        indicators.forEach((dot, i) => {
+          dot.classList.toggle("active", i === index);
+        });
+        current = index;
+      }
+
+      function nextSlide() {
+        const nextIndex = (current + 1) % slides.length;
+        showSlide(nextIndex);
+      }
+
+      function startAutoSlide() {
+        interval = setInterval(nextSlide, 4000);
+      }
+
+      function stopAutoSlide() {
+        clearInterval(interval);
+      }
+
+      indicators.forEach(dot => {
+        dot.addEventListener("click", () => {
+          stopAutoSlide();
+          const index = parseInt(dot.dataset.slide);
+          showSlide(index);
+          startAutoSlide();
+        });
+      });
+
+      showSlide(current);
+      startAutoSlide();
+    });
+  </script>
+</body>
+</html>
