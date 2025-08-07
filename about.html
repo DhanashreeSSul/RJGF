@@ -329,5 +329,32 @@
 <!-- Custom JS -->
 <script src="JS/aboutusrjgf.js"></script>
  <script src="JS/loadheader.js"></script>
+ <script>
+  const scrollContainer = document.querySelector(".testimonials-scroll");
+
+  let scrollAmount = 0;
+  const scrollStep = 1;
+  const scrollDelay = 20;
+
+  function autoScroll() {
+    if (scrollContainer.scrollLeft + scrollContainer.clientWidth >= scrollContainer.scrollWidth) {
+      scrollContainer.scrollLeft = 0; // reset to start
+    } else {
+      scrollContainer.scrollLeft += scrollStep;
+    }
+    scrollAmount += scrollStep;
+  }
+
+  let scrollInterval = setInterval(autoScroll, scrollDelay);
+
+  // Pause on hover or touch
+  scrollContainer.addEventListener('mouseenter', () => clearInterval(scrollInterval));
+  scrollContainer.addEventListener('mouseleave', () => scrollInterval = setInterval(autoScroll, scrollDelay));
+
+  // Optional: Pause on touch (mobile)
+  scrollContainer.addEventListener('touchstart', () => clearInterval(scrollInterval));
+  scrollContainer.addEventListener('touchend', () => scrollInterval = setInterval(autoScroll, scrollDelay));
+</script>
+
 </body>
 </html>

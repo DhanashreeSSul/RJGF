@@ -98,6 +98,7 @@ document.addEventListener('DOMContentLoaded', () => {
   /* -------------------------------
      Testimonials Scroll
   ------------------------------- */
+
   function initTestimonialScroll() {
     const container = document.querySelector('.testimonials-scroll');
     if (!container) return;
@@ -142,12 +143,16 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     container.addEventListener('touchmove', e => {
-      if (!isDown) return;
-      e.preventDefault();
-      const x = e.touches[0].pageX - container.offsetLeft;
-      const walk = (x - startX) * 2;
-      container.scrollLeft = scrollLeft - walk;
-    });
+  if (!isDown) return;
+  
+  const x = e.touches[0].pageX - container.offsetLeft;
+  const walk = (x - startX) * 2;
+  container.scrollLeft = scrollLeft - walk;
+
+  // Only prevent default if it's horizontal scrolling
+  if (Math.abs(walk) > 10) e.preventDefault();
+}, { passive: false });
+
   }
 
   initTestimonialScroll();
